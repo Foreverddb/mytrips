@@ -1,0 +1,2351 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src 'unsafe-inline' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<title>Otsu Photo Itinerary</title>
+<style>:root{color-scheme:light dark;background:light-dark(rgb(255 255 255), rgb(24 24 24))}html,body{margin:0}body{box-sizing:border-box;padding:1rem;background:inherit}iframe{display:block;width:100%;height:calc(100vh - 2rem);margin:0 auto;border:0}</style>
+</head>
+<body>
+<iframe sandbox="allow-scripts" referrerpolicy="no-referrer" title="Otsu Photo Itinerary" srcdoc="&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+&lt;meta http-equiv=&quot;Content-Security-Policy&quot; content=&quot;default-src &#x27;none&#x27;; script-src &#x27;unsafe-inline&#x27; &#x27;unsafe-eval&#x27; &#x27;wasm-unsafe-eval&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src &#x27;unsafe-inline&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src &#x27;none&#x27;; object-src &#x27;none&#x27;; base-uri &#x27;none&#x27;; form-action &#x27;none&#x27;&quot;&gt;
+&lt;title&gt;Otsu Photo Itinerary&lt;/title&gt;
+&lt;style&gt;:root {
+  color-scheme: light dark;
+  background-color: var(
+    --background,
+    var(--color-background-primary, light-dark(rgb(255 255 255), rgb(24 24 24)))
+  ) !important;
+
+  /* Agent-facing contract; keep in sync with SKILL.md. */
+  --background: var(
+    --color-background-primary,
+    light-dark(rgb(255 255 255), rgb(24 24 24))
+  );
+  --foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --card: color-mix(in oklab, var(--foreground) 5%, var(--background));
+  --card-foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --popover: var(
+    --color-background-secondary,
+    light-dark(rgb(255 255 255), rgb(45 45 45))
+  );
+  --popover-foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --primary: var(
+    --color-text-info,
+    light-dark(rgb(51 156 255), rgb(131 195 255))
+  );
+  --primary-foreground: var(
+    --color-text-inverse,
+    light-dark(rgb(255 255 255), rgb(13 13 13))
+  );
+  --secondary: var(
+    --color-background-secondary,
+    light-dark(rgb(255 255 255 / 96%), rgb(54 54 54 / 96%))
+  );
+  --secondary-foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --muted: color-mix(in srgb, var(--foreground) 10%, transparent);
+  --muted-foreground: var(
+    --color-text-secondary,
+    light-dark(rgb(26 28 31 / 49.4%), rgb(255 255 255 / 49.8%))
+  );
+  --accent: var(
+    --color-background-info,
+    light-dark(rgb(229 242 255), rgb(13 39 63))
+  );
+  --accent-foreground: var(
+    --color-text-info,
+    light-dark(rgb(51 156 255), rgb(131 195 255))
+  );
+  --destructive: var(
+    --color-text-warning,
+    light-dark(rgb(226 85 7), rgb(255 133 73))
+  );
+  --border: var(
+    --color-border-secondary,
+    light-dark(rgb(26 28 31 / 8%), rgb(255 255 255 / 8.2%))
+  );
+  --input: var(
+    --color-border-primary,
+    light-dark(
+      rgb(26 28 31 / 11.8%),
+      color-mix(in oklab, rgb(0 0 0) 10%, transparent)
+    )
+  );
+  --ring: var(
+    --color-ring-primary,
+    light-dark(rgb(51 156 255), rgb(131 195 255 / 76%))
+  );
+  --font-size-base: var(--font-text-md-size, 14px);
+  --blue: light-dark(rgb(51 156 255), rgb(51 156 255));
+  --orange: light-dark(rgb(226 85 7), rgb(251 106 34));
+  --green: light-dark(rgb(0 162 64), rgb(64 201 119));
+  --red: light-dark(rgb(224 46 42), rgb(255 103 100));
+  --purple: light-dark(rgb(146 79 247), rgb(173 123 249));
+  --yellow: light-dark(rgb(255 195 0), rgb(255 210 64));
+  --viz-series-1: var(--primary);
+  --viz-series-2: light-dark(rgb(243 136 59), rgb(245 154 86));
+  --viz-series-3: light-dark(rgb(93 201 119), rgb(116 213 139));
+  --viz-series-4: light-dark(rgb(235 119 177), rgb(240 143 192));
+  --viz-series-5: light-dark(rgb(155 121 236), rgb(170 145 239));
+  --viz-series-6: light-dark(rgb(58 185 177), rgb(90 203 194));
+
+  /* Internal implementation variables; not part of the agent contract. */
+  --font-sans: -apple-system, system-ui, &quot;Segoe UI&quot;, sans-serif;
+  --font-mono:
+    ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;,
+    monospace;
+  --font-size-normal: max(11px, var(--font-size-base));
+  --font-size-tooltip: calc(var(--font-size-base) - 1px);
+  --font-size-small: max(11px, calc(var(--font-size-base) - 2px));
+  --font-size-h1: calc(var(--font-size-normal) * 1.7142857143);
+  --font-size-h2: calc(var(--font-size-normal) * 1.4285714286);
+  --font-size-h3: calc(var(--font-size-normal) * 1.2857142857);
+  --font-weight-normal: 430;
+  --font-weight-medium: 500;
+  --line-height-normal: calc(var(--font-size-normal) * 1.5);
+  --line-height-tooltip: calc(var(--font-size-tooltip) * 1.4285714286);
+  --line-height-small: calc(var(--font-size-small) + 4px);
+  --radius: var(--border-radius-lg, 12.5px);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-2xl: calc(var(--radius) * 1.6);
+  --radius-full: 9999px;
+  --shadow-sm: 0 1px 2px -1px rgb(0 0 0 / 8%);
+  --checkmark-image: url(&quot;data:image/svg+xml,%3Csvg xmlns=&#x27;http://www.w3.org/2000/svg&#x27; viewBox=&#x27;0 0 17 17&#x27;%3E%3Cpath d=&#x27;M12.8961 3.64101C13.1297 3.41418 13.4984 3.37523 13.7779 3.56581C14.0571 3.75635 14.1554 4.11331 14.0299 4.41347L13.9615 4.53847L7.71151 13.7045C7.59411 13.8767 7.4063 13.9877 7.19881 14.0072C6.99136 14.0267 6.78564 13.9533 6.63826 13.806L2.88826 10.056L2.79842 9.9457C2.6192 9.67407 2.64927 9.30496 2.88826 9.06581C3.12738 8.82669 3.49647 8.79676 3.76815 8.97597L3.8785 9.06581L7.03084 12.2182L12.8053 3.74941L12.8961 3.64101Z&#x27;/%3E%3C/svg%3E&quot;);
+
+  /* Legacy aliases; not part of the current agent contract. */
+  --viz-bg: transparent;
+  --viz-panel: var(--card);
+  --viz-border: var(--border);
+  --viz-text: var(--foreground);
+  --viz-muted: var(--muted-foreground);
+  --viz-accent: var(--primary);
+  --viz-accent-text: var(--primary-foreground);
+  --viz-accent-bg: var(--accent);
+  --viz-font-size: var(--font-size-base);
+  --viz-warning: var(--destructive);
+}
+
+:root[data-theme=&quot;light&quot;] {
+  color-scheme: light;
+}
+
+:root[data-theme=&quot;dark&quot;] {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html &gt; body {
+  /* Preserve MCP aliases for older inline renderers without creating :root cycles. */
+  --color-background-primary: var(
+    --background,
+    light-dark(rgb(255 255 255), rgb(24 24 24))
+  );
+  --color-text-primary: var(
+    --foreground,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --color-border-secondary: var(
+    --border,
+    light-dark(rgb(26 28 31 / 8%), rgb(255 255 255 / 8.2%))
+  );
+
+  margin: 0;
+  padding: 5px;
+  color: var(--foreground);
+  background: transparent !important;
+  font-family: var(--font-sans) !important;
+  font-size: var(--font-size-normal);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+}
+
+a {
+  color: color-mix(in srgb, var(--viz-accent) 80%, var(--viz-text) 20%);
+  cursor: pointer;
+  font-weight: var(--font-weight-medium, 500);
+  text-decoration: none;
+  text-underline-offset: 2px;
+}
+
+a:is(:hover, :focus-visible) {
+  text-decoration-line: underline;
+  text-decoration-style: dashed;
+  text-decoration-thickness: 0.5px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-block: 0;
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.3;
+}
+
+b,
+strong,
+th {
+  font-weight: var(--font-weight-medium);
+}
+
+code:not(pre code) {
+  display: inline;
+  padding: 1px 6px;
+  border-radius: var(--radius-sm);
+  corner-shape: superellipse(1.5);
+  background: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  overflow-wrap: anywhere;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  word-break: break-word;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--foreground);
+  font: inherit;
+  text-align: start;
+}
+
+.table :is(th, td) {
+  padding-block: 10px;
+  padding-inline: 0 24px;
+  overflow-wrap: anywhere;
+  border-bottom: 1px solid var(--border);
+  text-align: start;
+  vertical-align: top;
+}
+
+.table-responsive &gt; .table :is(th, td) {
+  overflow-wrap: break-word;
+}
+
+.table :is(th, td):last-child {
+  padding-inline-end: 0;
+}
+
+.table :is(caption, thead th) {
+  font-weight: 600;
+}
+
+.table thead th {
+  padding-block: 8px;
+  border-bottom-color: color-mix(in srgb, var(--foreground) 16%, transparent);
+}
+
+.table tbody tr:last-child :is(th, td) {
+  border-bottom: 0;
+}
+
+.table.table-sm :is(th, td) {
+  padding-block: 6px;
+}
+
+.table.table-sm :is(th, td):not(:last-child) {
+  padding-inline-end: 16px;
+}
+
+.table :is(.text-end, [align=&quot;right&quot;]) {
+  text-align: end;
+  font-variant-numeric: tabular-nums;
+}
+
+.table :is(.text-center, [align=&quot;center&quot;]) {
+  text-align: center;
+}
+
+.table .text-nowrap {
+  white-space: nowrap;
+}
+
+#widget {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  padding: 0;
+  background: transparent !important;
+}
+
+.card {
+  min-width: 0;
+  padding: 12px;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  border-radius: var(--radius-2xl);
+  corner-shape: superellipse(1.5);
+  color: var(--card-foreground);
+  background: var(--card);
+}
+
+#widget &gt; :not(.card, .progress) {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.tooltip {
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  width: max-content;
+  max-width: min(
+    20rem,
+    var(--tooltip-available-width, calc(100vw - 10px)),
+    calc(100vw - 10px)
+  );
+  max-height: min(
+    var(--tooltip-available-height, calc(100vh - 10px)),
+    calc(100vh - 10px)
+  );
+  padding: 4px 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  corner-shape: superellipse(1.5);
+  color: var(--popover-foreground);
+  background: var(--popover);
+  box-shadow: none;
+  font-size: var(--font-size-tooltip);
+  line-height: var(--line-height-tooltip);
+  overflow-wrap: break-word;
+  white-space: normal;
+  pointer-events: none;
+  user-select: none;
+}
+
+.viz-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(max(180px, 24%), 1fr));
+  gap: 10px;
+}
+
+.viz-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.viz-stat-value {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+.viz-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.progress {
+  display: flex;
+  height: 6px;
+  margin-block: calc((var(--line-height-normal, 1.5em) - 6px) / 2);
+  overflow: hidden;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: var(--muted);
+}
+
+.progress-bar {
+  height: 100%;
+  flex-shrink: 0;
+  border: 0;
+  background: var(--viz-series-1);
+}
+
+.viz-badge {
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  color: var(--accent-foreground);
+  background: var(--accent);
+  font-weight: var(--font-weight-medium);
+}
+
+small,
+.text-small,
+.viz-badge {
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+}
+
+.text-muted {
+  color: var(--muted-foreground);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.viz-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.viz-controls &gt; .form-label {
+  display: grid;
+  min-width: min(100%, 260px);
+  flex: 1 1 280px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 2px 12px;
+  margin-bottom: 0;
+}
+
+.viz-controls &gt; .form-label &gt; :is(.form-control, .form-range, .form-select) {
+  grid-column: 1 / -1;
+}
+
+.btn,
+.form-check-input,
+.form-control,
+.form-range,
+.form-select {
+  font: inherit;
+}
+
+.btn {
+  appearance: button;
+  display: inline-flex;
+  inline-size: fit-content;
+  max-inline-size: 100%;
+  min-height: 28px;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin: 0;
+  padding: 0 8px;
+  -webkit-app-region: no-drag;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  corner-shape: superellipse(1.5);
+  color: var(--secondary-foreground);
+  background: var(--secondary);
+  cursor: var(--cursor-interaction, pointer);
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+.btn:is(.btn-block, .viz-tile) {
+  inline-size: 100%;
+}
+
+.btn.viz-tile {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+a.btn {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn:not(:disabled):hover {
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.btn-primary {
+  border-color: transparent;
+  color: var(--primary-foreground);
+  background: var(--foreground);
+  background-clip: padding-box;
+}
+
+.btn-primary .text-muted {
+  color: color-mix(in srgb, var(--primary-foreground) 50%, transparent);
+}
+
+.btn-primary:not(:disabled):hover {
+  background: color-mix(in srgb, var(--foreground) 80%, transparent);
+  background-clip: padding-box;
+}
+
+.btn-ghost {
+  border-color: transparent;
+  color: var(--muted-foreground);
+  background: transparent;
+}
+
+.btn-ghost:not(:disabled):hover {
+  color: var(--foreground);
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+[data-lucide] {
+  stroke-width: 1.6;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--foreground);
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  min-height: 28px;
+  padding: 0 8px;
+  outline: none;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  corner-shape: superellipse(1.5);
+  color: var(--foreground);
+  background: var(--secondary);
+}
+
+.form-control::placeholder {
+  color: var(--muted-foreground);
+}
+
+.form-control[type=&quot;file&quot;] {
+  padding: 0;
+  overflow: hidden;
+  cursor: var(--cursor-interaction, pointer);
+}
+
+.form-control[type=&quot;file&quot;]::file-selector-button {
+  min-height: 26px;
+  margin-right: 8px;
+  padding: 0 8px;
+  border: 0;
+  border-right: 1px solid var(--input);
+  color: var(--secondary-foreground);
+  background: var(--secondary);
+  cursor: inherit;
+  font: inherit;
+}
+
+.form-control[type=&quot;file&quot;]:not(:disabled):hover::file-selector-button {
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.form-control-color[type=&quot;color&quot;] {
+  width: 40px;
+  height: 28px;
+  padding: 3px;
+  cursor: var(--cursor-interaction, pointer);
+}
+
+.form-control-color[type=&quot;color&quot;]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.form-control-color[type=&quot;color&quot;]::-webkit-color-swatch {
+  border: 0;
+  border-radius: calc(var(--radius-lg) - 4px);
+  corner-shape: superellipse(1.5);
+}
+
+textarea.form-control {
+  height: auto;
+  min-height: 72px;
+  padding: 8px 10px;
+  resize: vertical;
+}
+
+.form-control:focus-visible {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-control:disabled,
+.form-select:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.form-select {
+  appearance: none;
+  display: block;
+  width: 100%;
+  min-height: 28px;
+  margin: 0;
+  padding: 0 32px 0 8px;
+  outline: none;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  corner-shape: superellipse(1.5);
+  color: var(--foreground);
+  background-color: var(--secondary);
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--muted-foreground) 50%),
+    linear-gradient(135deg, var(--muted-foreground) 50%, transparent 50%);
+  background-position:
+    calc(100% - 14px) 50%,
+    calc(100% - 10px) 50%;
+  background-repeat: no-repeat;
+  background-size: 4px 4px;
+  cursor: var(--cursor-interaction, default);
+}
+
+.form-select:not(:disabled):hover {
+  background-color: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.form-select:focus-visible {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-check {
+  display: flex;
+  min-height: 20px;
+  align-items: center;
+  gap: 6px;
+}
+
+.form-check-input {
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  flex: 0 0 auto;
+  margin: 0;
+  border: 1px solid var(--input);
+  color: var(--primary-foreground);
+  background-color: transparent;
+  cursor: var(--cursor-interaction, default);
+  transition:
+    background-color 150ms,
+    border-color 150ms,
+    box-shadow 150ms;
+}
+
+.form-check:not(.form-switch) .form-check-input[type=&quot;checkbox&quot;] {
+  border-color: var(--input);
+  border-radius: var(--radius-sm);
+  corner-shape: superellipse(1.5);
+  background-color: var(--secondary);
+  box-shadow: var(--shadow-sm);
+}
+
+.form-check:not(.form-switch)
+  .form-check-input:not(:disabled):not(:checked):hover {
+  background-color: var(--card);
+}
+
+.form-check:not(.form-switch) .form-check-input[type=&quot;checkbox&quot;]:checked {
+  border-color: var(--primary);
+  background-color: var(--primary);
+}
+
+.form-check:not(.form-switch)
+  .form-check-input[type=&quot;checkbox&quot;]:checked::before {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--primary-foreground);
+  content: &quot;&quot;;
+  mask: var(--checkmark-image) center / 12px 12px no-repeat;
+}
+
+.form-check-input[type=&quot;radio&quot;] {
+  width: 14px;
+  height: 14px;
+  border-radius: var(--radius-full);
+}
+
+.form-check-input[type=&quot;radio&quot;]:checked {
+  border: 2px solid var(--primary);
+  background:
+    radial-gradient(circle, var(--primary-foreground) 0 2.5px, transparent 3px),
+    var(--primary);
+}
+
+.form-check:not(.form-switch) .form-check-input:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+.form-check:not(.form-switch) .form-check-input:disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.form-check:not(.form-switch) .form-check-input:disabled + .form-check-label {
+  cursor: not-allowed;
+}
+
+.form-switch .form-check-input:disabled,
+.form-switch .form-check-input:disabled + .form-check-label {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.form-check-label {
+  color: var(--foreground);
+  cursor: var(--cursor-interaction, default);
+}
+
+.form-switch .form-check-input {
+  position: relative;
+  width: 32px;
+  height: 20px;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: var(--muted);
+  box-shadow: none;
+  transition: background-color 200ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.form-switch .form-check-input::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  box-sizing: border-box;
+  border: 1px solid light-dark(var(--primary-foreground), var(--foreground));
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+  box-shadow: var(--shadow-sm);
+  content: &quot;&quot;;
+  transform: translate(2px, -50%);
+  transition: transform 200ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.form-switch .form-check-input:checked {
+  background: var(--primary);
+}
+
+.form-switch .form-check-input:checked::before {
+  transform: translate(14px, -50%);
+}
+
+.form-switch .form-check-input:focus-visible {
+  box-shadow: 0 0 0 2px var(--ring);
+}
+
+.form-range {
+  appearance: none;
+  display: block;
+  width: 100%;
+  height: 28px;
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: 0;
+  accent-color: var(--primary);
+  background: linear-gradient(
+      color-mix(in srgb, var(--foreground) 7%, transparent),
+      color-mix(in srgb, var(--foreground) 7%, transparent)
+    )
+    center / 100% 2px no-repeat;
+}
+
+.form-range::-webkit-slider-runnable-track {
+  height: 28px;
+  background: transparent;
+}
+
+.form-range::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  margin-top: 4px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+}
+
+.form-range:focus-visible::-webkit-slider-thumb {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-range::-moz-range-track {
+  height: 28px;
+  background: transparent;
+}
+
+.form-range::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+}
+
+.form-range:focus-visible::-moz-range-thumb {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-range:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.btn:not(.btn-primary, .viz-tile):is(
+  [aria-pressed=&quot;true&quot;],
+  [aria-selected=&quot;true&quot;],
+  .is-selected
+) {
+  border-color: var(--primary);
+  color: var(--primary-foreground);
+  background: var(--primary);
+}
+
+.btn.viz-tile:is([aria-pressed=&quot;true&quot;], [aria-selected=&quot;true&quot;], .is-selected) {
+  border-color: var(--primary);
+  box-shadow: inset 0 0 0 1px var(--primary);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+#widget &gt; svg {
+  width: 100%;
+}
+
+/* Model-authored chart rules can otherwise stretch icons after these styles load. */
+svg.lucide {
+  display: block;
+  width: 16px !important;
+  height: 16px !important;
+  flex: none;
+  margin: 0 !important;
+  stroke-width: 1.6;
+}
+
+.text-warning,
+.text-destructive {
+  color: var(--destructive);
+}
+
+html&gt;body{padding:0}&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id=&quot;otsu-trip-report&quot;&gt;
+  &lt;header class=&quot;report-head&quot;&gt;
+    &lt;div&gt;
+      &lt;h1&gt;9月4日 大津・白鬚神社摄影行程&lt;/h1&gt;
+      &lt;p class=&quot;text-muted&quot;&gt;HX616 07:55抵达KIX · 主计划20:20前后返回琵琶湖酒店 · 时刻均为JST&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;span class=&quot;viz-badge&quot;&gt;2026-09-04 周五&lt;/span&gt;
+  &lt;/header&gt;
+
+  &lt;div class=&quot;viz-grid report-stats&quot; aria-label=&quot;行程摘要&quot;&gt;
+    &lt;div class=&quot;card viz-stat&quot;&gt;
+      &lt;span class=&quot;text-muted&quot;&gt;固定铁路卡点&lt;/span&gt;
+      &lt;strong class=&quot;viz-stat-value&quot;&gt;4班&lt;/strong&gt;
+      &lt;span class=&quot;text-small&quot;&gt;09:42 / 11:15 / 12:55 / 15:21&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;card viz-stat&quot;&gt;
+      &lt;span class=&quot;text-muted&quot;&gt;官方巡礼与拉力&lt;/span&gt;
+      &lt;strong class=&quot;viz-stat-value&quot;&gt;4处&lt;/strong&gt;
+      &lt;span class=&quot;text-small&quot;&gt;大津站、港、京阪石山、平和堂&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;card viz-stat&quot;&gt;
+      &lt;span class=&quot;text-muted&quot;&gt;关键摄影窗口&lt;/span&gt;
+      &lt;strong class=&quot;viz-stat-value&quot;&gt;17:47–18:43&lt;/strong&gt;
+      &lt;span class=&quot;text-small&quot;&gt;行程拍至18:43 · 天文蓝调至18:46&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;section class=&quot;map-section&quot; aria-labelledby=&quot;map-title&quot;&gt;
+    &lt;div class=&quot;section-head&quot;&gt;
+      &lt;div&gt;
+        &lt;h2 id=&quot;map-title&quot;&gt;路线地图&lt;/h2&gt;
+        &lt;p class=&quot;text-small text-muted&quot;&gt;真实节点坐标 · 路线为简化示意，不代替现场导航&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;viz-controls map-views&quot; aria-label=&quot;地图范围&quot;&gt;
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-ghost&quot; data-view=&quot;all&quot; aria-pressed=&quot;false&quot;&gt;全程&lt;/button&gt;
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot; data-view=&quot;shiga&quot; aria-pressed=&quot;true&quot;&gt;滋贺主线&lt;/button&gt;
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-ghost&quot; data-view=&quot;otsu&quot; aria-pressed=&quot;false&quot;&gt;大津市区&lt;/button&gt;
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-ghost&quot; data-view=&quot;shrine&quot; aria-pressed=&quot;false&quot;&gt;白鬚神社&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;map-legend text-small&quot; aria-label=&quot;交通方式图例&quot;&gt;
+      &lt;span&gt;&lt;i class=&quot;legend-swatch jr&quot;&gt;&lt;/i&gt;JR&lt;/span&gt;
+      &lt;span&gt;&lt;i class=&quot;legend-swatch keihan&quot;&gt;&lt;/i&gt;京阪&lt;/span&gt;
+      &lt;span&gt;&lt;i class=&quot;legend-swatch taxi&quot;&gt;&lt;/i&gt;出租车&lt;/span&gt;
+      &lt;span&gt;&lt;i class=&quot;legend-swatch local&quot;&gt;&lt;/i&gt;班车 / 步行&lt;/span&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;map-shell&quot;&gt;
+      &lt;svg class=&quot;route-map&quot; role=&quot;img&quot; aria-labelledby=&quot;route-map-title route-map-desc&quot;&gt;
+        &lt;title id=&quot;route-map-title&quot;&gt;关西机场、大津、白鬚神社与石山行程地图&lt;/title&gt;
+        &lt;desc id=&quot;route-map-desc&quot;&gt;地图显示9月4日从关西机场经京都、大津、白鬚神社、膳所、石山返回酒店的路线。悬停线路可查看时间和执行流程。&lt;/desc&gt;
+      &lt;/svg&gt;
+      &lt;div class=&quot;map-tooltip&quot; role=&quot;tooltip&quot; aria-hidden=&quot;true&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;article class=&quot;card selected-detail&quot; aria-live=&quot;polite&quot;&gt;
+      &lt;div class=&quot;detail-head&quot;&gt;
+        &lt;div&gt;
+          &lt;span class=&quot;viz-badge detail-status&quot;&gt;关键预约&lt;/span&gt;
+          &lt;h3 class=&quot;detail-title&quot;&gt;白鬚神社摄影&lt;/h3&gt;
+        &lt;/div&gt;
+        &lt;strong class=&quot;detail-time&quot;&gt;13:35–14:50&lt;/strong&gt;
+      &lt;/div&gt;
+      &lt;p class=&quot;detail-summary&quot;&gt;&lt;/p&gt;
+      &lt;div class=&quot;detail-grid&quot;&gt;
+        &lt;div&gt;
+          &lt;span class=&quot;text-small text-muted&quot;&gt;执行&lt;/span&gt;
+          &lt;p class=&quot;detail-action&quot;&gt;&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+          &lt;span class=&quot;text-small text-muted&quot;&gt;摄影 / 风险&lt;/span&gt;
+          &lt;p class=&quot;detail-photo&quot;&gt;&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;viz-row detail-links&quot;&gt;&lt;/div&gt;
+    &lt;/article&gt;
+
+    &lt;p class=&quot;map-credit text-small text-muted&quot;&gt;
+      地理数据 &lt;a href=&quot;https://www.openstreetmap.org/copyright&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;© OpenStreetMap contributors&lt;/a&gt;
+    &lt;/p&gt;
+  &lt;/section&gt;
+
+  &lt;section class=&quot;timeline-section&quot; aria-labelledby=&quot;timeline-title&quot;&gt;
+    &lt;div class=&quot;section-head&quot;&gt;
+      &lt;div&gt;
+        &lt;h2 id=&quot;timeline-title&quot;&gt;执行时间轴&lt;/h2&gt;
+        &lt;p class=&quot;text-small text-muted&quot;&gt;官方链接与预约入口紧邻对应节点&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;timeline-list&quot;&gt;&lt;/div&gt;
+  &lt;/section&gt;
+
+  &lt;section class=&quot;reference-section&quot; aria-label=&quot;摄影与延误参考&quot;&gt;
+    &lt;details open&gt;
+      &lt;summary&gt;摄影参数与光线窗口&lt;/summary&gt;
+      &lt;div class=&quot;table-responsive&quot;&gt;
+        &lt;table class=&quot;table table-sm&quot;&gt;
+          &lt;thead&gt;
+            &lt;tr&gt;&lt;th&gt;地点&lt;/th&gt;&lt;th&gt;窗口&lt;/th&gt;&lt;th&gt;起始参数&lt;/th&gt;&lt;th&gt;构图重点&lt;/th&gt;&lt;/tr&gt;
+          &lt;/thead&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;白鬚神社&lt;/td&gt;
+              &lt;td class=&quot;text-nowrap&quot;&gt;13:35–14:50&lt;/td&gt;
+              &lt;td&gt;70–200mm · ISO 100 · f/8 · 1/250–1/500s&lt;/td&gt;
+              &lt;td&gt;藍湖白鬚台拍鸟居；清晰倒影用短曝光，ND长曝用于柔化水面&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td&gt;膳所湖岸&lt;/td&gt;
+              &lt;td class=&quot;text-nowrap&quot;&gt;17:47–18:36&lt;/td&gt;
+              &lt;td&gt;ISO 100 · f/8 · 1/60–1/250s · ±2EV包围&lt;/td&gt;
+              &lt;td&gt;夕阳在身后，重点拍暖光、近江大桥与云层，不追求落日入湖&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td&gt;蓝调 / 延时&lt;/td&gt;
+              &lt;td class=&quot;text-nowrap&quot;&gt;18:36–18:43&lt;/td&gt;
+              &lt;td&gt;1–8s · f/8 · WB 3800–4500K；延时间隔4–6s&lt;/td&gt;
+              &lt;td&gt;行程拍到18:43；天文蓝调至18:46。17:40开始延时，固定对焦、光圈和白平衡&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/div&gt;
+    &lt;/details&gt;
+
+    &lt;details&gt;
+      &lt;summary&gt;延误删减规则&lt;/summary&gt;
+      &lt;div class=&quot;table-responsive&quot;&gt;
+        &lt;table class=&quot;table table-sm&quot;&gt;
+          &lt;thead&gt;
+            &lt;tr&gt;&lt;th&gt;触发条件&lt;/th&gt;&lt;th&gt;调整&lt;/th&gt;&lt;th&gt;必须保留&lt;/th&gt;&lt;/tr&gt;
+          &lt;/thead&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;&lt;td&gt;乘10:16 HARUKA&lt;/td&gt;&lt;td&gt;删除午间大津港，返程后补；删除膳所&lt;/td&gt;&lt;td&gt;寄存行李、12:55湖西线、白鬚神社&lt;/td&gt;&lt;/tr&gt;
+            &lt;tr&gt;&lt;td&gt;错过大津京12:55&lt;/td&gt;&lt;td&gt;13:55出发、14:23到站；预约普通出租车14:30到神社、15:00收机、约15:10回站（&lt;a href=&quot;https://shiga.0152.jp/office/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;第一交通滋贺官网&lt;/a&gt; · &lt;a href=&quot;tel:0120524447&quot;&gt;拨号预约&lt;/a&gt;）&lt;/td&gt;&lt;td&gt;15:21返程；必须让出租车等候或固定接送点&lt;/td&gt;&lt;/tr&gt;
+            &lt;tr&gt;&lt;td&gt;KIX通关晚于10:45&lt;/td&gt;&lt;td&gt;不再追求全覆盖&lt;/td&gt;&lt;td&gt;白鬚神社、大津港、平和堂石山&lt;/td&gt;&lt;/tr&gt;
+            &lt;tr&gt;&lt;td&gt;湖西线停运 / 雷暴&lt;/td&gt;&lt;td&gt;取消白鬚神社，改走大津港、膳所、石山湖岸线&lt;/td&gt;&lt;td&gt;不在湖岸架金属三脚架&lt;/td&gt;&lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/div&gt;
+    &lt;/details&gt;
+  &lt;/section&gt;
+
+  &lt;footer class=&quot;report-foot text-small text-muted&quot;&gt;
+    铁路时刻核对日期：2026-08-25。出发前24小时再次核对JR WEST、香港航空与高岛市交通公告。
+  &lt;/footer&gt;
+&lt;/div&gt;
+
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js&quot;&gt;&lt;/script&gt;
+&lt;style&gt;
+  #otsu-trip-report {
+    position: relative;
+    width: 100%;
+    color: var(--foreground);
+  }
+
+  #otsu-trip-report .report-head,
+  #otsu-trip-report .section-head,
+  #otsu-trip-report .detail-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  #otsu-trip-report .report-head p,
+  #otsu-trip-report .section-head p,
+  #otsu-trip-report .selected-detail p,
+  #otsu-trip-report .timeline-item p {
+    margin: 4px 0 0;
+  }
+
+  #otsu-trip-report .report-stats {
+    margin: 18px 0 24px;
+  }
+
+  #otsu-trip-report .map-section,
+  #otsu-trip-report .timeline-section,
+  #otsu-trip-report .reference-section {
+    margin-top: 24px;
+  }
+
+  #otsu-trip-report .map-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin: 10px 0 8px;
+  }
+
+  #otsu-trip-report .map-legend span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  #otsu-trip-report .legend-swatch {
+    display: inline-block;
+    width: 22px;
+    height: 3px;
+  }
+
+  #otsu-trip-report .legend-swatch.jr { background: var(--viz-series-1); }
+  #otsu-trip-report .legend-swatch.keihan { background: var(--viz-series-2); }
+  #otsu-trip-report .legend-swatch.taxi { background: var(--viz-series-3); }
+  #otsu-trip-report .legend-swatch.local { background: var(--viz-series-4); }
+
+  #otsu-trip-report .map-shell {
+    position: relative;
+    width: 100%;
+  }
+
+  #otsu-trip-report .route-map {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  #otsu-trip-report .map-frame {
+    fill: color-mix(in srgb, var(--muted) 18%, transparent);
+    stroke: var(--border);
+    stroke-width: 1px;
+  }
+
+  #otsu-trip-report .region {
+    fill: color-mix(in srgb, var(--muted) 28%, transparent);
+    stroke: var(--border);
+    stroke-width: 1px;
+    vector-effect: non-scaling-stroke;
+  }
+
+  #otsu-trip-report .city-boundary {
+    fill: color-mix(in srgb, var(--accent) 18%, transparent);
+    stroke: var(--muted-foreground);
+    stroke-width: 1px;
+    stroke-dasharray: 4 4;
+    vector-effect: non-scaling-stroke;
+  }
+
+  #otsu-trip-report .lake {
+    fill: color-mix(in srgb, var(--viz-series-1) 20%, transparent);
+    stroke: color-mix(in srgb, var(--viz-series-1) 64%, var(--border));
+    stroke-width: 1px;
+    vector-effect: non-scaling-stroke;
+  }
+
+  #otsu-trip-report .route-visible {
+    fill: none;
+    stroke-width: 3px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    vector-effect: non-scaling-stroke;
+    transition: stroke-width 160ms ease, opacity 160ms ease;
+  }
+
+  #otsu-trip-report .route-visible.jr { stroke: var(--viz-series-1); }
+  #otsu-trip-report .route-visible.keihan { stroke: var(--viz-series-2); }
+  #otsu-trip-report .route-visible.taxi { stroke: var(--viz-series-3); }
+  #otsu-trip-report .route-visible.local {
+    stroke: var(--viz-series-4);
+    stroke-dasharray: 6 5;
+  }
+
+  #otsu-trip-report .route-visible.is-active {
+    stroke-width: 6px;
+  }
+
+  #otsu-trip-report .route-visible.is-related {
+    stroke-width: 5px;
+  }
+
+  #otsu-trip-report .route-visible.is-selected {
+    stroke-width: 8px;
+  }
+
+  #otsu-trip-report .route-hit {
+    fill: none;
+    stroke: transparent;
+    stroke-width: 32px;
+    pointer-events: stroke;
+    cursor: pointer;
+  }
+
+  #otsu-trip-report .node-mark {
+    fill: var(--background);
+    stroke: var(--foreground);
+    stroke-width: 2px;
+    vector-effect: non-scaling-stroke;
+    transition: r 160ms ease;
+  }
+
+  #otsu-trip-report .node-mark.is-critical {
+    fill: color-mix(in srgb, var(--viz-series-3) 25%, var(--background));
+    stroke: var(--viz-series-3);
+  }
+
+  #otsu-trip-report .node-mark.is-photo {
+    fill: color-mix(in srgb, var(--viz-series-2) 22%, var(--background));
+    stroke: var(--viz-series-2);
+  }
+
+  #otsu-trip-report .node-mark.is-active {
+    r: 9px;
+    stroke-width: 3px;
+  }
+
+  #otsu-trip-report .node-mark.is-related {
+    r: 9px;
+    stroke-width: 3px;
+  }
+
+  #otsu-trip-report .node-mark.is-selected {
+    r: 11px;
+    stroke-width: 4px;
+  }
+
+  #otsu-trip-report .node-selection-ring {
+    fill: none;
+    stroke: var(--foreground);
+    stroke-width: 2px;
+    stroke-dasharray: 3 3;
+    vector-effect: non-scaling-stroke;
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  #otsu-trip-report .node-group.is-selected .node-selection-ring {
+    opacity: 1;
+  }
+
+  #otsu-trip-report .node-hit {
+    fill: transparent;
+    cursor: pointer;
+  }
+
+  #otsu-trip-report .node-number,
+  #otsu-trip-report .node-label,
+  #otsu-trip-report .map-place-label {
+    fill: var(--foreground);
+    font-size: 12px;
+    letter-spacing: 0;
+    pointer-events: none;
+  }
+
+  #otsu-trip-report .node-number {
+    text-anchor: middle;
+    dominant-baseline: central;
+    font-weight: 500;
+  }
+
+  #otsu-trip-report .node-label {
+    paint-order: stroke;
+    stroke: var(--background);
+    stroke-width: 4px;
+    stroke-linejoin: round;
+  }
+
+  #otsu-trip-report .map-place-label {
+    fill: var(--muted-foreground);
+  }
+
+  #otsu-trip-report .map-tooltip {
+    position: absolute;
+    z-index: 5;
+    max-width: min(280px, calc(100% - 16px));
+    padding: 10px 12px;
+    color: var(--popover-foreground);
+    background: var(--popover);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    box-shadow: 0 8px 24px color-mix(in srgb, var(--foreground) 14%, transparent);
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(4px);
+    transition: opacity 120ms ease, transform 120ms ease;
+  }
+
+  #otsu-trip-report .map-tooltip.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  #otsu-trip-report .map-tooltip strong,
+  #otsu-trip-report .map-tooltip span {
+    display: block;
+  }
+
+  #otsu-trip-report .map-tooltip strong {
+    margin: 3px 0;
+  }
+
+  #otsu-trip-report .selected-detail {
+    margin-top: 14px;
+  }
+
+  #otsu-trip-report .detail-time {
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+  }
+
+  #otsu-trip-report .detail-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 14px;
+  }
+
+  #otsu-trip-report .detail-links {
+    margin-top: 14px;
+  }
+
+  #otsu-trip-report .map-credit {
+    margin: 6px 0 0;
+    text-align: end;
+  }
+
+  #otsu-trip-report .timeline-list {
+    margin-top: 10px;
+    border-top: 1px solid var(--border);
+  }
+
+  #otsu-trip-report .timeline-item {
+    display: grid;
+    grid-template-columns: 94px minmax(150px, 0.8fr) minmax(220px, 1.7fr);
+    gap: 14px;
+    align-items: start;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  #otsu-trip-report .timeline-time {
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  #otsu-trip-report .timeline-title-wrap {
+    min-width: 0;
+  }
+
+  #otsu-trip-report .timeline-title-wrap .btn {
+    max-width: 100%;
+  }
+
+  #otsu-trip-report .timeline-meta {
+    min-width: 0;
+  }
+
+  #otsu-trip-report .inline-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 12px;
+    margin-top: 6px;
+  }
+
+  #otsu-trip-report details {
+    border-top: 1px solid var(--border);
+    padding: 12px 0;
+  }
+
+  #otsu-trip-report details:last-child {
+    border-bottom: 1px solid var(--border);
+  }
+
+  #otsu-trip-report summary {
+    cursor: pointer;
+    font-weight: 500;
+  }
+
+  #otsu-trip-report details .table-responsive {
+    margin-top: 10px;
+  }
+
+  #otsu-trip-report .report-foot {
+    margin-top: 18px;
+  }
+
+  @media (max-width: 620px) {
+    #otsu-trip-report .detail-grid {
+      grid-template-columns: 1fr;
+    }
+
+    #otsu-trip-report .timeline-item {
+      grid-template-columns: 78px minmax(0, 1fr);
+      gap: 8px 12px;
+    }
+
+    #otsu-trip-report .timeline-meta {
+      grid-column: 2;
+    }
+
+    #otsu-trip-report .map-credit {
+      text-align: start;
+    }
+  }
+&lt;/style&gt;
+
+&lt;script&gt;
+(function () {
+  const root = document.getElementById(&quot;otsu-trip-report&quot;);
+  const svg = d3.select(root.querySelector(&quot;.route-map&quot;));
+  const shell = root.querySelector(&quot;.map-shell&quot;);
+  const tooltip = root.querySelector(&quot;.map-tooltip&quot;);
+  const prefersReducedMotion = window.matchMedia(&quot;(prefers-reduced-motion: reduce)&quot;).matches;
+
+  const links = {
+    hx616: { label: &quot;香港航空航班表&quot;, url: &quot;https://www.hongkongairlines.com/en_HK/fly-with-us/flight-schedule&quot; },
+    visitJapan: { label: &quot;Visit Japan Web&quot;, url: &quot;https://services.digital.go.jp/en/visit-japan-web/&quot; },
+    kansaiPass: { label: &quot;Kansai Area Pass&quot;, url: &quot;https://www.westjr.co.jp/travel-information/en/tickets-passes/jrwest-rail-pass/kansai/&quot; },
+    jrReserve: { label: &quot;JR-WEST在线购买／预约&quot;, url: &quot;https://www.westjr.co.jp/global/en/ticket/pass/reservation_form/index.php?p=kansai-areapass&quot; },
+    jrReceive: { label: &quot;KIX取票说明&quot;, url: &quot;https://www.westjr.co.jp/global/en/howto/train-reservation/receive/&quot; },
+    jrSeat: { label: &quot;HARUKA指定席操作&quot;, url: &quot;https://www.westjr.co.jp/travel-information/en/train-usage-guide/howto/ticket-vending-machine/&quot; },
+    icoca: { label: &quot;ICOCA购买／充值&quot;, url: &quot;https://www.westjr.co.jp/global/en/howto/icoca/&quot; },
+    harukaOneWay: { label: &quot;HARUKA单程票备选&quot;, url: &quot;https://www.westjr.co.jp/travel-information/en/tickets-passes/oneway/haruka/&quot; },
+    harukaOneWayReserve: { label: &quot;单程票直接预约&quot;, url: &quot;https://www.westjr.co.jp/global/en/ticket/haruka-oneway/reservation/&quot; },
+    haruka: { label: &quot;09:42 HARUKA官方时刻&quot;, url: &quot;https://timetable.jr-odekake.net/train-timetable/581?date=20260904&quot; },
+    jrKyotoOtsu: { label: &quot;11:15 京都→大津&quot;, url: &quot;https://timetable.jr-odekake.net/train-timetable/61511?date=20260904&quot; },
+    hotelShuttle: { label: &quot;酒店班车与交通&quot;, url: &quot;https://www.keihanhotels-resorts.co.jp/biwakohotel/access/shuttlebus/&quot; },
+    laraMap: { label: &quot;《再见菈菈》官方地图&quot;, url: &quot;https://goodbyelara.com/special/map/&quot; },
+    rally: { label: &quot;数字拉力入口&quot;, url: &quot;https://goodbyelara.com/digitalrally/&quot; },
+    portMap: { label: &quot;大津港导航&quot;, url: &quot;https://www.google.com/maps/search/?api=1&amp;query=Otsu+Port+Shiga&quot; },
+    otsukyoTrain: { label: &quot;12:55 湖西线官方时刻&quot;, url: &quot;https://timetable.jr-odekake.net/train-timetable/61521?date=20260904&quot; },
+    taxiOfficial: { label: &quot;第一交通滋贺官网&quot;, url: &quot;https://shiga.0152.jp/office/&quot; },
+    taxiCall: { label: &quot;拨号预约 0120-524-447&quot;, url: &quot;tel:0120524447&quot; },
+    takashimaTaxi: { label: &quot;乘合出租预约说明&quot;, url: &quot;https://www.city.takashima.lg.jp/soshiki/toshiseibibu/toshiseisakuka/5/15515.html&quot; },
+    taxiPdf: { label: &quot;平日乘合出租时刻表&quot;, url: &quot;https://www.city.takashima.lg.jp/material/files/group/62/takashima-heizitsu071001-8.pdf&quot; },
+    shrineAccess: { label: &quot;白鬚神社官方交通&quot;, url: &quot;http://shirahigejinja.com/access/&quot; },
+    shrineMap: { label: &quot;藍湖白鬚台导航&quot;, url: &quot;https://www.google.com/maps/search/?api=1&amp;query=35.2744146%2C136.0113480&quot; },
+    festival: { label: &quot;9月大祭交通公告&quot;, url: &quot;https://takashima-kanko.jp/2026/08/post_1140.html&quot; },
+    returnTrain: { label: &quot;15:21 返程官方时刻&quot;, url: &quot;https://timetable.jr-odekake.net/train-timetable/145081?date=20260904&quot; },
+    keihan: { label: &quot;京阪车站与时刻&quot;, url: &quot;https://www.keihan.co.jp/traffic/station/&quot; },
+    keihanTicket: { label: &quot;京阪票价与购票&quot;, url: &quot;https://www.keihan.co.jp/travel/en/trains/purchasing-tickets/&quot; },
+    keihanOtsukyo: { label: &quot;京阪大津京平日时刻PDF&quot;, url: &quot;https://www.keihan.co.jp/traffic/station/assets/pdf/time/61411.pdf&quot; },
+    keihanZeze: { label: &quot;膳所本町平日时刻PDF&quot;, url: &quot;https://www.keihan.co.jp/traffic/station/assets/pdf/time/60611.pdf&quot; },
+    jrIshiyamaReturn: { label: &quot;19:51 石山→大津&quot;, url: &quot;https://timetable.jr-odekake.net/train-timetable/391451?date=20260904&quot; },
+    otsukyoTransferMap: { label: &quot;JR→京阪大津京换乘导航&quot;, url: &quot;https://www.google.com/maps/dir/?api=1&amp;origin=JR+Otsukyo+Station&amp;destination=Keihan+Otsukyo+Station&amp;travelmode=walking&quot; },
+    takashimaMap: { label: &quot;近江高岛站导航&quot;, url: &quot;https://www.google.com/maps/search/?api=1&amp;query=Omi-Takashima+Station&quot; },
+    zezeStationMap: { label: &quot;膳所本町→公园步行&quot;, url: &quot;https://www.google.com/maps/dir/?api=1&amp;origin=Zeze-Hommachi+Station&amp;destination=Zeze+Castle+Ruins+Park&amp;travelmode=walking&quot; },
+    zezeMap: { label: &quot;膳所城迹公园导航&quot;, url: &quot;https://www.google.com/maps/search/?api=1&amp;query=Zeze+Castle+Ruins+Park&quot; },
+    heiwadoMap: { label: &quot;平和堂石山导航&quot;, url: &quot;https://www.google.com/maps/search/?api=1&amp;query=Heiwado+Ishiyama&quot; },
+    nao: { label: &quot;大津日出日落表&quot;, url: &quot;https://eco.mtk.nao.ac.jp/koyomi/dni/2026/s2609.html.en&quot; }
+  };
+
+  const nodes = [
+    {
+      id: &quot;kix&quot;, number: 1, name: &quot;KIX关西机场&quot;, short: &quot;KIX&quot;, coord: [135.2434129, 34.4359259],
+      time: &quot;07:55–09:42&quot;, status: &quot;入境与车票&quot;, views: [&quot;all&quot;],
+      summary: &quot;HX616抵达T1后完成入境、取行李、海关，并在JR站领取或购买票券。&quot;,
+      action: &quot;Pass于8月4日10:00 JST开放预约；到绿色售票机取票并指定HARUKA座位。09:12只在09:00前已到JR站时采用；提前买早餐、午餐和水。&quot;,
+      photo: &quot;不安排机场拍摄。优先完成Visit Japan Web和JR票务，避免影响后续硬卡点。&quot;,
+      linkKeys: [&quot;hx616&quot;, &quot;visitJapan&quot;, &quot;kansaiPass&quot;, &quot;jrReserve&quot;, &quot;jrReceive&quot;, &quot;jrSeat&quot;, &quot;icoca&quot;, &quot;haruka&quot;], type: &quot;critical&quot;, dx: 10, dy: -10
+    },
+    {
+      id: &quot;kyoto&quot;, number: 2, name: &quot;京都站&quot;, short: &quot;京都&quot;, coord: [135.7587660, 34.9853497],
+      time: &quot;11:04–11:15&quot;, status: &quot;11分钟换乘&quot;, views: [&quot;all&quot;],
+      summary: &quot;HARUKA抵达30号站台，转2号站台乘11:15新快速野洲行。&quot;,
+      action: &quot;不出闸，直接按JR标识换乘；HARUKA稍晚时放弃奔跑，改乘后续频密列车。&quot;,
+      photo: &quot;不安排拍摄，重行李状态下优先完成换乘。&quot;,
+      linkKeys: [&quot;haruka&quot;, &quot;jrKyotoOtsu&quot;], type: &quot;critical&quot;, dx: 10, dy: -10
+    },
+    {
+      id: &quot;otsu&quot;, number: 3, name: &quot;JR大津站&quot;, short: &quot;大津站&quot;, coord: [135.8648951, 35.0030494],
+      time: &quot;11:24–11:35 / 19:50后&quot;, status: &quot;拉力与返程&quot;, views: [&quot;all&quot;, &quot;shiga&quot;, &quot;otsu&quot;],
+      summary: &quot;北口改札外、售票机附近完成数字拉力签到；晚间由此转酒店班车。&quot;,
+      action: &quot;签到控制在8分钟内，乘11:35酒店班车。班车无需预约；大津站每小时15、35、55分发车，满员等下一班。&quot;,
+      photo: &quot;站内只做立牌记录，不展开器材，以免错过班车。&quot;,
+      linkKeys: [&quot;rally&quot;, &quot;hotelShuttle&quot;], type: &quot;normal&quot;, dx: -58, dy: 18
+    },
+    {
+      id: &quot;hotel&quot;, number: 4, name: &quot;琵琶湖酒店&quot;, short: &quot;酒店&quot;, coord: [135.8682527, 35.0102636],
+      time: &quot;11:40–11:50 / 20:20&quot;, status: &quot;寄存行李&quot;, views: [&quot;all&quot;, &quot;shiga&quot;, &quot;otsu&quot;],
+      summary: &quot;入住前寄存大件行李，只带相机、两支镜头、三脚架、水与雨具。&quot;,
+      action: &quot;请前台在12:15前叫好大津港至JR大津京的出租车；同时确认晚餐最后点餐时间。&quot;,
+      photo: &quot;酒店湖景留到翌日清晨或返店后，不在午间占用主线时间。&quot;,
+      linkKeys: [&quot;hotelShuttle&quot;, &quot;taxiOfficial&quot;, &quot;taxiCall&quot;], type: &quot;critical&quot;, dx: 10, dy: 18
+    },
+    {
+      id: &quot;port&quot;, number: 5, name: &quot;大津港&quot;, short: &quot;大津港&quot;, coord: [135.8660059, 35.0126186],
+      time: &quot;11:50–12:15&quot;, status: &quot;官方巡礼&quot;, views: [&quot;all&quot;, &quot;shiga&quot;, &quot;otsu&quot;],
+      summary: &quot;《再见菈菈》第2话官方地点，也是第一期数字拉力点。&quot;,
+      action: &quot;旅客中心1层候船室附近拍立牌并签到；12:15准时上出租车。&quot;,
+      photo: &quot;16–35mm拍候船楼、港湾和湖岸关系；午间只做记录，不等待光线。&quot;,
+      linkKeys: [&quot;laraMap&quot;, &quot;rally&quot;, &quot;portMap&quot;, &quot;taxiOfficial&quot;, &quot;taxiCall&quot;], type: &quot;photo&quot;, dx: 10, dy: -12
+    },
+    {
+      id: &quot;otsukyo&quot;, number: 6, name: &quot;JR大津京&quot;, short: &quot;大津京&quot;, coord: [135.8573599, 35.0245014],
+      time: &quot;12:35–12:55 / 15:48&quot;, status: &quot;湖西线卡点&quot;, views: [&quot;all&quot;, &quot;shiga&quot;, &quot;otsu&quot;],
+      summary: &quot;去程必须赶12:55新快速；返程15:48抵达后步行换京阪大津京。&quot;,
+      action: &quot;12:40前进站并确认敦贺方向站台。返程换乘京阪时预留步行时间。&quot;,
+      photo: &quot;站内不展开拍摄，优先补水、检查电池和镜头。&quot;,
+      linkKeys: [&quot;otsukyoTrain&quot;, &quot;keihan&quot;, &quot;keihanTicket&quot;, &quot;icoca&quot;], type: &quot;critical&quot;, dx: -65, dy: -10
+    },
+    {
+      id: &quot;takashima&quot;, number: 7, name: &quot;近江高岛站&quot;, short: &quot;近江高岛&quot;, coord: [136.0103068, 35.2926397],
+      time: &quot;13:23 / 15:05–15:21&quot;, status: &quot;预约出租车&quot;, views: [&quot;all&quot;, &quot;shiga&quot;, &quot;shrine&quot;],
+      summary: &quot;车站没有寄存柜。推荐普通出租车13:25接站、14:50从神社接回。&quot;,
+      action: &quot;至少提前一天预约大津第一交通0120-524-447，并说明携带三脚架。省钱方案使用13:45去程与14:56回程乘合出租。&quot;,
+      photo: &quot;站前只保留机动时间；返程15:05到站后立即进站候车。&quot;,
+      linkKeys: [&quot;taxiOfficial&quot;, &quot;taxiCall&quot;, &quot;takashimaTaxi&quot;, &quot;taxiPdf&quot;, &quot;takashimaMap&quot;], type: &quot;critical&quot;, dx: 10, dy: -12
+    },
+    {
+      id: &quot;shrine&quot;, number: 8, name: &quot;白鬚神社 / 藍湖白鬚台&quot;, short: &quot;白鬚神社&quot;, coord: [136.0113480, 35.2744146],
+      time: &quot;13:35–14:50&quot;, status: &quot;关键摄影&quot;, views: [&quot;all&quot;, &quot;shiga&quot;, &quot;shrine&quot;],
+      summary: &quot;先在神社一侧官方观景台拍湖中鸟居，再完成参拜和建筑环境照。&quot;,
+      action: &quot;9月4日14:00起因翌日大祭关闭停车场。预约时确认接送点；14:45前收器材，到约定位置候车。&quot;,
+      photo: &quot;70–200mm，ISO 100、f/8、1/250–1/500s；绝不横穿国道161。CPL不要旋至最强。&quot;,
+      linkKeys: [&quot;shrineAccess&quot;, &quot;shrineMap&quot;, &quot;festival&quot;, &quot;taxiOfficial&quot;, &quot;taxiCall&quot;, &quot;takashimaTaxi&quot;, &quot;taxiPdf&quot;], type: &quot;photo&quot;, dx: 10, dy: 18
+    },
+    {
+      id: &quot;keihanotsukyo&quot;, number: 9, name: &quot;京阪大津京&quot;, short: &quot;京阪大津京&quot;, coord: [135.8555654, 35.0231984],
+      time: &quot;15:48–15:57&quot;, status: &quot;9分钟换乘&quot;, views: [&quot;otsu&quot;],
+      summary: &quot;从JR大津京步行换乘京阪石山坂本线，前往膳所本町。&quot;,
+      action: &quot;乘15:57石山寺方向列车；JR Pass本体及随附京阪券均不覆盖大津线，使用已充值ICOCA另付。&quot;,
+      photo: &quot;车上休息并为傍晚摄影重新分配电池和存储卡。&quot;,
+      linkKeys: [&quot;keihanOtsukyo&quot;, &quot;keihanTicket&quot;, &quot;icoca&quot;, &quot;otsukyoTransferMap&quot;], type: &quot;critical&quot;, dx: -82, dy: 18
+    },
+    {
+      id: &quot;zezehm&quot;, number: 10, name: &quot;膳所本町站&quot;, short: &quot;膳所本町&quot;, coord: [135.8892595, 34.9951234],
+      time: &quot;16:19–16:27&quot;, status: &quot;湖岸入口&quot;, views: [&quot;shiga&quot;, &quot;otsu&quot;],
+      summary: &quot;下车后步行前往膳所城迹公园与近江大桥西侧。&quot;,
+      action: &quot;步行约7–8分钟到公园；先确认18:58京阪班次，再进入湖岸机位。&quot;,
+      photo: &quot;步行途中不展开脚架，到公园后再换镜头。&quot;,
+      linkKeys: [&quot;keihanZeze&quot;, &quot;keihanTicket&quot;, &quot;icoca&quot;, &quot;zezeStationMap&quot;, &quot;zezeMap&quot;], type: &quot;normal&quot;, dx: -12, dy: 20
+    },
+    {
+      id: &quot;zeze&quot;, number: 11, name: &quot;膳所城迹公园&quot;, short: &quot;膳所湖岸&quot;, coord: [135.8954117, 34.9952266],
+      time: &quot;16:27–18:43&quot;, status: &quot;暖光与蓝调&quot;, views: [&quot;shiga&quot;, &quot;otsu&quot;],
+      summary: &quot;当天主摄影窗口，行程拍到18:43；天文蓝调持续至18:46。&quot;,
+      action: &quot;17:40前完成构图和脚架固定；18:43收机并立即步行回站，赶18:58京阪。&quot;,
+      photo: &quot;夕阳在身后，拍湖面暖光、桥梁与云层。蓝调ISO 100、f/8、1–8s，WB 3800–4500K。&quot;,
+      linkKeys: [&quot;zezeMap&quot;, &quot;nao&quot;], type: &quot;photo&quot;, dx: 10, dy: 22
+    },
+    {
+      id: &quot;bridge&quot;, number: 12, name: &quot;近江大桥西诘&quot;, short: &quot;近江大桥&quot;, coord: [135.8941915, 34.9978145],
+      time: &quot;17:47–18:43&quot;, status: &quot;备用机位&quot;, views: [&quot;otsu&quot;],
+      summary: &quot;与膳所城迹公园相邻，用于桥梁引导线、车流和湖面层次。&quot;,
+      action: &quot;与公园二选一，不在光线窗口中频繁搬动。18:43收机回膳所本町站。&quot;,
+      photo: &quot;70–200mm压缩桥面与远山；16–35mm用岸线做前景。&quot;,
+      linkKeys: [&quot;zezeMap&quot;, &quot;nao&quot;], type: &quot;photo&quot;, dx: 10, dy: -16
+    },
+    {
+      id: &quot;ishiyama&quot;, number: 13, name: &quot;京阪石山站&quot;, short: &quot;京阪石山&quot;, coord: [135.8993301, 34.9796523],
+      time: &quot;19:06–19:15&quot;, status: &quot;拉力签到&quot;, views: [&quot;all&quot;, &quot;shiga&quot;, &quot;otsu&quot;],
+      summary: &quot;立牌位于2层改札内正面附近，先拍摄与签到再出站。&quot;,
+      action: &quot;乘18:58京阪、约19:06到石山；离开付费区前完成站内内容。&quot;,
+      photo: &quot;手持高感记录即可，不在通道架三脚架。&quot;,
+      linkKeys: [&quot;keihanZeze&quot;, &quot;keihanTicket&quot;, &quot;icoca&quot;, &quot;rally&quot;], type: &quot;normal&quot;, dx: -70, dy: 18
+    },
+    {
+      id: &quot;heiwado&quot;, number: 14, name: &quot;平和堂石山&quot;, short: &quot;平和堂石山&quot;, coord: [135.9028733, 34.9783351],
+      time: &quot;19:15–19:45&quot;, status: &quot;官方巡礼&quot;, views: [&quot;all&quot;, &quot;shiga&quot;, &quot;otsu&quot;],
+      summary: &quot;官方第2、4话地点；完成第四个拉力点，并尝试兑换第一期卡片。&quot;,
+      action: &quot;2层拍立牌，3层服务中心凭至少3个签到兑换；官方公布服务时间至21:00，库存不保证。&quot;,
+      photo: &quot;夜间以环境与招牌记录为主；避免把普通顾客清晰拍入画面。&quot;,
+      linkKeys: [&quot;laraMap&quot;, &quot;rally&quot;, &quot;heiwadoMap&quot;], type: &quot;photo&quot;, dx: 10, dy: -10
+    }
+  ];
+
+  const segments = [
+    {
+      id: &quot;haruka&quot;, mode: &quot;jr&quot;, time: &quot;09:42–11:04&quot;, from: &quot;KIX关西机场&quot;, to: &quot;京都站&quot;,
+      title: &quot;HARUKA 12号&quot;, status: &quot;指定席 / JR&quot;,
+      summary: &quot;机场直达京都，主计划不追赶09:12班次。&quot;,
+      action: &quot;主方案用Kansai Area Pass并在登车前指定座位；只有不买Pass时才单买HARUKA单程票，避免重复购买。&quot;,
+      photo: &quot;车上休息，不安排沿途拍摄。&quot;,
+      linkKeys: [&quot;kansaiPass&quot;, &quot;jrReserve&quot;, &quot;jrSeat&quot;, &quot;harukaOneWay&quot;, &quot;harukaOneWayReserve&quot;, &quot;haruka&quot;],
+      endpoints: [&quot;kix&quot;, &quot;kyoto&quot;],
+      coords: [[135.2434129,34.4359259],[135.3313204,34.3908597],[135.5152685,34.6460778],[135.4955732,34.7022133],[135.5001888,34.7335385],[135.6176729,34.8516198],[135.7587660,34.9853497]]
+    },
+    {
+      id: &quot;biwako&quot;, mode: &quot;jr&quot;, time: &quot;11:15–11:24&quot;, from: &quot;京都站&quot;, to: &quot;JR大津站&quot;,
+      title: &quot;JR琵琶湖线&quot;, status: &quot;11分钟换乘&quot;,
+      summary: &quot;京都2号站台乘新快速野洲行，9分钟到大津。&quot;,
+      action: &quot;HARUKA晚点时改乘后续列车，不出站。&quot;,
+      photo: &quot;不安排拍摄。&quot;,
+      linkKeys: [&quot;jrKyotoOtsu&quot;],
+      endpoints: [&quot;kyoto&quot;, &quot;otsu&quot;],
+      coords: [[135.7587660,34.9853497],[135.8173144,34.9911178],[135.8648951,35.0030494]]
+    },
+    {
+      id: &quot;hotel-local&quot;, mode: &quot;local&quot;, time: &quot;11:35–12:15&quot;, from: &quot;JR大津站&quot;, to: &quot;大津港&quot;,
+      title: &quot;酒店寄存与港区短巡礼&quot;, status: &quot;班车 + 步行&quot;,
+      summary: &quot;先寄存重行李，再步行至大津港完成官方巡礼。&quot;,
+      action: &quot;11:35酒店班车；11:50到港，12:15离开。&quot;,
+      photo: &quot;16–35mm快速记录港湾环境。&quot;,
+      linkKeys: [&quot;hotelShuttle&quot;, &quot;laraMap&quot;, &quot;rally&quot;, &quot;taxiOfficial&quot;, &quot;taxiCall&quot;],
+      endpoints: [&quot;otsu&quot;, &quot;hotel&quot;, &quot;port&quot;],
+      coords: [[135.8648951,35.0030494],[135.8682527,35.0102636],[135.8660059,35.0126186]]
+    },
+    {
+      id: &quot;port-taxi&quot;, mode: &quot;taxi&quot;, time: &quot;12:15–12:35&quot;, from: &quot;大津港&quot;, to: &quot;JR大津京&quot;,
+      title: &quot;市区出租车&quot;, status: &quot;建议酒店代叫&quot;,
+      summary: &quot;直接前往JR大津京，给12:55湖西线保留约20分钟缓冲。&quot;,
+      action: &quot;请酒店前台预叫；不要用京阪慢慢换乘压缩缓冲。&quot;,
+      photo: &quot;途中不拍摄。&quot;,
+      linkKeys: [&quot;portMap&quot;, &quot;taxiOfficial&quot;, &quot;taxiCall&quot;, &quot;otsukyoTrain&quot;],
+      endpoints: [&quot;port&quot;, &quot;otsukyo&quot;],
+      coords: [[135.865734,35.012439],[135.865602,35.012275],[135.864567,35.012785],[135.863379,35.011508],[135.861239,35.012402],[135.859776,35.01369],[135.858217,35.013566],[135.857913,35.016133],[135.858206,35.019202],[135.858269,35.023006],[135.857319,35.023136],[135.857797,35.024125],[135.8573599,35.0245014]]
+    },
+    {
+      id: &quot;kosei&quot;, mode: &quot;jr&quot;, time: &quot;12:55–13:23 / 15:21–15:48&quot;, from: &quot;JR大津京&quot;, to: &quot;近江高岛&quot;,
+      title: &quot;JR湖西线往返&quot;, status: &quot;两班硬卡点&quot;,
+      summary: &quot;去程新快速敦贺行，返程新快速姬路行；同一路段往返一次。&quot;,
+      action: &quot;12:40前进站；返程15:05到站后直接候车。&quot;,
+      photo: &quot;靠湖一侧可观察天气，但不要以车窗照替代正式机位。&quot;,
+      linkKeys: [&quot;otsukyoTrain&quot;, &quot;returnTrain&quot;],
+      endpoints: [&quot;otsukyo&quot;, &quot;takashima&quot;],
+      coords: [[135.8573599,35.0245014],[135.8783509,35.0706650],[135.8948908,35.0972099],[135.9149669,35.1208877],[135.9220643,35.1621022],[135.9590299,35.2358219],[135.9705823,35.2537381],[136.0103068,35.2926397]]
+    },
+    {
+      id: &quot;shrine-taxi&quot;, mode: &quot;taxi&quot;, time: &quot;13:25–15:05&quot;, from: &quot;近江高岛&quot;, to: &quot;白鬚神社往返&quot;,
+      title: &quot;预约出租车往返&quot;, status: &quot;必须提前预约&quot;,
+      summary: &quot;普通出租车最稳；乘合出租省钱但要分别预约13:45去程和14:56回程。&quot;,
+      action: &quot;电话0120-524-447。9月4日14:00起停车场关闭，预约时确认接送点。&quot;,
+      photo: &quot;不要步行国道161，更不要横穿公路。&quot;,
+      linkKeys: [&quot;taxiOfficial&quot;, &quot;taxiCall&quot;, &quot;takashimaTaxi&quot;, &quot;taxiPdf&quot;, &quot;festival&quot;, &quot;shrineMap&quot;],
+      endpoints: [&quot;takashima&quot;, &quot;shrine&quot;],
+      coords: [[136.010545,35.292736],[136.010334,35.293084],[136.011862,35.29375],[136.014073,35.29291],[136.015074,35.292181],[136.015965,35.291698],[136.016875,35.289244],[136.018174,35.286896],[136.018552,35.285141],[136.017732,35.279652],[136.017292,35.278545],[136.016588,35.277826],[136.013264,35.275789],[136.0113480,35.2744146]]
+    },
+    {
+      id: &quot;keihan-south&quot;, mode: &quot;keihan&quot;, time: &quot;15:57–16:19&quot;, from: &quot;京阪大津京&quot;, to: &quot;膳所本町&quot;,
+      title: &quot;京阪石山坂本线南下&quot;, status: &quot;ICOCA另付&quot;,
+      summary: &quot;返程后一路向南，不再折返北部。&quot;,
+      action: &quot;步行由JR大津京转京阪大津京，乘15:57石山寺方向列车。&quot;,
+      photo: &quot;利用车程休息并准备傍晚机位。&quot;,
+      linkKeys: [&quot;keihanOtsukyo&quot;, &quot;keihanTicket&quot;, &quot;icoca&quot;, &quot;otsukyoTransferMap&quot;],
+      endpoints: [&quot;keihanotsukyo&quot;, &quot;zezehm&quot;],
+      coords: [[135.8555654,35.0231984],[135.8595642,35.0130609],[135.8644164,35.0111217],[135.8707344,35.0078038],[135.8753755,35.0049358],[135.8809387,34.9997495],[135.8858852,34.9975502],[135.8892595,34.9951234]]
+    },
+    {
+      id: &quot;zeze-walk&quot;, mode: &quot;local&quot;, time: &quot;16:19–18:43&quot;, from: &quot;膳所本町&quot;, to: &quot;膳所湖岸&quot;,
+      title: &quot;湖岸步行与摄影&quot;, status: &quot;主光线窗口&quot;,
+      summary: &quot;膳所城迹公园与近江大桥西诘二选一固定机位。&quot;,
+      action: &quot;17:40前完成脚架和构图，18:43收机并步行回站。&quot;,
+      photo: &quot;暖光17:47起，日落18:20，蓝调18:36–18:46。&quot;,
+      linkKeys: [&quot;zezeStationMap&quot;, &quot;zezeMap&quot;, &quot;nao&quot;],
+      endpoints: [&quot;zezehm&quot;, &quot;zeze&quot;, &quot;bridge&quot;],
+      coords: [[135.8892595,34.9951234],[135.8923,34.9950],[135.8954117,34.9952266],[135.8941915,34.9978145]]
+    },
+    {
+      id: &quot;keihan-ishiyama&quot;, mode: &quot;keihan&quot;, time: &quot;18:58–19:06&quot;, from: &quot;膳所本町&quot;, to: &quot;京阪石山&quot;,
+      title: &quot;京阪前往石山&quot;, status: &quot;站内先签到&quot;,
+      summary: &quot;抵达后在改札内完成立牌和数字拉力，再出站。&quot;,
+      action: &quot;乘18:58石山寺方向列车；京阪票价不含在JR Pass内。&quot;,
+      photo: &quot;只做手持记录，不在改札通道架脚架。&quot;,
+      linkKeys: [&quot;keihanZeze&quot;, &quot;keihanTicket&quot;, &quot;icoca&quot;, &quot;rally&quot;],
+      endpoints: [&quot;zezehm&quot;, &quot;ishiyama&quot;],
+      coords: [[135.8892595,34.9951234],[135.8915028,34.9913260],[135.8940498,34.9885373],[135.8955177,34.9850254],[135.8993301,34.9796523]]
+    },
+    {
+      id: &quot;heiwado-walk&quot;, mode: &quot;local&quot;, time: &quot;19:06–19:45&quot;, from: &quot;京阪石山&quot;, to: &quot;平和堂石山&quot;,
+      title: &quot;石山官方巡礼&quot;, status: &quot;步行约5分钟&quot;,
+      summary: &quot;完成官方第2、4话地点与第四个数字拉力点。&quot;,
+      action: &quot;2层立牌、3层服务中心；兑换卡片以库存为准。&quot;,
+      photo: &quot;夜间环境记录，避免影响普通顾客。&quot;,
+      linkKeys: [&quot;laraMap&quot;, &quot;rally&quot;, &quot;heiwadoMap&quot;],
+      endpoints: [&quot;ishiyama&quot;, &quot;heiwado&quot;],
+      coords: [[135.8993301,34.9796523],[135.9028733,34.9783351]]
+    },
+    {
+      id: &quot;return-hotel&quot;, mode: &quot;jr&quot;, time: &quot;19:51–20:20&quot;, from: &quot;JR石山&quot;, to: &quot;琵琶湖酒店&quot;,
+      title: &quot;JR返大津与酒店班车&quot;, status: &quot;收尾&quot;,
+      summary: &quot;首选19:51普通列车、19:56到大津，再接20:15酒店班车。&quot;,
+      action: &quot;19:45从平和堂离开；错过19:51仍可尝试19:58列车。到大津后不想等班车可步行或叫出租车。&quot;,
+      photo: &quot;器材收好，回酒店后立即备份照片与充电。&quot;,
+      linkKeys: [&quot;jrIshiyamaReturn&quot;, &quot;hotelShuttle&quot;],
+      endpoints: [&quot;ishiyama&quot;, &quot;otsu&quot;, &quot;hotel&quot;],
+      coords: [[135.9002136,34.9798576],[135.8778,34.9990],[135.8648951,35.0030494],[135.8682527,35.0102636]]
+    }
+  ];
+
+  const steps = [
+    { id: &quot;step-kix&quot;, nodeId: &quot;kix&quot;, time: &quot;07:55–09:42&quot;, title: &quot;KIX入境、领票、早餐&quot;, summary: &quot;Pass最早8月4日10:00 JST购买；到站后取票、指定座位并充值ICOCA。&quot;, linkKeys: [&quot;hx616&quot;, &quot;visitJapan&quot;, &quot;kansaiPass&quot;, &quot;jrReserve&quot;, &quot;jrReceive&quot;, &quot;jrSeat&quot;, &quot;icoca&quot;, &quot;haruka&quot;] },
+    { id: &quot;step-haruka&quot;, segmentId: &quot;haruka&quot;, time: &quot;09:42–11:04&quot;, title: &quot;HARUKA 12号&quot;, summary: &quot;主方案用Pass；只有不买Pass时才单买HARUKA票。&quot;, linkKeys: [&quot;haruka&quot;, &quot;kansaiPass&quot;, &quot;jrReserve&quot;, &quot;jrSeat&quot;, &quot;harukaOneWay&quot;, &quot;harukaOneWayReserve&quot;] },
+    { id: &quot;step-kyoto&quot;, nodeId: &quot;kyoto&quot;, time: &quot;11:04–11:15&quot;, title: &quot;京都站换乘&quot;, summary: &quot;30号站台转2号站台，11分钟。&quot;, linkKeys: [&quot;jrKyotoOtsu&quot;] },
+    { id: &quot;step-otsu&quot;, nodeId: &quot;otsu&quot;, time: &quot;11:24–11:35&quot;, title: &quot;JR大津站拉力&quot;, summary: &quot;北口改札外签到，乘11:35酒店班车。&quot;, linkKeys: [&quot;rally&quot;, &quot;hotelShuttle&quot;] },
+    { id: &quot;step-hotel&quot;, nodeId: &quot;hotel&quot;, time: &quot;11:40–11:50&quot;, title: &quot;酒店寄存行李&quot;, summary: &quot;只带摄影器材，请前台预叫12:15出租车。&quot;, linkKeys: [&quot;hotelShuttle&quot;, &quot;taxiOfficial&quot;, &quot;taxiCall&quot;] },
+    { id: &quot;step-port&quot;, nodeId: &quot;port&quot;, time: &quot;11:50–12:15&quot;, title: &quot;大津港官方巡礼&quot;, summary: &quot;第2话地点、立牌、GPS签到；12:15乘预叫出租车。&quot;, linkKeys: [&quot;laraMap&quot;, &quot;rally&quot;, &quot;portMap&quot;, &quot;taxiOfficial&quot;, &quot;taxiCall&quot;] },
+    { id: &quot;step-taxi-otsu&quot;, segmentId: &quot;port-taxi&quot;, time: &quot;12:15–12:35&quot;, title: &quot;出租车去JR大津京&quot;, summary: &quot;酒店前台预叫第一交通普通出租车，保留20分钟进站缓冲。&quot;, linkKeys: [&quot;taxiOfficial&quot;, &quot;taxiCall&quot;, &quot;otsukyoTrain&quot;] },
+    { id: &quot;step-kosei-out&quot;, segmentId: &quot;kosei&quot;, time: &quot;12:55–13:23&quot;, title: &quot;湖西线去近江高岛&quot;, summary: &quot;新快速敦贺行，硬卡点。&quot;, linkKeys: [&quot;otsukyoTrain&quot;] },
+    { id: &quot;step-takashima&quot;, nodeId: &quot;takashima&quot;, time: &quot;13:23–13:35&quot;, title: &quot;预约出租车接站&quot;, summary: &quot;普通出租车推荐13:25接；电话说明“普通タクシーの事前配車予約”。&quot;, linkKeys: [&quot;taxiOfficial&quot;, &quot;taxiCall&quot;, &quot;takashimaTaxi&quot;, &quot;taxiPdf&quot;, &quot;takashimaMap&quot;] },
+    { id: &quot;step-shrine&quot;, nodeId: &quot;shrine&quot;, time: &quot;13:35–14:50&quot;, title: &quot;白鬚神社摄影&quot;, summary: &quot;先藍湖白鬚台，再参拜；14:50从约定点乘预约车离开。&quot;, linkKeys: [&quot;shrineAccess&quot;, &quot;shrineMap&quot;, &quot;festival&quot;, &quot;taxiOfficial&quot;, &quot;taxiCall&quot;, &quot;takashimaTaxi&quot;, &quot;taxiPdf&quot;] },
+    { id: &quot;step-return-taxi&quot;, segmentId: &quot;shrine-taxi&quot;, time: &quot;14:50–15:05&quot;, title: &quot;预约出租车回站&quot;, summary: &quot;15:05前到近江高岛，给15:21列车留足缓冲。&quot;, linkKeys: [&quot;taxiOfficial&quot;, &quot;taxiCall&quot;, &quot;takashimaTaxi&quot;, &quot;taxiPdf&quot;] },
+    { id: &quot;step-return-jr&quot;, segmentId: &quot;kosei&quot;, time: &quot;15:21–15:48&quot;, title: &quot;湖西线返回大津京&quot;, summary: &quot;新快速姬路行，硬卡点。&quot;, linkKeys: [&quot;returnTrain&quot;] },
+    { id: &quot;step-keihan&quot;, segmentId: &quot;keihan-south&quot;, time: &quot;15:57–16:19&quot;, title: &quot;京阪一路向南&quot;, summary: &quot;JR大津京步行换京阪，乘15:57前往膳所本町。&quot;, linkKeys: [&quot;keihanOtsukyo&quot;, &quot;keihanTicket&quot;, &quot;icoca&quot;, &quot;otsukyoTransferMap&quot;] },
+    { id: &quot;step-zeze&quot;, nodeId: &quot;zeze&quot;, time: &quot;16:27–18:43&quot;, title: &quot;膳所湖岸暖光与蓝调&quot;, summary: &quot;17:47暖光、18:20日落，18:43收机赶18:58京阪。&quot;, linkKeys: [&quot;zezeStationMap&quot;, &quot;zezeMap&quot;, &quot;nao&quot;, &quot;keihanZeze&quot;, &quot;keihanTicket&quot;, &quot;icoca&quot;] },
+    { id: &quot;step-ishiyama&quot;, nodeId: &quot;ishiyama&quot;, time: &quot;18:58–19:15&quot;, title: &quot;京阪石山站拉力&quot;, summary: &quot;约19:06到站，改札内先拍立牌并签到。&quot;, linkKeys: [&quot;keihanZeze&quot;, &quot;keihanTicket&quot;, &quot;icoca&quot;, &quot;rally&quot;] },
+    { id: &quot;step-heiwado&quot;, nodeId: &quot;heiwado&quot;, time: &quot;19:15–19:45&quot;, title: &quot;平和堂石山巡礼&quot;, summary: &quot;官方第2、4话地点，3层尝试兑换卡片。&quot;, linkKeys: [&quot;laraMap&quot;, &quot;rally&quot;, &quot;heiwadoMap&quot;] },
+    { id: &quot;step-home&quot;, segmentId: &quot;return-hotel&quot;, time: &quot;19:51–20:20&quot;, title: &quot;JR返大津、酒店班车&quot;, summary: &quot;19:51石山发、19:56大津到，接20:15酒店班车。&quot;, linkKeys: [&quot;jrIshiyamaReturn&quot;, &quot;hotelShuttle&quot;] }
+  ];
+
+  const regions = {
+    type: &quot;FeatureCollection&quot;,
+    features: [
+      { type: &quot;Feature&quot;, properties: { name: &quot;大阪府&quot;, level: &quot;region&quot; }, geometry: { type: &quot;Polygon&quot;, coordinates: [[[135.0259,34.3940],[135.1059,34.3089],[135.1116,34.2718],[135.2542,34.3158],[135.3382,34.3353],[135.4854,34.3628],[135.5771,34.3760],[135.6870,34.4515],[135.6503,34.5441],[135.6819,34.5851],[135.7096,34.7802],[135.7460,34.8036],[135.6493,34.9253],[135.5727,34.9712],[135.4931,34.9891],[135.3817,35.0102],[135.3302,35.0352],[135.3465,34.9645],[135.4683,34.9274],[135.4160,34.8177],[135.4603,34.7331],[135.3779,34.6683],[135.3116,34.5845],[135.2624,34.5442],[135.1470,34.5324],[135.0259,34.3940]]] } },
+      { type: &quot;Feature&quot;, properties: { name: &quot;京都府&quot;, level: &quot;region&quot; }, geometry: { type: &quot;Polygon&quot;, coordinates: [[[134.8591,35.8641],[134.8739,35.6212],[134.9269,35.5125],[135.0300,35.5403],[135.0492,35.4077],[134.9336,35.4071],[134.9247,35.3117],[135.0679,35.2374],[135.1573,35.2612],[135.1971,35.2030],[135.2740,35.1773],[135.3898,35.1288],[135.4043,35.0889],[135.3816,35.0103],[135.4811,34.9497],[135.5813,34.9225],[135.6133,34.9712],[135.6758,34.8993],[135.7460,34.8036],[135.7555,34.7275],[135.8901,34.7083],[135.9251,34.7577],[136.0288,34.7063],[136.0555,34.7386],[136.0102,34.7985],[135.9464,34.8516],[135.8979,34.8713],[135.8787,34.9470],[135.8202,35.0130],[135.8568,35.1536],[135.8293,35.2205],[135.8584,35.2892],[135.7688,35.3560],[135.5299,35.3790],[135.4584,35.4682],[135.4605,35.5485],[135.5818,35.6144],[135.6795,35.8694],[135.4752,36.1500],[135.1102,35.9574],[134.8591,35.8641]]] } },
+      { type: &quot;Feature&quot;, properties: { name: &quot;滋賀県&quot;, level: &quot;region&quot; }, geometry: { type: &quot;Polygon&quot;, coordinates: [[[135.7637,35.3454],[135.8296,35.2767],[135.8568,35.1536],[135.8148,35.0452],[135.8787,34.9470],[135.8979,34.8713],[135.9464,34.8516],[136.0279,34.8217],[136.0905,34.8121],[136.1264,34.8619],[136.1062,34.9001],[136.2538,34.8582],[136.3660,34.9049],[136.4158,34.9805],[136.4546,35.1621],[136.4087,35.1872],[136.4157,35.2172],[136.3773,35.2433],[136.4223,35.3484],[136.4120,35.3701],[136.4444,35.3894],[136.4118,35.4186],[136.4205,35.4660],[136.3867,35.4888],[136.4004,35.5301],[136.34598,35.5361],[136.3175,35.5474],[136.3237,35.6164],[136.2694,35.6687],[136.1506,35.6979],[136.1345,35.6694],[136.1768,35.5984],[136.1698,35.5659],[136.1138,35.5829],[136.1065,35.5290],[136.0265,35.5295],[136.0043,35.4910],[135.9396,35.5205],[135.8906,35.4032],[135.8137,35.4133],[135.7637,35.3454]]] } },
+      { type: &quot;Feature&quot;, properties: { name: &quot;大津市&quot;, level: &quot;city&quot; }, geometry: { type: &quot;Polygon&quot;, coordinates: [[[135.8148,35.0452],[135.8268,34.9913],[135.8787,34.9470],[135.8629,34.9031],[135.8852,34.8754],[135.9409,34.8937],[135.9639,34.8798],[136.0415,34.9231],[136.0429,34.9612],[136.0055,34.9798],[135.9029,34.9924],[135.8879,35.0324],[136.0163,35.2313],[135.9911,35.2671],[135.9567,35.2777],[135.9279,35.2583],[135.8588,35.2816],[135.8293,35.2203],[135.8568,35.1536],[135.8148,35.0452]]] } },
+      { type: &quot;Feature&quot;, properties: { name: &quot;高岛市&quot;, level: &quot;city&quot; }, geometry: { type: &quot;Polygon&quot;, coordinates: [[[135.7637,35.3454],[135.8340,35.2743],[135.8584,35.2892],[135.9279,35.2583],[135.9837,35.2723],[136.0163,35.2313],[136.1528,35.2687],[136.1485,35.3560],[136.0983,35.3928],[136.1179,35.4381],[136.0916,35.4652],[136.1056,35.5288],[136.0832,35.5406],[136.0265,35.5295],[135.9815,35.4865],[135.9396,35.5205],[135.8906,35.4032],[135.8137,35.4133],[135.7637,35.3454]]] } }
+    ]
+  };
+
+  const lake = {
+    type: &quot;Feature&quot;, properties: { name: &quot;琵琶湖&quot; }, geometry: { type: &quot;Polygon&quot;, coordinates: [[
+      [135.8598,35.0145],[135.8918,35.0054],[135.8962,34.9908],[135.9082,34.9829],[135.9067,34.9974],[135.9210,35.0098],[135.9142,35.0168],[135.9167,35.0272],[135.9059,35.0360],[135.9294,35.0583],[135.9317,35.0759],[135.9419,35.0749],[135.9481,35.0760],[135.9365,35.0944],[135.9458,35.1252],[135.9804,35.1232],[135.9877,35.1442],[136.0077,35.1353],[136.0198,35.1469],[136.0598,35.1440],[136.0662,35.1531],[136.0583,35.1621],[136.0619,35.1803],[136.0742,35.1913],[136.0932,35.1930],[136.1013,35.2011],[136.1112,35.2077],[136.1093,35.2159],[136.1547,35.2279],[136.2077,35.2569],[136.2573,35.2951],[136.2533,35.3004],[136.2765,35.3429],[136.2766,35.3643],[136.2448,35.3866],[136.2143,35.3883],[136.2146,35.4043],[136.2009,35.4160],[136.1962,35.4338],[136.1874,35.4421],[136.1872,35.4502],[136.1990,35.4552],[136.1888,35.4796],[136.1915,35.4961],[136.1825,35.5040],[136.1708,35.5018],[136.1691,35.5150],[136.1604,35.5129],[136.1624,35.4880],[136.1480,35.4745],[136.1503,35.4640],[136.1589,35.4630],[136.1506,35.4433],[136.1401,35.4447],[136.1433,35.4580],[136.1276,35.4564],[136.1230,35.4704],[136.1324,35.4835],[136.1187,35.4871],[136.1014,35.4523],[136.0875,35.4489],[136.0744,35.4639],[136.0418,35.4352],[136.0480,35.4072],[136.0355,35.3989],[136.0358,35.3787],[136.0669,35.3573],[136.0792,35.3168],[136.0610,35.3167],[136.0453,35.3020],[136.0289,35.3035],[136.0132,35.2938],[136.0190,35.2793],[135.9767,35.2572],[135.9615,35.2391],[135.9634,35.2282],[135.9247,35.2003],[135.9164,35.1810],[135.9242,35.1649],[135.9368,35.1562],[135.9242,35.1389],[135.9320,35.1254],[135.9154,35.1027],[135.9042,35.1012],[135.9103,35.0981],[135.9063,35.0922],[135.8949,35.0883],[135.8977,35.0831],[135.8691,35.0441],[135.8699,35.0265],[135.8598,35.0145]
+    ]] }
+  };
+
+  const nodeById = new Map(nodes.map(function (node) { return [node.id, node]; }));
+  const segmentById = new Map(segments.map(function (segment) { return [segment.id, segment]; }));
+  const viewNodeIds = {
+    all: [&quot;kix&quot;, &quot;kyoto&quot;, &quot;otsu&quot;, &quot;takashima&quot;, &quot;shrine&quot;],
+    shiga: nodes.filter(function (node) { return node.views.indexOf(&quot;shiga&quot;) &gt;= 0; }).map(function (node) { return node.id; }),
+    otsu: nodes.filter(function (node) { return node.views.indexOf(&quot;otsu&quot;) &gt;= 0; }).map(function (node) { return node.id; }),
+    shrine: nodes.filter(function (node) { return node.views.indexOf(&quot;shrine&quot;) &gt;= 0; }).map(function (node) { return node.id; })
+  };
+
+  const viewLabelIds = {
+    all: [&quot;kix&quot;, &quot;kyoto&quot;, &quot;otsu&quot;, &quot;takashima&quot;, &quot;shrine&quot;],
+    shiga: [&quot;otsukyo&quot;, &quot;takashima&quot;, &quot;shrine&quot;, &quot;zeze&quot;],
+    otsu: [&quot;otsu&quot;, &quot;hotel&quot;, &quot;port&quot;, &quot;otsukyo&quot;, &quot;keihanotsukyo&quot;, &quot;zezehm&quot;, &quot;zeze&quot;, &quot;bridge&quot;, &quot;ishiyama&quot;, &quot;heiwado&quot;],
+    shrine: [&quot;takashima&quot;, &quot;shrine&quot;]
+  };
+
+  const segmentViews = {
+    haruka: [&quot;all&quot;],
+    biwako: [&quot;all&quot;],
+    &quot;hotel-local&quot;: [&quot;all&quot;, &quot;shiga&quot;, &quot;otsu&quot;],
+    &quot;port-taxi&quot;: [&quot;all&quot;, &quot;shiga&quot;, &quot;otsu&quot;],
+    kosei: [&quot;all&quot;, &quot;shiga&quot;],
+    &quot;shrine-taxi&quot;: [&quot;all&quot;, &quot;shiga&quot;, &quot;shrine&quot;],
+    &quot;keihan-south&quot;: [&quot;all&quot;, &quot;shiga&quot;, &quot;otsu&quot;],
+    &quot;zeze-walk&quot;: [&quot;all&quot;, &quot;shiga&quot;, &quot;otsu&quot;],
+    &quot;keihan-ishiyama&quot;: [&quot;all&quot;, &quot;shiga&quot;, &quot;otsu&quot;],
+    &quot;heiwado-walk&quot;: [&quot;all&quot;, &quot;shiga&quot;, &quot;otsu&quot;],
+    &quot;return-hotel&quot;: [&quot;all&quot;, &quot;shiga&quot;, &quot;otsu&quot;]
+  };
+
+  let currentView = &quot;shiga&quot;;
+  let currentSelection = nodes.find(function (node) { return node.id === &quot;shrine&quot;; });
+  let selectedStepId = &quot;step-shrine&quot;;
+  let selectedNodeIds = new Set([&quot;shrine&quot;]);
+  let selectedSegmentIds = new Set();
+  let relatedNodeIds = new Set();
+  let relatedSegmentIds = new Set([&quot;shrine-taxi&quot;]);
+  let projection;
+  let geoPath;
+
+  const defs = svg.append(&quot;defs&quot;);
+  defs.append(&quot;clipPath&quot;).attr(&quot;id&quot;, &quot;otsu-map-clip&quot;).append(&quot;rect&quot;).attr(&quot;class&quot;, &quot;clip-rect&quot;);
+  const frameLayer = svg.append(&quot;g&quot;);
+  const regionLayer = svg.append(&quot;g&quot;).attr(&quot;clip-path&quot;, &quot;url(#otsu-map-clip)&quot;);
+  const lakeLayer = svg.append(&quot;g&quot;).attr(&quot;clip-path&quot;, &quot;url(#otsu-map-clip)&quot;);
+  const routeLayer = svg.append(&quot;g&quot;).attr(&quot;clip-path&quot;, &quot;url(#otsu-map-clip)&quot;);
+  const nodeLayer = svg.append(&quot;g&quot;).attr(&quot;clip-path&quot;, &quot;url(#otsu-map-clip)&quot;);
+  const labelLayer = svg.append(&quot;g&quot;).attr(&quot;clip-path&quot;, &quot;url(#otsu-map-clip)&quot;);
+
+  function externalLinks(keys, buttonStyle) {
+    return (keys || []).map(function (key) {
+      const item = links[key];
+      if (!item) return &quot;&quot;;
+      const className = buttonStyle ? &quot;btn&quot; : &quot;&quot;;
+      const externalAttrs = item.url.indexOf(&quot;tel:&quot;) === 0 ? &quot;&quot; : ` target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;`;
+      return `&lt;a class=&quot;${className}&quot; href=&quot;${item.url}&quot;${externalAttrs}&gt;${item.label}&lt;/a&gt;`;
+    }).join(&quot;&quot;);
+  }
+
+  function applyMapSelection() {
+    routeLayer.selectAll(&quot;.route-visible&quot;)
+      .classed(&quot;is-selected&quot;, function (segment) { return selectedSegmentIds.has(segment.id); })
+      .classed(&quot;is-related&quot;, function (segment) { return relatedSegmentIds.has(segment.id); });
+
+    nodeLayer.selectAll(&quot;.node-group&quot;)
+      .classed(&quot;is-selected&quot;, function (node) { return selectedNodeIds.has(node.id); });
+
+    nodeLayer.selectAll(&quot;.node-mark&quot;)
+      .classed(&quot;is-selected&quot;, function (node) { return selectedNodeIds.has(node.id); })
+      .classed(&quot;is-related&quot;, function (node) { return relatedNodeIds.has(node.id); });
+
+    labelLayer.selectAll(&quot;.node-label&quot;)
+      .classed(&quot;is-selected&quot;, function (node) { return selectedNodeIds.has(node.id); });
+  }
+
+  function selectMapItem(item) {
+    selectedNodeIds = new Set();
+    selectedSegmentIds = new Set();
+    relatedNodeIds = new Set();
+    relatedSegmentIds = new Set();
+
+    if (nodeById.has(item.id)) {
+      selectedNodeIds.add(item.id);
+      segments.forEach(function (segment) {
+        if (segment.endpoints.indexOf(item.id) &gt;= 0) relatedSegmentIds.add(segment.id);
+      });
+    } else if (segmentById.has(item.id)) {
+      selectedSegmentIds.add(item.id);
+      item.endpoints.forEach(function (nodeId) { relatedNodeIds.add(nodeId); });
+    }
+
+    applyMapSelection();
+  }
+
+  function renderDetail(item, stepId) {
+    if (!item) return;
+    currentSelection = item;
+    selectedStepId = stepId || &quot;&quot;;
+    selectMapItem(item);
+    root.querySelector(&quot;.detail-status&quot;).textContent = item.status || &quot;行程节点&quot;;
+    root.querySelector(&quot;.detail-title&quot;).textContent = item.title || item.name;
+    root.querySelector(&quot;.detail-time&quot;).textContent = item.time || &quot;&quot;;
+    root.querySelector(&quot;.detail-summary&quot;).textContent = item.summary || &quot;&quot;;
+    root.querySelector(&quot;.detail-action&quot;).textContent = item.action || &quot;&quot;;
+    root.querySelector(&quot;.detail-photo&quot;).textContent = item.photo || &quot;&quot;;
+    root.querySelector(&quot;.detail-links&quot;).innerHTML = externalLinks(item.linkKeys, true);
+
+    root.querySelectorAll(&quot;.step-trigger&quot;).forEach(function (button) {
+      button.setAttribute(&quot;aria-pressed&quot;, button.dataset.stepId === selectedStepId ? &quot;true&quot; : &quot;false&quot;);
+    });
+  }
+
+  function detailForStep(item, step) {
+    return Object.assign({}, item, {
+      id: item.id,
+      title: step.title,
+      time: step.time,
+      summary: step.summary,
+      linkKeys: step.linkKeys
+    });
+  }
+
+  function preferredViewForStep(step) {
+    if (step.nodeId === &quot;kix&quot; || step.nodeId === &quot;kyoto&quot;) return &quot;all&quot;;
+    if (step.nodeId === &quot;takashima&quot; || step.nodeId === &quot;shrine&quot;) return &quot;shrine&quot;;
+    if (step.segmentId === &quot;haruka&quot; || step.segmentId === &quot;biwako&quot;) return &quot;all&quot;;
+    if (step.segmentId === &quot;kosei&quot;) return &quot;shiga&quot;;
+    if (step.segmentId === &quot;shrine-taxi&quot;) return &quot;shrine&quot;;
+    return &quot;otsu&quot;;
+  }
+
+  function syncViewButtons() {
+    root.querySelectorAll(&quot;[data-view]&quot;).forEach(function (button) {
+      const active = button.dataset.view === currentView;
+      button.setAttribute(&quot;aria-pressed&quot;, active ? &quot;true&quot; : &quot;false&quot;);
+      button.classList.toggle(&quot;btn-primary&quot;, active);
+      button.classList.toggle(&quot;btn-ghost&quot;, !active);
+    });
+  }
+
+  function setMapView(viewName, animate) {
+    currentView = viewName;
+    syncViewButtons();
+    hideTooltip();
+    drawMap(animate);
+  }
+
+  function revealMap() {
+    root.querySelector(&quot;.map-section&quot;).scrollIntoView({
+      behavior: prefersReducedMotion ? &quot;auto&quot; : &quot;smooth&quot;,
+      block: &quot;start&quot;
+    });
+  }
+
+  function renderTimeline() {
+    const list = root.querySelector(&quot;.timeline-list&quot;);
+    list.innerHTML = steps.map(function (step) {
+      return `&lt;div class=&quot;timeline-item&quot;&gt;
+        &lt;strong class=&quot;timeline-time&quot;&gt;${step.time}&lt;/strong&gt;
+        &lt;div class=&quot;timeline-title-wrap&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;btn btn-ghost step-trigger&quot; data-step-id=&quot;${step.id}&quot; aria-pressed=&quot;false&quot;&gt;${step.title}&lt;/button&gt;&lt;/div&gt;
+        &lt;div class=&quot;timeline-meta&quot;&gt;&lt;p&gt;${step.summary}&lt;/p&gt;&lt;div class=&quot;inline-links text-small&quot;&gt;${externalLinks(step.linkKeys, false)}&lt;/div&gt;&lt;/div&gt;
+      &lt;/div&gt;`;
+    }).join(&quot;&quot;);
+
+    list.querySelectorAll(&quot;.step-trigger&quot;).forEach(function (button) {
+      button.addEventListener(&quot;click&quot;, function () {
+        const step = steps.find(function (candidate) { return candidate.id === button.dataset.stepId; });
+        const item = step.nodeId ? nodeById.get(step.nodeId) : segmentById.get(step.segmentId);
+        renderDetail(detailForStep(item, step), step.id);
+        setMapView(preferredViewForStep(step), true);
+        requestAnimationFrame(revealMap);
+      });
+    });
+  }
+
+  function viewCoordinates(viewName) {
+    const ids = viewNodeIds[viewName];
+    const coords = ids.map(function (id) { return nodeById.get(id).coord; });
+    if (viewName === &quot;all&quot;) {
+      segments.forEach(function (segment) { segment.coords.forEach(function (coord) { coords.push(coord); }); });
+    }
+    return coords;
+  }
+
+  function activeEndpoints(ids) {
+    nodeLayer.selectAll(&quot;.node-mark&quot;).classed(&quot;is-active&quot;, function (node) {
+      return ids.indexOf(node.id) &gt;= 0;
+    });
+  }
+
+  function placeTooltip(event, html) {
+    tooltip.innerHTML = html;
+    tooltip.setAttribute(&quot;aria-hidden&quot;, &quot;false&quot;);
+    tooltip.classList.add(&quot;is-visible&quot;);
+    const shellRect = shell.getBoundingClientRect();
+    const tooltipRect = tooltip.getBoundingClientRect();
+    let left = event.clientX - shellRect.left + 14;
+    let top = event.clientY - shellRect.top + 14;
+    left = Math.max(8, Math.min(left, shellRect.width - tooltipRect.width - 8));
+    top = Math.max(8, Math.min(top, shellRect.height - tooltipRect.height - 8));
+    tooltip.style.left = left + &quot;px&quot;;
+    tooltip.style.top = top + &quot;px&quot;;
+  }
+
+  function hideTooltip() {
+    tooltip.classList.remove(&quot;is-visible&quot;);
+    tooltip.setAttribute(&quot;aria-hidden&quot;, &quot;true&quot;);
+    activeEndpoints([]);
+    routeLayer.selectAll(&quot;.route-visible&quot;).classed(&quot;is-active&quot;, false);
+  }
+
+  function labelVisible(node) {
+    return viewLabelIds[currentView].indexOf(node.id) &gt;= 0;
+  }
+
+  function labelOffset(node) {
+    if (currentView === &quot;all&quot; &amp;&amp; node.id === &quot;otsu&quot;) return { dx: 10, dy: 18 };
+    return { dx: node.dx, dy: node.dy };
+  }
+
+  function labelPlacement(node, textWidth, width, height) {
+    const point = projection(node.coord);
+    const offset = labelOffset(node);
+    const inset = 8;
+    const fallbackWidth = Array.from(node.short).length * 12;
+    const measuredWidth = textWidth || fallbackWidth;
+    let anchor = offset.dx &lt; 0 ? &quot;end&quot; : &quot;start&quot;;
+    let x = point[0] + offset.dx;
+
+    if (anchor === &quot;end&quot; &amp;&amp; x - measuredWidth &lt; inset) {
+      anchor = &quot;start&quot;;
+      x = point[0] + 10;
+    } else if (anchor === &quot;start&quot; &amp;&amp; x + measuredWidth &gt; width - inset) {
+      anchor = &quot;end&quot;;
+      x = point[0] - 10;
+    }
+
+    if (anchor === &quot;start&quot;) {
+      x = Math.max(inset, Math.min(x, width - measuredWidth - inset));
+    } else {
+      x = Math.min(width - inset, Math.max(x, measuredWidth + inset));
+    }
+
+    return {
+      anchor: anchor,
+      x: x,
+      y: Math.max(14, Math.min(point[1] + offset.dy, height - inset))
+    };
+  }
+
+  function drawMap(animate) {
+    const width = Math.max(320, shell.clientWidth);
+    const height = width &lt; 480 ? 430 : Math.min(520, Math.max(390, width * 0.62));
+    const padding = currentView === &quot;all&quot; ? 30 : 38;
+    const coords = viewCoordinates(currentView);
+    const fitFeature = { type: &quot;Feature&quot;, geometry: { type: &quot;MultiPoint&quot;, coordinates: coords } };
+    projection = d3.geoMercator().fitExtent([[padding, padding], [width - padding, height - padding]], fitFeature);
+    geoPath = d3.geoPath(projection);
+
+    svg.attr(&quot;viewBox&quot;, &quot;0 0 &quot; + width + &quot; &quot; + height).attr(&quot;height&quot;, height);
+    defs.select(&quot;.clip-rect&quot;).attr(&quot;x&quot;, 1).attr(&quot;y&quot;, 1).attr(&quot;width&quot;, width - 2).attr(&quot;height&quot;, height - 2).attr(&quot;rx&quot;, 4);
+    frameLayer.selectAll(&quot;rect&quot;).data([0]).join(&quot;rect&quot;).attr(&quot;class&quot;, &quot;map-frame&quot;).attr(&quot;x&quot;, 1).attr(&quot;y&quot;, 1).attr(&quot;width&quot;, width - 2).attr(&quot;height&quot;, height - 2).attr(&quot;rx&quot;, 4);
+
+    const duration = animate &amp;&amp; !prefersReducedMotion ? 420 : 0;
+    const transition = svg.transition().duration(duration);
+
+    regionLayer.selectAll(&quot;path&quot;).data(regions.features, function (feature) { return feature.properties.name; }).join(&quot;path&quot;)
+      .attr(&quot;class&quot;, function (feature) { return feature.properties.level === &quot;city&quot; ? &quot;city-boundary&quot; : &quot;region&quot;; })
+      .transition(transition)
+      .style(&quot;opacity&quot;, function (feature) {
+        if (currentView === &quot;otsu&quot; || currentView === &quot;shrine&quot;) return 0;
+        if (currentView === &quot;all&quot; &amp;&amp; feature.properties.level === &quot;city&quot;) return 0;
+        return currentView === &quot;shiga&quot; &amp;&amp; feature.properties.level === &quot;region&quot; ? 0.35 : 0.72;
+      })
+      .attr(&quot;d&quot;, geoPath);
+
+    lakeLayer.selectAll(&quot;path&quot;).data([lake]).join(&quot;path&quot;).attr(&quot;class&quot;, &quot;lake&quot;)
+      .transition(transition).attr(&quot;d&quot;, geoPath);
+
+    const routeGroups = routeLayer.selectAll(&quot;.route-group&quot;).data(segments, function (segment) { return segment.id; }).join(function (enter) {
+      const group = enter.append(&quot;g&quot;).attr(&quot;class&quot;, &quot;route-group&quot;);
+      group.append(&quot;path&quot;).attr(&quot;class&quot;, function (segment) { return &quot;route-visible &quot; + segment.mode; });
+      group.append(&quot;path&quot;).attr(&quot;class&quot;, &quot;route-hit&quot;);
+      return group;
+    });
+
+    routeGroups
+      .style(&quot;opacity&quot;, function (segment) { return segmentViews[segment.id].indexOf(currentView) &gt;= 0 ? 1 : 0; })
+      .style(&quot;pointer-events&quot;, function (segment) { return segmentViews[segment.id].indexOf(currentView) &gt;= 0 ? &quot;auto&quot; : &quot;none&quot;; });
+
+    routeGroups.select(&quot;.route-visible&quot;).transition(transition).attr(&quot;d&quot;, function (segment) {
+      return geoPath({ type: &quot;LineString&quot;, coordinates: segment.coords });
+    });
+    routeGroups.select(&quot;.route-hit&quot;).attr(&quot;d&quot;, function (segment) {
+      return geoPath({ type: &quot;LineString&quot;, coordinates: segment.coords });
+    });
+
+    routeGroups.select(&quot;.route-hit&quot;)
+      .on(&quot;mouseenter&quot;, function (event, segment) {
+        d3.select(this.parentNode).select(&quot;.route-visible&quot;).classed(&quot;is-active&quot;, true);
+        activeEndpoints(segment.endpoints);
+        placeTooltip(event,
+          `&lt;span class=&quot;text-small text-muted&quot;&gt;${segment.time} · ${segment.status}&lt;/span&gt;` +
+          `&lt;strong&gt;${segment.from} → ${segment.to}&lt;/strong&gt;` +
+          `&lt;span&gt;${segment.summary}&lt;/span&gt;`);
+      })
+      .on(&quot;mousemove&quot;, function (event, segment) {
+        placeTooltip(event,
+          `&lt;span class=&quot;text-small text-muted&quot;&gt;${segment.time} · ${segment.status}&lt;/span&gt;` +
+          `&lt;strong&gt;${segment.from} → ${segment.to}&lt;/strong&gt;` +
+          `&lt;span&gt;${segment.summary}&lt;/span&gt;`);
+      })
+      .on(&quot;mouseleave&quot;, hideTooltip)
+      .on(&quot;click&quot;, function (event, segment) {
+        renderDetail(segment);
+      });
+
+    const nodeGroups = nodeLayer.selectAll(&quot;.node-group&quot;).data(nodes, function (node) { return node.id; }).join(function (enter) {
+      const group = enter.append(&quot;g&quot;).attr(&quot;class&quot;, &quot;node-group&quot;);
+      group.append(&quot;circle&quot;).attr(&quot;class&quot;, &quot;node-selection-ring&quot;).attr(&quot;r&quot;, 14);
+      group.append(&quot;circle&quot;).attr(&quot;class&quot;, function (node) {
+        const modifier = node.type === &quot;photo&quot; ? &quot; is-photo&quot; : node.type === &quot;critical&quot; ? &quot; is-critical&quot; : &quot;&quot;;
+        return &quot;node-mark&quot; + modifier;
+      }).attr(&quot;r&quot;, 7);
+      group.append(&quot;text&quot;).attr(&quot;class&quot;, &quot;node-number&quot;).text(function (node) { return node.number; });
+      group.append(&quot;circle&quot;).attr(&quot;class&quot;, &quot;node-hit&quot;).attr(&quot;r&quot;, 18);
+      return group;
+    });
+
+    nodeGroups
+      .style(&quot;opacity&quot;, function (node) { return viewNodeIds[currentView].indexOf(node.id) &gt;= 0 ? 1 : 0; })
+      .style(&quot;pointer-events&quot;, function (node) { return viewNodeIds[currentView].indexOf(node.id) &gt;= 0 ? &quot;auto&quot; : &quot;none&quot;; });
+
+    nodeGroups.transition(transition).attr(&quot;transform&quot;, function (node) {
+      const point = projection(node.coord);
+      return &quot;translate(&quot; + point[0] + &quot;,&quot; + point[1] + &quot;)&quot;;
+    });
+
+    nodeGroups.select(&quot;.node-hit&quot;)
+      .on(&quot;mouseenter&quot;, function (event, node) {
+        d3.select(this.parentNode).select(&quot;.node-mark&quot;).classed(&quot;is-active&quot;, true);
+        placeTooltip(event,
+          `&lt;span class=&quot;text-small text-muted&quot;&gt;${node.time} · ${node.status}&lt;/span&gt;` +
+          `&lt;strong&gt;${node.name}&lt;/strong&gt;&lt;span&gt;${node.summary}&lt;/span&gt;`);
+      })
+      .on(&quot;mousemove&quot;, function (event, node) {
+        placeTooltip(event,
+          `&lt;span class=&quot;text-small text-muted&quot;&gt;${node.time} · ${node.status}&lt;/span&gt;` +
+          `&lt;strong&gt;${node.name}&lt;/strong&gt;&lt;span&gt;${node.summary}&lt;/span&gt;`);
+      })
+      .on(&quot;mouseleave&quot;, hideTooltip)
+      .on(&quot;click&quot;, function (event, node) { renderDetail(node); });
+
+    const nodeLabels = labelLayer.selectAll(&quot;.node-label&quot;).data(nodes.filter(labelVisible), function (node) { return node.id; }).join(&quot;text&quot;)
+      .attr(&quot;class&quot;, &quot;node-label&quot;).text(function (node) { return node.short; });
+
+    nodeLabels.attr(&quot;text-anchor&quot;, function (node) {
+      return labelPlacement(node, this.getComputedTextLength(), width, height).anchor;
+    }).transition(transition)
+      .attr(&quot;x&quot;, function (node) { return labelPlacement(node, this.getComputedTextLength(), width, height).x; })
+      .attr(&quot;y&quot;, function (node) { return labelPlacement(node, this.getComputedTextLength(), width, height).y; });
+
+    const placeLabels = [
+      { id: &quot;lake-label&quot;, name: &quot;琵琶湖&quot;, coord: [136.105,35.19], views: [&quot;all&quot;,&quot;shiga&quot;] },
+      { id: &quot;osaka-label&quot;, name: &quot;大阪府&quot;, coord: [135.42,34.58], views: [&quot;all&quot;] },
+      { id: &quot;kyoto-label&quot;, name: &quot;京都府&quot;, coord: [135.43,35.20], views: [&quot;all&quot;] }
+    ].filter(function (label) { return label.views.indexOf(currentView) &gt;= 0; });
+
+    labelLayer.selectAll(&quot;.map-place-label&quot;).data(placeLabels, function (label) { return label.id; }).join(&quot;text&quot;)
+      .attr(&quot;class&quot;, &quot;map-place-label&quot;).text(function (label) { return label.name; })
+      .transition(transition)
+      .attr(&quot;x&quot;, function (label) { return projection(label.coord)[0]; })
+      .attr(&quot;y&quot;, function (label) { return projection(label.coord)[1]; });
+
+    applyMapSelection();
+  }
+
+  root.querySelectorAll(&quot;[data-view]&quot;).forEach(function (button) {
+    button.addEventListener(&quot;click&quot;, function () {
+      setMapView(button.dataset.view, true);
+    });
+  });
+
+  renderTimeline();
+  renderDetail(currentSelection, selectedStepId);
+  drawMap(false);
+  new ResizeObserver(function () {
+    hideTooltip();
+    drawMap(false);
+  }).observe(shell);
+})();
+&lt;/script&gt;
+
+&lt;script src=&quot;https://unpkg.com/@floating-ui/core@1.7.3/dist/floating-ui.core.umd.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://unpkg.com/@floating-ui/dom@1.7.4/dist/floating-ui.dom.umd.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+(() =&gt; {
+  if (window.FloatingUIDOM == null) {
+    return;
+  }
+  const { autoUpdate, computePosition, flip, offset, shift, size } =
+    window.FloatingUIDOM;
+  const tooltipPlacements = new Set([&quot;top&quot;, &quot;right&quot;, &quot;bottom&quot;, &quot;left&quot;]);
+  const tooltipId = `codex-visualization-tooltip-${
+    window.crypto?.randomUUID?.() ?? Date.now().toString(36)
+  }`;
+  const tooltipGap = 5;
+  const hoverDelay = 700;
+  const skipDelay = 300;
+  let activeTrigger = null;
+  let pendingTrigger = null;
+  let tooltip = null;
+  let openTimeout = null;
+  let autoUpdateCleanup = null;
+  let positionRequest = 0;
+  let skipDelayUntil = 0;
+
+  const getTrigger = (target) =&gt;
+    target?.nodeType === Node.ELEMENT_NODE
+      ? target.closest(&quot;[data-tooltip]&quot;)
+      : null;
+  const containsTarget = (trigger, target) =&gt;
+    target?.nodeType != null &amp;&amp; trigger.contains(target);
+  const getContent = (trigger) =&gt;
+    trigger.getAttribute(&quot;data-tooltip&quot;)?.trim() ?? &quot;&quot;;
+  const getPlacement = (trigger) =&gt; {
+    const placement = trigger.getAttribute(&quot;data-tooltip-placement&quot;);
+    return tooltipPlacements.has(placement) ? placement : &quot;top&quot;;
+  };
+  const getTooltip = () =&gt; {
+    if (tooltip == null) {
+      tooltip = document.createElement(&quot;div&quot;);
+      tooltip.id = tooltipId;
+      tooltip.className = &quot;tooltip&quot;;
+      tooltip.setAttribute(&quot;role&quot;, &quot;tooltip&quot;);
+    }
+    return tooltip;
+  };
+  const setDescribedBy = (trigger, described) =&gt; {
+    const ids = new Set(
+      (trigger.getAttribute(&quot;aria-describedby&quot;) ?? &quot;&quot;)
+        .split(/\s+/)
+        .filter(Boolean),
+    );
+    if (described) {
+      ids.add(tooltipId);
+    } else {
+      ids.delete(tooltipId);
+    }
+    if (ids.size === 0) {
+      trigger.removeAttribute(&quot;aria-describedby&quot;);
+    } else {
+      trigger.setAttribute(&quot;aria-describedby&quot;, [...ids].join(&quot; &quot;));
+    }
+  };
+  const clearOpenTimeout = () =&gt; {
+    if (openTimeout != null) {
+      window.clearTimeout(openTimeout);
+      openTimeout = null;
+    }
+    pendingTrigger = null;
+  };
+  const closeTooltip = (activateSkipDelay = true) =&gt; {
+    clearOpenTimeout();
+    positionRequest += 1;
+    autoUpdateCleanup?.();
+    autoUpdateCleanup = null;
+    if (activeTrigger == null) {
+      return;
+    }
+    setDescribedBy(activeTrigger, false);
+    activeTrigger = null;
+    tooltip?.remove();
+    if (activateSkipDelay) {
+      skipDelayUntil = Date.now() + skipDelay;
+    }
+  };
+  const updatePosition = (trigger, floating) =&gt; {
+    const request = ++positionRequest;
+    void computePosition(trigger, floating, {
+      middleware: [
+        offset(tooltipGap),
+        flip({ padding: tooltipGap }),
+        shift({ padding: tooltipGap }),
+        size({
+          padding: tooltipGap,
+          apply({ availableHeight, availableWidth, elements }) {
+            elements.floating.style.setProperty(
+              &quot;--tooltip-available-width&quot;,
+              `${Math.max(0, availableWidth)}px`,
+            );
+            elements.floating.style.setProperty(
+              &quot;--tooltip-available-height&quot;,
+              `${Math.max(0, availableHeight)}px`,
+            );
+          },
+        }),
+      ],
+      placement: getPlacement(trigger),
+      strategy: &quot;fixed&quot;,
+    })
+      .then(({ x, y }) =&gt; {
+        if (activeTrigger !== trigger || request !== positionRequest) {
+          return;
+        }
+        const scale = window.devicePixelRatio || 1;
+        floating.style.transform = `translate(${Math.round(x * scale) / scale}px, ${Math.round(y * scale) / scale}px)`;
+        floating.style.visibility = &quot;visible&quot;;
+      })
+      .catch(() =&gt; {
+        if (activeTrigger === trigger &amp;&amp; request === positionRequest) {
+          closeTooltip(false);
+        }
+      });
+  };
+  const openTooltip = (trigger) =&gt; {
+    const content = getContent(trigger);
+    if (!trigger.isConnected || content.length === 0) {
+      return;
+    }
+    clearOpenTimeout();
+    if (activeTrigger === trigger) {
+      return;
+    }
+    closeTooltip();
+    const floating = getTooltip();
+    floating.textContent = content;
+    floating.style.visibility = &quot;hidden&quot;;
+    floating.style.transform = &quot;translate(0, 0)&quot;;
+    document.body.appendChild(floating);
+    activeTrigger = trigger;
+    setDescribedBy(trigger, true);
+    autoUpdateCleanup = autoUpdate(trigger, floating, () =&gt; {
+      updatePosition(trigger, floating);
+    });
+  };
+  const requestOpen = (trigger, immediate = false) =&gt; {
+    if (
+      getContent(trigger).length === 0 ||
+      activeTrigger === trigger ||
+      pendingTrigger === trigger
+    ) {
+      return;
+    }
+    clearOpenTimeout();
+    pendingTrigger = trigger;
+    const delay =
+      immediate || activeTrigger != null || Date.now() &lt; skipDelayUntil
+        ? 0
+        : hoverDelay;
+    if (delay === 0) {
+      openTooltip(trigger);
+      return;
+    }
+    openTimeout = window.setTimeout(() =&gt; {
+      openTimeout = null;
+      pendingTrigger = null;
+      openTooltip(trigger);
+    }, delay);
+  };
+  const handlePointerOpen = (event) =&gt; {
+    if (event.pointerType === &quot;touch&quot;) {
+      return;
+    }
+    const trigger = getTrigger(event.target);
+    if (trigger == null || containsTarget(trigger, event.relatedTarget)) {
+      return;
+    }
+    requestOpen(trigger);
+  };
+  const handleLeave = (event) =&gt; {
+    const trigger = getTrigger(event.target);
+    if (trigger == null || containsTarget(trigger, event.relatedTarget)) {
+      return;
+    }
+    if (activeTrigger === trigger || pendingTrigger === trigger) {
+      closeTooltip();
+    }
+  };
+  const handleFocusIn = (event) =&gt; {
+    const trigger = getTrigger(event.target);
+    if (trigger?.matches(&quot;:focus-visible&quot;)) {
+      requestOpen(trigger, true);
+    }
+  };
+  const handleKeyDown = (event) =&gt; {
+    if (event.key === &quot;Escape&quot;) {
+      closeTooltip();
+    }
+  };
+  const handleContextMenu = (event) =&gt; {
+    const trigger = getTrigger(event.target);
+    if (activeTrigger === trigger || pendingTrigger === trigger) {
+      closeTooltip();
+    }
+  };
+  const destroy = () =&gt; {
+    closeTooltip(false);
+    document.removeEventListener(&quot;pointerover&quot;, handlePointerOpen);
+    document.removeEventListener(&quot;pointerout&quot;, handleLeave);
+    document.removeEventListener(&quot;focusin&quot;, handleFocusIn);
+    document.removeEventListener(&quot;focusout&quot;, handleLeave);
+    document.removeEventListener(&quot;keydown&quot;, handleKeyDown);
+    document.removeEventListener(&quot;contextmenu&quot;, handleContextMenu);
+    tooltip = null;
+  };
+
+  document.addEventListener(&quot;pointerover&quot;, handlePointerOpen);
+  document.addEventListener(&quot;pointerout&quot;, handleLeave);
+  document.addEventListener(&quot;focusin&quot;, handleFocusIn);
+  document.addEventListener(&quot;focusout&quot;, handleLeave);
+  document.addEventListener(&quot;keydown&quot;, handleKeyDown);
+  document.addEventListener(&quot;contextmenu&quot;, handleContextMenu);
+  window.addEventListener(&quot;pagehide&quot;, destroy, { once: true });
+})();
+&lt;/script&gt;
+&lt;script id=&quot;codex-visualization-lucide&quot; async src=&quot;https://unpkg.com/lucide@1.17.0/dist/umd/lucide.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+(() =&gt; {
+  const initialize = () =&gt; {
+    globalThis.lucide?.createIcons({ attrs: { width: 16, height: 16 } });
+  };
+  if (globalThis.lucide != null) {
+    initialize();
+    return;
+  }
+  document
+    .getElementById(&quot;codex-visualization-lucide&quot;)
+    ?.addEventListener(&quot;load&quot;, initialize, { once: true });
+})();
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+"></iframe>
+</body>
+</html>
