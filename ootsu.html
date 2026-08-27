@@ -9,7 +9,7 @@
 <style>:root{color-scheme:light dark;background:light-dark(rgb(255 255 255), rgb(24 24 24))}html,body{margin:0}body{box-sizing:border-box;padding:1rem;background:inherit}iframe{display:block;width:100%;height:calc(100vh - 2rem);margin:0 auto;border:0}</style>
 </head>
 <body>
-<iframe sandbox="allow-scripts" referrerpolicy="no-referrer" title="Otsu Photo Itinerary" srcdoc="&lt;!doctype html&gt;
+<iframe sandbox="allow-scripts allow-popups allow-popups-to-escape-sandbox" referrerpolicy="no-referrer" title="Otsu Photo Itinerary" srcdoc="&lt;!doctype html&gt;
 &lt;html lang=&quot;en&quot;&gt;
 &lt;head&gt;
 &lt;meta charset=&quot;utf-8&quot;&gt;
@@ -941,7 +941,7 @@ html&gt;body{padding:0}&lt;/style&gt;
     &lt;div class=&quot;section-head&quot;&gt;
       &lt;div&gt;
         &lt;h2 id=&quot;map-title&quot;&gt;路线地图&lt;/h2&gt;
-        &lt;p class=&quot;text-small text-muted&quot;&gt;真实节点坐标 · 路线为简化示意，不代替现场导航&lt;/p&gt;
+        &lt;p class=&quot;text-small text-muted&quot;&gt;真实节点坐标 · 路线为简化示意，不代替现场导航 · 悬停看执行摘要，点击线路或节点看完整说明&lt;/p&gt;
       &lt;/div&gt;
       &lt;div class=&quot;viz-controls map-views&quot; aria-label=&quot;地图范围&quot;&gt;
         &lt;button type=&quot;button&quot; class=&quot;btn btn-ghost&quot; data-view=&quot;all&quot; aria-pressed=&quot;false&quot;&gt;全程&lt;/button&gt;
@@ -996,14 +996,15 @@ html&gt;body{padding:0}&lt;/style&gt;
       &lt;p class=&quot;detail-summary&quot;&gt;&lt;/p&gt;
       &lt;div class=&quot;detail-grid&quot;&gt;
         &lt;div&gt;
-          &lt;span class=&quot;text-small text-muted&quot;&gt;执行&lt;/span&gt;
+          &lt;span class=&quot;text-small text-muted&quot;&gt;快速执行&lt;/span&gt;
           &lt;p class=&quot;detail-action&quot;&gt;&lt;/p&gt;
         &lt;/div&gt;
         &lt;div&gt;
-          &lt;span class=&quot;text-small text-muted&quot;&gt;摄影 / 风险&lt;/span&gt;
+          &lt;span class=&quot;text-small text-muted&quot;&gt;快速摄影&lt;/span&gt;
           &lt;p class=&quot;detail-photo&quot;&gt;&lt;/p&gt;
         &lt;/div&gt;
       &lt;/div&gt;
+      &lt;div class=&quot;detail-guide&quot; aria-label=&quot;节点详细说明&quot;&gt;&lt;/div&gt;
       &lt;div class=&quot;viz-row detail-links&quot;&gt;&lt;/div&gt;
     &lt;/article&gt;
 
@@ -1016,13 +1017,27 @@ html&gt;body{padding:0}&lt;/style&gt;
     &lt;div class=&quot;section-head&quot;&gt;
       &lt;div&gt;
         &lt;h2 id=&quot;timeline-title&quot;&gt;执行时间轴&lt;/h2&gt;
-        &lt;p class=&quot;text-small text-muted&quot;&gt;官方链接与预约入口紧邻对应节点&lt;/p&gt;
+        &lt;p class=&quot;text-small text-muted&quot;&gt;先看目的，再按彩色说明块执行；费用均为参考价，出发前以官方页面为准&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;timeline-guide-legend text-small&quot; aria-label=&quot;说明块图例&quot;&gt;
+        &lt;span class=&quot;guide-key guide-key-action&quot;&gt;怎么做&lt;/span&gt;
+        &lt;span class=&quot;guide-key guide-key-route&quot;&gt;路线&lt;/span&gt;
+        &lt;span class=&quot;guide-key guide-key-cost&quot;&gt;费用&lt;/span&gt;
+        &lt;span class=&quot;guide-key guide-key-background&quot;&gt;背景&lt;/span&gt;
+        &lt;span class=&quot;guide-key guide-key-photo&quot;&gt;摄影&lt;/span&gt;
+        &lt;span class=&quot;guide-key guide-key-risk&quot;&gt;注意&lt;/span&gt;
+        &lt;span class=&quot;guide-key guide-key-backup&quot;&gt;备用&lt;/span&gt;
+        &lt;span class=&quot;guide-key guide-key-language&quot;&gt;日语&lt;/span&gt;
       &lt;/div&gt;
     &lt;/div&gt;
     &lt;div class=&quot;timeline-list&quot;&gt;&lt;/div&gt;
   &lt;/section&gt;
 
-  &lt;section class=&quot;reference-section&quot; aria-label=&quot;摄影与延误参考&quot;&gt;
+  &lt;section class=&quot;reference-section&quot; aria-label=&quot;路线名词、摄影与延误参考&quot;&gt;
+    &lt;details open&gt;
+      &lt;summary&gt;路线名词、票券与服务速查&lt;/summary&gt;
+      &lt;div class=&quot;terms-list&quot;&gt;&lt;/div&gt;
+    &lt;/details&gt;
     &lt;details open&gt;
       &lt;summary&gt;摄影参数与光线窗口&lt;/summary&gt;
       &lt;div class=&quot;table-responsive&quot;&gt;
@@ -1080,7 +1095,7 @@ html&gt;body{padding:0}&lt;/style&gt;
   &lt;/section&gt;
 
   &lt;footer class=&quot;report-foot text-small text-muted&quot;&gt;
-    铁路时刻核对日期：2026-08-25。出发前24小时再次核对JR WEST、香港航空与高岛市交通公告。
+    铁路时刻核对日期：2026-08-26。出发前24小时再次核对JR WEST、香港航空与高岛市交通公告。
   &lt;/footer&gt;
 &lt;/div&gt;
 
@@ -1090,6 +1105,14 @@ html&gt;body{padding:0}&lt;/style&gt;
     position: relative;
     width: 100%;
     color: var(--foreground);
+    --guide-action: var(--viz-series-1);
+    --guide-route: var(--viz-series-2);
+    --guide-cost: var(--viz-series-3);
+    --guide-background: var(--muted-foreground);
+    --guide-photo: var(--viz-series-5);
+    --guide-risk: var(--destructive);
+    --guide-backup: var(--viz-series-6);
+    --guide-language: var(--viz-series-4);
   }
 
   #otsu-trip-report .report-head,
@@ -1168,6 +1191,7 @@ html&gt;body{padding:0}&lt;/style&gt;
   #otsu-trip-report .map-shell {
     position: relative;
     width: 100%;
+    overflow: hidden;
   }
 
   #otsu-trip-report .route-map {
@@ -1200,6 +1224,10 @@ html&gt;body{padding:0}&lt;/style&gt;
     color: var(--foreground);
     transform: translate(-50%, -50%);
     pointer-events: auto;
+  }
+
+  #otsu-trip-report .map-media-pin.is-hidden {
+    display: none;
   }
 
   #otsu-trip-report .map-media-pin::before {
@@ -1425,6 +1453,8 @@ html&gt;body{padding:0}&lt;/style&gt;
     z-index: 5;
     width: max-content;
     max-width: min(420px, calc(100% - 16px));
+    box-sizing: border-box;
+    display: none;
     padding: 10px 12px;
     color: var(--popover-foreground);
     background: var(--popover);
@@ -1438,6 +1468,7 @@ html&gt;body{padding:0}&lt;/style&gt;
   }
 
   #otsu-trip-report .map-tooltip.is-visible {
+    display: block;
     opacity: 1;
     transform: translateY(0);
   }
@@ -1449,6 +1480,20 @@ html&gt;body{padding:0}&lt;/style&gt;
 
   #otsu-trip-report .map-tooltip strong {
     margin: 3px 0;
+  }
+
+  #otsu-trip-report .map-tooltip .tooltip-guide {
+    margin-top: 4px;
+    padding-inline-start: 7px;
+    border-inline-start: 2px solid var(--guide-color);
+    overflow-wrap: anywhere;
+  }
+
+  #otsu-trip-report .map-tooltip .tooltip-guide-cost { --guide-color: var(--guide-cost); }
+  #otsu-trip-report .map-tooltip .tooltip-guide-action { --guide-color: var(--guide-action); }
+  #otsu-trip-report .map-tooltip .tooltip-guide-risk {
+    --guide-color: var(--guide-risk);
+    border-inline-style: dashed;
   }
 
   #otsu-trip-report .map-tooltip-media {
@@ -1580,6 +1625,177 @@ html&gt;body{padding:0}&lt;/style&gt;
     min-width: 0;
   }
 
+  #otsu-trip-report .timeline-guide-legend {
+    display: flex;
+    flex: 1 1 100%;
+    flex-wrap: wrap;
+    gap: 6px 10px;
+    margin-top: 8px;
+  }
+
+  #otsu-trip-report .guide-key {
+    display: inline-flex;
+    align-items: center;
+    min-height: 20px;
+    padding: 2px 7px;
+    border-inline-start: 3px solid var(--guide-color);
+    color: var(--muted-foreground);
+    background: color-mix(in srgb, var(--guide-color) 8%, transparent);
+    font-size: 11px;
+    line-height: 1.3;
+  }
+
+  #otsu-trip-report .guide-key-action { --guide-color: var(--guide-action); }
+  #otsu-trip-report .guide-key-route { --guide-color: var(--guide-route); }
+  #otsu-trip-report .guide-key-cost { --guide-color: var(--guide-cost); }
+  #otsu-trip-report .guide-key-background { --guide-color: var(--guide-background); }
+  #otsu-trip-report .guide-key-photo { --guide-color: var(--guide-photo); }
+  #otsu-trip-report .guide-key-risk { --guide-color: var(--guide-risk); }
+  #otsu-trip-report .guide-key-backup { --guide-color: var(--guide-backup); }
+  #otsu-trip-report .guide-key-language { --guide-color: var(--guide-language); }
+
+  #otsu-trip-report .timeline-purpose {
+    font-weight: 500;
+  }
+
+  #otsu-trip-report .timeline-guide,
+  #otsu-trip-report .detail-guide {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    margin-top: 10px;
+  }
+
+  #otsu-trip-report .timeline-guide {
+    grid-column: 1 / -1;
+  }
+
+  #otsu-trip-report .guide-block {
+    min-width: 0;
+    padding: 8px 10px;
+    border-inline-start: 3px solid var(--guide-color);
+    background: color-mix(in srgb, var(--guide-color) 8%, transparent);
+  }
+
+  #otsu-trip-report .guide-block.guide-action { --guide-color: var(--guide-action); }
+  #otsu-trip-report .guide-block.guide-route { --guide-color: var(--guide-route); }
+  #otsu-trip-report .guide-block.guide-cost { --guide-color: var(--guide-cost); }
+  #otsu-trip-report .guide-block.guide-background { --guide-color: var(--guide-background); }
+  #otsu-trip-report .guide-block.guide-photo { --guide-color: var(--guide-photo); }
+  #otsu-trip-report .guide-block.guide-risk {
+    --guide-color: var(--guide-risk);
+    border-inline-style: dashed;
+  }
+  #otsu-trip-report .guide-block.guide-backup {
+    --guide-color: var(--guide-backup);
+    border-inline-style: dotted;
+  }
+  #otsu-trip-report .guide-block.guide-language { --guide-color: var(--guide-language); }
+
+  #otsu-trip-report .guide-label {
+    display: block;
+    color: var(--guide-color);
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.35;
+  }
+
+  #otsu-trip-report .guide-copy {
+    min-width: 0;
+    margin-top: 3px;
+    line-height: 1.55;
+    overflow-wrap: anywhere;
+  }
+
+  #otsu-trip-report .guide-copy p {
+    margin: 0;
+  }
+
+  #otsu-trip-report .guide-copy ul,
+  #otsu-trip-report .guide-copy ol {
+    margin: 3px 0 0;
+    padding-inline-start: 1.25em;
+  }
+
+  #otsu-trip-report .guide-copy li + li {
+    margin-top: 3px;
+  }
+
+  #otsu-trip-report .guide-cost .guide-copy {
+    font-variant-numeric: tabular-nums;
+  }
+
+  #otsu-trip-report .guide-background .guide-copy {
+    color: var(--muted-foreground);
+    font-style: italic;
+  }
+
+  #otsu-trip-report .guide-language .guide-copy code {
+    display: block;
+    white-space: pre-wrap;
+    font-family: var(--font-mono);
+    font-size: 0.92em;
+    overflow-wrap: anywhere;
+  }
+
+  #otsu-trip-report .guide-language .guide-romaji {
+    display: block;
+    margin-top: 3px;
+    color: var(--muted-foreground);
+    font-family: var(--font-mono);
+    font-size: 0.88em;
+    overflow-wrap: anywhere;
+  }
+
+  #otsu-trip-report .guide-language .guide-meaning {
+    display: block;
+    margin-top: 3px;
+    color: var(--muted-foreground);
+  }
+
+  #otsu-trip-report .guide-block-wide {
+    grid-column: 1 / -1;
+  }
+
+  #otsu-trip-report .terms-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px 14px;
+    margin-top: 10px;
+  }
+
+  #otsu-trip-report .term-item {
+    min-width: 0;
+    padding: 8px 10px;
+    border-inline-start: 3px solid var(--guide-route);
+    background: color-mix(in srgb, var(--guide-route) 6%, transparent);
+  }
+
+  #otsu-trip-report .term-item strong {
+    display: block;
+  }
+
+  #otsu-trip-report .term-item p {
+    margin: 3px 0 0;
+    line-height: 1.5;
+  }
+
+  #otsu-trip-report .term-item ol {
+    margin: 5px 0 0;
+    padding-inline-start: 1.35em;
+    line-height: 1.5;
+  }
+
+  #otsu-trip-report .term-item li + li {
+    margin-top: 4px;
+  }
+
+  #otsu-trip-report .term-item .term-note {
+    margin-top: 7px;
+    color: var(--muted-foreground);
+    font-size: 0.92em;
+  }
+
   #otsu-trip-report .inline-links {
     display: flex;
     flex-wrap: wrap;
@@ -1674,6 +1890,16 @@ html&gt;body{padding:0}&lt;/style&gt;
       grid-column: 2;
     }
 
+    #otsu-trip-report .timeline-guide,
+    #otsu-trip-report .detail-guide,
+    #otsu-trip-report .terms-list {
+      grid-template-columns: 1fr;
+    }
+
+    #otsu-trip-report .guide-block-wide {
+      grid-column: auto;
+    }
+
     #otsu-trip-report .map-credit {
       text-align: start;
     }
@@ -1712,8 +1938,11 @@ html&gt;body{padding:0}&lt;/style&gt;
     otsukyoTrain: { label: &quot;12:55 湖西线官方时刻&quot;, url: &quot;https://timetable.jr-odekake.net/train-timetable/61521?date=20260904&quot; },
     taxiOfficial: { label: &quot;第一交通滋贺官网&quot;, url: &quot;https://shiga.0152.jp/office/&quot; },
     taxiCall: { label: &quot;拨号预约 0120-524-447&quot;, url: &quot;tel:0120524447&quot; },
+    taxiFare: { label: &quot;第一交通滋贺运价公告&quot;, url: &quot;https://news.0152.jp/%e6%bb%8b%e8%b3%80_%e9%81%8b%e8%b3%83%e6%94%b9%e5%ae%9a%e3%81%ae%e3%81%8a%e7%9f%a5%e3%82%89%e3%81%9b/&quot; },
     takashimaTaxi: { label: &quot;乘合出租预约说明&quot;, url: &quot;https://www.city.takashima.lg.jp/soshiki/toshiseibibu/toshiseisakuka/5/15515.html&quot; },
     taxiPdf: { label: &quot;平日乘合出租时刻表&quot;, url: &quot;https://www.city.takashima.lg.jp/material/files/group/62/takashima-heizitsu071001-8.pdf&quot; },
+    takashimaFare: { label: &quot;高岛市乘合出租票价PDF&quot;, url: &quot;https://www.city.takashima.lg.jp/material/files/group/62/unchin_annnai.pdf&quot; },
+    takashimaHowto: { label: &quot;高岛市预约乘合说明PDF&quot;, url: &quot;https://www.city.takashima.lg.jp/material/files/group/62/yoyaku202104.pdf&quot; },
     shrineAccess: { label: &quot;白鬚神社官方交通&quot;, url: &quot;http://shirahigejinja.com/access/&quot; },
     shrineMap: { label: &quot;藍湖白鬚台导航&quot;, url: &quot;https://www.google.com/maps/search/?api=1&amp;query=35.2744146%2C136.0113480&quot; },
     festival: { label: &quot;9月大祭交通公告&quot;, url: &quot;https://takashima-kanko.jp/2026/08/post_1140.html&quot; },
@@ -1722,7 +1951,13 @@ html&gt;body{padding:0}&lt;/style&gt;
     keihanTicket: { label: &quot;京阪票价与购票&quot;, url: &quot;https://www.keihan.co.jp/travel/en/trains/purchasing-tickets/&quot; },
     keihanOtsukyo: { label: &quot;京阪大津京平日时刻PDF&quot;, url: &quot;https://www.keihan.co.jp/traffic/station/assets/pdf/time/61411.pdf&quot; },
     keihanZeze: { label: &quot;膳所本町平日时刻PDF&quot;, url: &quot;https://www.keihan.co.jp/traffic/station/assets/pdf/time/60611.pdf&quot; },
+    keihanIshiyamaTime: { label: &quot;京阪石山平日时刻PDF&quot;, url: &quot;https://www.keihan.co.jp/traffic/station/assets/pdf/time/60211.pdf&quot; },
     jrIshiyamaReturn: { label: &quot;19:51 石山→大津&quot;, url: &quot;https://timetable.jr-odekake.net/train-timetable/391451?date=20260904&quot; },
+    jrStationInfo: { label: &quot;JR西日本车站查询&quot;, url: &quot;https://www.jr-odekake.net/eki/&quot; },
+    jrOtsuMap: { label: &quot;JR大津站地图&quot;, url: &quot;https://www.google.com/maps/search/?api=1&amp;query=JR+Otsu+Station&quot; },
+    jrOtsukyoMap: { label: &quot;JR大津京站地图&quot;, url: &quot;https://www.google.com/maps/search/?api=1&amp;query=JR+Otsukyo+Station&quot; },
+    jrIshiyamaMap: { label: &quot;JR石山站地图&quot;, url: &quot;https://www.google.com/maps/search/?api=1&amp;query=JR+Ishiyama+Station&quot; },
+    keihanIshiyamaMap: { label: &quot;京阪石山站地图&quot;, url: &quot;https://www.google.com/maps/search/?api=1&amp;query=Keihan+Ishiyama+Station&quot; },
     otsukyoTransferMap: { label: &quot;JR→京阪大津京换乘导航&quot;, url: &quot;https://www.google.com/maps/dir/?api=1&amp;origin=JR+Otsukyo+Station&amp;destination=Keihan+Otsukyo+Station&amp;travelmode=walking&quot; },
     takashimaMap: { label: &quot;近江高岛站导航&quot;, url: &quot;https://www.google.com/maps/search/?api=1&amp;query=Omi-Takashima+Station&quot; },
     zezeStationMap: { label: &quot;膳所本町→公园步行&quot;, url: &quot;https://www.google.com/maps/dir/?api=1&amp;origin=Zeze-Hommachi+Station&amp;destination=Zeze+Castle+Ruins+Park&amp;travelmode=walking&quot; },
@@ -1888,7 +2123,7 @@ html&gt;body{padding:0}&lt;/style&gt;
       summary: &quot;入住前寄存大件行李，只带相机、两支镜头、三脚架、水与雨具。&quot;,
       action: &quot;请前台在12:15前叫好大津港至JR大津京的出租车；同时确认晚餐最后点餐时间。&quot;,
       photo: &quot;酒店湖景留到翌日清晨或返店后，不在午间占用主线时间。&quot;,
-      linkKeys: [&quot;hotelShuttle&quot;, &quot;taxiOfficial&quot;, &quot;taxiCall&quot;], type: &quot;critical&quot;, dx: 10, dy: 18
+      linkKeys: [&quot;hotelShuttle&quot;, &quot;taxiOfficial&quot;, &quot;taxiFare&quot;, &quot;taxiCall&quot;], type: &quot;critical&quot;, dx: 10, dy: 18
     },
     {
       id: &quot;port&quot;, number: 5, name: &quot;大津港&quot;, short: &quot;大津港&quot;, coord: [135.8660059, 35.0126186],
@@ -1896,7 +2131,7 @@ html&gt;body{padding:0}&lt;/style&gt;
       summary: &quot;《再见菈菈》第2话官方地点，也是第一期数字拉力点。&quot;,
       action: &quot;旅客中心1层候船室附近拍立牌并签到；12:15准时上出租车。&quot;,
       photo: &quot;16–35mm拍候船楼、港湾和湖岸关系；午间只做记录，不等待光线。&quot;,
-      linkKeys: [&quot;laraMap&quot;, &quot;rally&quot;, &quot;portMap&quot;, &quot;taxiOfficial&quot;, &quot;taxiCall&quot;], type: &quot;photo&quot;, dx: 10, dy: -12
+      linkKeys: [&quot;laraMap&quot;, &quot;rally&quot;, &quot;portMap&quot;, &quot;taxiOfficial&quot;, &quot;taxiFare&quot;, &quot;taxiCall&quot;], type: &quot;photo&quot;, dx: 10, dy: -12
     },
     {
       id: &quot;otsukyo&quot;, number: 6, name: &quot;JR大津京&quot;, short: &quot;大津京&quot;, coord: [135.8573599, 35.0245014],
@@ -1910,9 +2145,9 @@ html&gt;body{padding:0}&lt;/style&gt;
       id: &quot;takashima&quot;, number: 7, name: &quot;近江高岛站&quot;, short: &quot;近江高岛&quot;, coord: [136.0103068, 35.2926397],
       time: &quot;13:23 / 15:05–15:21&quot;, status: &quot;预约出租车&quot;, views: [&quot;all&quot;, &quot;shiga&quot;, &quot;shrine&quot;],
       summary: &quot;车站没有寄存柜。推荐普通出租车13:25接站、14:50从神社接回。&quot;,
-      action: &quot;至少提前一天预约大津第一交通0120-524-447，并说明携带三脚架。省钱方案使用13:45去程与14:56回程乘合出租。&quot;,
+      action: &quot;至少提前一天预约大津第一交通0120-524-447，并说明携带三脚架。省钱方案是高岛市乘合出租：13:45去程须在13:15前预约、14:56回程须在14:13前预约；最终以官方预约系统为准。&quot;,
       photo: &quot;站前只保留机动时间；返程15:05到站后立即进站候车。&quot;,
-      linkKeys: [&quot;taxiOfficial&quot;, &quot;taxiCall&quot;, &quot;takashimaTaxi&quot;, &quot;taxiPdf&quot;, &quot;takashimaMap&quot;], type: &quot;critical&quot;, dx: 10, dy: -12
+      linkKeys: [&quot;taxiOfficial&quot;, &quot;taxiFare&quot;, &quot;taxiCall&quot;, &quot;takashimaTaxi&quot;, &quot;takashimaFare&quot;, &quot;takashimaHowto&quot;, &quot;taxiPdf&quot;, &quot;takashimaMap&quot;], type: &quot;critical&quot;, dx: 10, dy: -12
     },
     {
       id: &quot;shrine&quot;, number: 8, name: &quot;白鬚神社 / 藍湖白鬚台&quot;, short: &quot;白鬚神社&quot;, coord: [136.0113480, 35.2744146],
@@ -1920,29 +2155,29 @@ html&gt;body{padding:0}&lt;/style&gt;
       summary: &quot;先在神社一侧官方观景台拍湖中鸟居，再完成参拜和建筑环境照。&quot;,
       action: &quot;9月4日14:00起因翌日大祭关闭停车场。预约时确认接送点；14:45前收器材，到约定位置候车。&quot;,
       photo: &quot;70–200mm，ISO 100、f/8、1/250–1/500s；绝不横穿国道161。CPL不要旋至最强。&quot;,
-      linkKeys: [&quot;shrineAccess&quot;, &quot;shrineMap&quot;, &quot;festival&quot;, &quot;taxiOfficial&quot;, &quot;taxiCall&quot;, &quot;takashimaTaxi&quot;, &quot;taxiPdf&quot;], type: &quot;photo&quot;, dx: 10, dy: 18
+      linkKeys: [&quot;shrineAccess&quot;, &quot;shrineMap&quot;, &quot;festival&quot;, &quot;taxiOfficial&quot;, &quot;taxiFare&quot;, &quot;taxiCall&quot;, &quot;takashimaTaxi&quot;, &quot;takashimaFare&quot;, &quot;takashimaHowto&quot;, &quot;taxiPdf&quot;], type: &quot;photo&quot;, dx: 10, dy: 18
     },
     {
       id: &quot;keihanotsukyo&quot;, number: 9, name: &quot;京阪大津京&quot;, short: &quot;京阪大津京&quot;, coord: [135.8555654, 35.0231984],
-      time: &quot;15:48–15:57&quot;, status: &quot;9分钟换乘&quot;, views: [&quot;otsu&quot;],
+      time: &quot;15:48–15:59&quot;, status: &quot;11分钟换乘（候选班次）&quot;, views: [&quot;otsu&quot;],
       summary: &quot;从JR大津京步行换乘京阪石山坂本线，前往膳所本町。&quot;,
-      action: &quot;乘15:57石山寺方向列车；JR Pass本体及随附京阪券均不覆盖大津线，使用已充值ICOCA另付。&quot;,
+      action: &quot;乘15:59石山寺方向列车；JR Pass本体及随附京阪券均不覆盖大津线，使用已充值ICOCA另付。出发日以站内电子屏为准。&quot;,
       photo: &quot;车上休息并为傍晚摄影重新分配电池和存储卡。&quot;,
       linkKeys: [&quot;keihanOtsukyo&quot;, &quot;keihanTicket&quot;, &quot;icoca&quot;, &quot;otsukyoTransferMap&quot;], type: &quot;critical&quot;, dx: -82, dy: 18
     },
     {
       id: &quot;zezehm&quot;, number: 10, name: &quot;膳所本町站&quot;, short: &quot;膳所本町&quot;, coord: [135.8892595, 34.9951234],
-      time: &quot;16:19–16:27&quot;, status: &quot;湖岸入口&quot;, views: [&quot;shiga&quot;, &quot;otsu&quot;],
+      time: &quot;约16:19–16:29&quot;, status: &quot;湖岸入口（到站后缓冲）&quot;, views: [&quot;shiga&quot;, &quot;otsu&quot;],
       summary: &quot;下车后步行前往膳所城迹公园与近江大桥西侧。&quot;,
-      action: &quot;步行约7–8分钟到公园；先确认18:58京阪班次，再进入湖岸机位。&quot;,
+      action: &quot;步行约7–8分钟到公园；先确认18:59京阪班次，再进入湖岸机位。&quot;,
       photo: &quot;步行途中不展开脚架，到公园后再换镜头。&quot;,
       linkKeys: [&quot;keihanZeze&quot;, &quot;keihanTicket&quot;, &quot;icoca&quot;, &quot;zezeStationMap&quot;, &quot;zezeMap&quot;], type: &quot;normal&quot;, dx: -12, dy: 20
     },
     {
       id: &quot;zeze&quot;, number: 11, name: &quot;膳所城迹公园&quot;, short: &quot;膳所湖岸&quot;, coord: [135.8954117, 34.9952266],
-      time: &quot;16:27–18:43&quot;, status: &quot;暖光与蓝调&quot;, views: [&quot;shiga&quot;, &quot;otsu&quot;],
+      time: &quot;16:29–18:43&quot;, status: &quot;暖光与蓝调&quot;, views: [&quot;shiga&quot;, &quot;otsu&quot;],
       summary: &quot;当天主摄影窗口，行程拍到18:43；天文蓝调持续至18:46。&quot;,
-      action: &quot;17:40前完成构图和脚架固定；18:43收机并立即步行回站，赶18:58京阪。&quot;,
+      action: &quot;17:40前完成构图和脚架固定；18:43收机并立即步行回站，赶18:59京阪。&quot;,
       photo: &quot;夕阳在身后，拍湖面暖光、桥梁与云层。蓝调ISO 100、f/8、1–8s，WB 3800–4500K。&quot;,
       linkKeys: [&quot;zezeMap&quot;, &quot;nao&quot;], type: &quot;photo&quot;, dx: 10, dy: 22
     },
@@ -1956,17 +2191,17 @@ html&gt;body{padding:0}&lt;/style&gt;
     },
     {
       id: &quot;ishiyama&quot;, number: 13, name: &quot;京阪石山站&quot;, short: &quot;京阪石山&quot;, coord: [135.8993301, 34.9796523],
-      time: &quot;19:06–19:15&quot;, status: &quot;数字拉力（非取景）&quot;, views: [&quot;all&quot;, &quot;shiga&quot;, &quot;otsu&quot;],
+      time: &quot;约19:05–19:15&quot;, status: &quot;数字拉力（非取景）&quot;, views: [&quot;all&quot;, &quot;shiga&quot;, &quot;otsu&quot;],
       summary: &quot;立牌位于2层改札内正面附近，先拍摄与签到再出站；此处不是官方动画取景地。&quot;,
-      action: &quot;乘18:58京阪、约19:06到石山；离开付费区前完成站内内容。&quot;,
+      action: &quot;乘18:59京阪、约19:05到京阪石山（预留整理缓冲至19:07）；离开付费区前完成站内内容。&quot;,
       photo: &quot;手持高感记录即可，不在通道架三脚架。&quot;,
-      linkKeys: [&quot;keihanZeze&quot;, &quot;keihanTicket&quot;, &quot;icoca&quot;, &quot;rally&quot;], type: &quot;normal&quot;, dx: -70, dy: 18
+      linkKeys: [&quot;keihanZeze&quot;, &quot;keihanIshiyamaTime&quot;, &quot;keihanTicket&quot;, &quot;icoca&quot;, &quot;rally&quot;], type: &quot;normal&quot;, dx: -70, dy: 18
     },
     {
       id: &quot;heiwado&quot;, number: 14, name: &quot;平和堂石山&quot;, short: &quot;平和堂石山&quot;, coord: [135.9028733, 34.9783351],
       time: &quot;19:15–19:45&quot;, status: &quot;官方动画舞台&quot;, views: [&quot;all&quot;, &quot;shiga&quot;, &quot;otsu&quot;],
-      summary: &quot;官方第2、4话地点；完成第四个拉力点，并尝试兑换第一期卡片。&quot;,
-      action: &quot;2层拍立牌，3层服务中心凭至少3个签到兑换；官方公布服务时间至21:00，库存不保证。&quot;,
+      summary: &quot;官方第2、4话地点；完成本日最后一个计划签到点，并尝试兑换第一期卡片。&quot;,
+      action: &quot;2层拍立牌；9月4日若仍按第一期规则，3层服务中心凭3处签到画面申请卡片。官方公布服务时间至21:00，库存不保证。&quot;,
       photo: &quot;夜间以环境与招牌记录为主；避免把普通顾客清晰拍入画面。&quot;,
       linkKeys: [&quot;laraMap&quot;, &quot;rally&quot;, &quot;heiwadoMap&quot;], type: &quot;photo&quot;, dx: 10, dy: -10
     }
@@ -1999,7 +2234,7 @@ html&gt;body{padding:0}&lt;/style&gt;
       summary: &quot;先寄存重行李，再步行至大津港完成官方巡礼。&quot;,
       action: &quot;11:35酒店班车；11:50到港，12:15离开。&quot;,
       photo: &quot;16–35mm快速记录港湾环境。&quot;,
-      linkKeys: [&quot;hotelShuttle&quot;, &quot;laraMap&quot;, &quot;rally&quot;, &quot;taxiOfficial&quot;, &quot;taxiCall&quot;],
+      linkKeys: [&quot;hotelShuttle&quot;, &quot;laraMap&quot;, &quot;rally&quot;, &quot;taxiOfficial&quot;, &quot;taxiFare&quot;, &quot;taxiCall&quot;],
       endpoints: [&quot;otsu&quot;, &quot;hotel&quot;, &quot;port&quot;],
       coords: [[135.8648951,35.0030494],[135.8682527,35.0102636],[135.8660059,35.0126186]]
     },
@@ -2009,7 +2244,7 @@ html&gt;body{padding:0}&lt;/style&gt;
       summary: &quot;直接前往JR大津京，给12:55湖西线保留约20分钟缓冲。&quot;,
       action: &quot;请酒店前台预叫；不要用京阪慢慢换乘压缩缓冲。&quot;,
       photo: &quot;途中不拍摄。&quot;,
-      linkKeys: [&quot;portMap&quot;, &quot;taxiOfficial&quot;, &quot;taxiCall&quot;, &quot;otsukyoTrain&quot;],
+      linkKeys: [&quot;portMap&quot;, &quot;taxiOfficial&quot;, &quot;taxiFare&quot;, &quot;taxiCall&quot;, &quot;otsukyoTrain&quot;],
       endpoints: [&quot;port&quot;, &quot;otsukyo&quot;],
       coords: [[135.865734,35.012439],[135.865602,35.012275],[135.864567,35.012785],[135.863379,35.011508],[135.861239,35.012402],[135.859776,35.01369],[135.858217,35.013566],[135.857913,35.016133],[135.858206,35.019202],[135.858269,35.023006],[135.857319,35.023136],[135.857797,35.024125],[135.8573599,35.0245014]]
     },
@@ -2026,25 +2261,25 @@ html&gt;body{padding:0}&lt;/style&gt;
     {
       id: &quot;shrine-taxi&quot;, mode: &quot;taxi&quot;, time: &quot;13:25–15:05&quot;, from: &quot;近江高岛&quot;, to: &quot;白鬚神社往返&quot;,
       title: &quot;预约出租车往返&quot;, status: &quot;必须提前预约&quot;,
-      summary: &quot;普通出租车最稳；乘合出租省钱但要分别预约13:45去程和14:56回程。&quot;,
-      action: &quot;电话0120-524-447。9月4日14:00起停车场关闭，预约时确认接送点。&quot;,
+      summary: &quot;普通出租车最稳；乘合出租省钱但要分别预约13:45去程和14:56回程，并留意各自截止时间。&quot;,
+      action: &quot;电话0120-524-447。9月4日14:00起停车场关闭，预约时确认安全接送点和是否另收迎车费。&quot;,
       photo: &quot;不要步行国道161，更不要横穿公路。&quot;,
-      linkKeys: [&quot;taxiOfficial&quot;, &quot;taxiCall&quot;, &quot;takashimaTaxi&quot;, &quot;taxiPdf&quot;, &quot;festival&quot;, &quot;shrineMap&quot;],
+      linkKeys: [&quot;taxiOfficial&quot;, &quot;taxiFare&quot;, &quot;taxiCall&quot;, &quot;takashimaTaxi&quot;, &quot;takashimaFare&quot;, &quot;takashimaHowto&quot;, &quot;taxiPdf&quot;, &quot;festival&quot;, &quot;shrineMap&quot;],
       endpoints: [&quot;takashima&quot;, &quot;shrine&quot;],
       coords: [[136.010545,35.292736],[136.010334,35.293084],[136.011862,35.29375],[136.014073,35.29291],[136.015074,35.292181],[136.015965,35.291698],[136.016875,35.289244],[136.018174,35.286896],[136.018552,35.285141],[136.017732,35.279652],[136.017292,35.278545],[136.016588,35.277826],[136.013264,35.275789],[136.0113480,35.2744146]]
     },
     {
-      id: &quot;keihan-south&quot;, mode: &quot;keihan&quot;, time: &quot;15:57–16:19&quot;, from: &quot;京阪大津京&quot;, to: &quot;膳所本町&quot;,
+      id: &quot;keihan-south&quot;, mode: &quot;keihan&quot;, time: &quot;15:59–约16:19&quot;, from: &quot;京阪大津京&quot;, to: &quot;膳所本町&quot;,
       title: &quot;京阪石山坂本线南下&quot;, status: &quot;ICOCA另付&quot;,
       summary: &quot;返程后一路向南，不再折返北部。&quot;,
-      action: &quot;步行由JR大津京转京阪大津京，乘15:57石山寺方向列车。&quot;,
+      action: &quot;步行由JR大津京转京阪大津京，乘15:59石山寺方向列车；出发日以站内电子屏为准。&quot;,
       photo: &quot;利用车程休息并准备傍晚机位。&quot;,
-      linkKeys: [&quot;keihanOtsukyo&quot;, &quot;keihanTicket&quot;, &quot;icoca&quot;, &quot;otsukyoTransferMap&quot;],
+      linkKeys: [&quot;keihanOtsukyo&quot;, &quot;keihanZeze&quot;, &quot;keihanTicket&quot;, &quot;icoca&quot;, &quot;otsukyoTransferMap&quot;],
       endpoints: [&quot;keihanotsukyo&quot;, &quot;zezehm&quot;],
       coords: [[135.8555654,35.0231984],[135.8595642,35.0130609],[135.8644164,35.0111217],[135.8707344,35.0078038],[135.8753755,35.0049358],[135.8809387,34.9997495],[135.8858852,34.9975502],[135.8892595,34.9951234]]
     },
     {
-      id: &quot;zeze-walk&quot;, mode: &quot;local&quot;, time: &quot;16:19–18:43&quot;, from: &quot;膳所本町&quot;, to: &quot;膳所湖岸&quot;,
+      id: &quot;zeze-walk&quot;, mode: &quot;local&quot;, time: &quot;约16:19–18:43&quot;, from: &quot;膳所本町&quot;, to: &quot;膳所湖岸&quot;,
       title: &quot;湖岸步行与摄影&quot;, status: &quot;主光线窗口&quot;,
       summary: &quot;膳所城迹公园与近江大桥西诘二选一固定机位。&quot;,
       action: &quot;17:40前完成脚架和构图，18:43收机并步行回站。&quot;,
@@ -2054,19 +2289,19 @@ html&gt;body{padding:0}&lt;/style&gt;
       coords: [[135.8892595,34.9951234],[135.8923,34.9950],[135.8954117,34.9952266],[135.8941915,34.9978145]]
     },
     {
-      id: &quot;keihan-ishiyama&quot;, mode: &quot;keihan&quot;, time: &quot;18:58–19:06&quot;, from: &quot;膳所本町&quot;, to: &quot;京阪石山&quot;,
+      id: &quot;keihan-ishiyama&quot;, mode: &quot;keihan&quot;, time: &quot;18:59–约19:05&quot;, from: &quot;膳所本町&quot;, to: &quot;京阪石山&quot;,
       title: &quot;京阪前往石山&quot;, status: &quot;站内先签到&quot;,
       summary: &quot;抵达后在改札内完成立牌和数字拉力，再出站。&quot;,
-      action: &quot;乘18:58石山寺方向列车；京阪票价不含在JR Pass内。&quot;,
+      action: &quot;乘18:59石山寺方向列车；京阪票价不含在JR Pass内，出发日以站内电子屏为准。&quot;,
       photo: &quot;只做手持记录，不在改札通道架脚架。&quot;,
-      linkKeys: [&quot;keihanZeze&quot;, &quot;keihanTicket&quot;, &quot;icoca&quot;, &quot;rally&quot;],
+      linkKeys: [&quot;keihanZeze&quot;, &quot;keihanIshiyamaTime&quot;, &quot;keihanTicket&quot;, &quot;icoca&quot;, &quot;rally&quot;],
       endpoints: [&quot;zezehm&quot;, &quot;ishiyama&quot;],
       coords: [[135.8892595,34.9951234],[135.8915028,34.9913260],[135.8940498,34.9885373],[135.8955177,34.9850254],[135.8993301,34.9796523]]
     },
     {
-      id: &quot;heiwado-walk&quot;, mode: &quot;local&quot;, time: &quot;19:06–19:45&quot;, from: &quot;京阪石山&quot;, to: &quot;平和堂石山&quot;,
+      id: &quot;heiwado-walk&quot;, mode: &quot;local&quot;, time: &quot;约19:05–19:45&quot;, from: &quot;京阪石山&quot;, to: &quot;平和堂石山&quot;,
       title: &quot;石山官方巡礼&quot;, status: &quot;步行约5分钟&quot;,
-      summary: &quot;完成官方第2、4话地点与第四个数字拉力点。&quot;,
+      summary: &quot;完成官方第2、4话地点与本日最后一个计划签到点。&quot;,
       action: &quot;2层立牌、3层服务中心；兑换卡片以库存为准。&quot;,
       photo: &quot;夜间环境记录，避免影响普通顾客。&quot;,
       linkKeys: [&quot;laraMap&quot;, &quot;rally&quot;, &quot;heiwadoMap&quot;],
@@ -2090,20 +2325,224 @@ html&gt;body{padding:0}&lt;/style&gt;
     { id: &quot;step-haruka&quot;, segmentId: &quot;haruka&quot;, time: &quot;09:42–11:04&quot;, title: &quot;HARUKA 12号&quot;, summary: &quot;主方案用Pass；只有不买Pass时才单买HARUKA票。&quot;, linkKeys: [&quot;haruka&quot;, &quot;kansaiPass&quot;, &quot;jrReserve&quot;, &quot;jrSeat&quot;, &quot;harukaOneWay&quot;, &quot;harukaOneWayReserve&quot;] },
     { id: &quot;step-kyoto&quot;, nodeId: &quot;kyoto&quot;, time: &quot;11:04–11:15&quot;, title: &quot;京都站换乘&quot;, summary: &quot;30号站台转2号站台，11分钟。&quot;, linkKeys: [&quot;jrKyotoOtsu&quot;] },
     { id: &quot;step-otsu&quot;, nodeId: &quot;otsu&quot;, time: &quot;11:24–11:35&quot;, title: &quot;JR大津站数字拉力（非取景）&quot;, summary: &quot;北口改札外签到，乘11:35酒店班车。&quot;, linkKeys: [&quot;rally&quot;, &quot;hotelShuttle&quot;] },
-    { id: &quot;step-hotel&quot;, nodeId: &quot;hotel&quot;, time: &quot;11:40–11:50&quot;, title: &quot;酒店寄存行李&quot;, summary: &quot;只带摄影器材，请前台预叫12:15出租车。&quot;, linkKeys: [&quot;hotelShuttle&quot;, &quot;taxiOfficial&quot;, &quot;taxiCall&quot;] },
-    { id: &quot;step-port&quot;, nodeId: &quot;port&quot;, time: &quot;11:50–12:15&quot;, title: &quot;大津港官方巡礼&quot;, summary: &quot;第2话地点、立牌、GPS签到；12:15乘预叫出租车。&quot;, linkKeys: [&quot;laraMap&quot;, &quot;rally&quot;, &quot;portMap&quot;, &quot;taxiOfficial&quot;, &quot;taxiCall&quot;] },
-    { id: &quot;step-taxi-otsu&quot;, segmentId: &quot;port-taxi&quot;, time: &quot;12:15–12:35&quot;, title: &quot;出租车去JR大津京&quot;, summary: &quot;酒店前台预叫第一交通普通出租车，保留20分钟进站缓冲。&quot;, linkKeys: [&quot;taxiOfficial&quot;, &quot;taxiCall&quot;, &quot;otsukyoTrain&quot;] },
+    { id: &quot;step-hotel&quot;, nodeId: &quot;hotel&quot;, time: &quot;11:40–11:50&quot;, title: &quot;酒店寄存行李&quot;, summary: &quot;只带摄影器材，请前台预叫12:15出租车。&quot;, linkKeys: [&quot;hotelShuttle&quot;, &quot;taxiOfficial&quot;, &quot;taxiFare&quot;, &quot;taxiCall&quot;] },
+    { id: &quot;step-port&quot;, nodeId: &quot;port&quot;, time: &quot;11:50–12:15&quot;, title: &quot;大津港官方巡礼&quot;, summary: &quot;第2话地点、立牌、GPS签到；12:15乘预叫出租车。&quot;, linkKeys: [&quot;laraMap&quot;, &quot;rally&quot;, &quot;portMap&quot;, &quot;taxiOfficial&quot;, &quot;taxiFare&quot;, &quot;taxiCall&quot;] },
+    { id: &quot;step-taxi-otsu&quot;, segmentId: &quot;port-taxi&quot;, time: &quot;12:15–12:35&quot;, title: &quot;出租车去JR大津京&quot;, summary: &quot;酒店前台预叫第一交通普通出租车，保留20分钟进站缓冲。&quot;, linkKeys: [&quot;taxiOfficial&quot;, &quot;taxiFare&quot;, &quot;taxiCall&quot;, &quot;otsukyoTrain&quot;] },
     { id: &quot;step-kosei-out&quot;, segmentId: &quot;kosei&quot;, time: &quot;12:55–13:23&quot;, title: &quot;湖西线去近江高岛&quot;, summary: &quot;新快速敦贺行，硬卡点。&quot;, linkKeys: [&quot;otsukyoTrain&quot;] },
-    { id: &quot;step-takashima&quot;, nodeId: &quot;takashima&quot;, time: &quot;13:23–13:35&quot;, title: &quot;预约出租车接站&quot;, summary: &quot;普通出租车推荐13:25接；电话说明“普通タクシーの事前配車予約”。&quot;, linkKeys: [&quot;taxiOfficial&quot;, &quot;taxiCall&quot;, &quot;takashimaTaxi&quot;, &quot;taxiPdf&quot;, &quot;takashimaMap&quot;] },
-    { id: &quot;step-shrine&quot;, nodeId: &quot;shrine&quot;, time: &quot;13:35–14:50&quot;, title: &quot;白鬚神社摄影&quot;, summary: &quot;先藍湖白鬚台，再参拜；14:50从约定点乘预约车离开。&quot;, linkKeys: [&quot;shrineAccess&quot;, &quot;shrineMap&quot;, &quot;festival&quot;, &quot;taxiOfficial&quot;, &quot;taxiCall&quot;, &quot;takashimaTaxi&quot;, &quot;taxiPdf&quot;] },
-    { id: &quot;step-return-taxi&quot;, segmentId: &quot;shrine-taxi&quot;, time: &quot;14:50–15:05&quot;, title: &quot;预约出租车回站&quot;, summary: &quot;15:05前到近江高岛，给15:21列车留足缓冲。&quot;, linkKeys: [&quot;taxiOfficial&quot;, &quot;taxiCall&quot;, &quot;takashimaTaxi&quot;, &quot;taxiPdf&quot;] },
+    { id: &quot;step-takashima&quot;, nodeId: &quot;takashima&quot;, time: &quot;13:23–13:35&quot;, title: &quot;预约出租车接站&quot;, summary: &quot;普通出租车推荐13:25接；电话说明“普通タクシーの事前配車予約”。&quot;, linkKeys: [&quot;taxiOfficial&quot;, &quot;taxiFare&quot;, &quot;taxiCall&quot;, &quot;takashimaTaxi&quot;, &quot;takashimaFare&quot;, &quot;takashimaHowto&quot;, &quot;taxiPdf&quot;, &quot;takashimaMap&quot;] },
+    { id: &quot;step-shrine&quot;, nodeId: &quot;shrine&quot;, time: &quot;13:35–14:50&quot;, title: &quot;白鬚神社摄影&quot;, summary: &quot;先藍湖白鬚台，再参拜；14:50从约定点乘预约车离开。&quot;, linkKeys: [&quot;shrineAccess&quot;, &quot;shrineMap&quot;, &quot;festival&quot;, &quot;taxiOfficial&quot;, &quot;taxiFare&quot;, &quot;taxiCall&quot;, &quot;takashimaTaxi&quot;, &quot;takashimaFare&quot;, &quot;takashimaHowto&quot;, &quot;taxiPdf&quot;] },
+    { id: &quot;step-return-taxi&quot;, segmentId: &quot;shrine-taxi&quot;, time: &quot;14:50–15:05&quot;, title: &quot;预约出租车回站&quot;, summary: &quot;15:05前到近江高岛，给15:21列车留足缓冲。&quot;, linkKeys: [&quot;taxiOfficial&quot;, &quot;taxiFare&quot;, &quot;taxiCall&quot;, &quot;takashimaTaxi&quot;, &quot;takashimaFare&quot;, &quot;takashimaHowto&quot;, &quot;taxiPdf&quot;] },
     { id: &quot;step-return-jr&quot;, segmentId: &quot;kosei&quot;, time: &quot;15:21–15:48&quot;, title: &quot;湖西线返回大津京&quot;, summary: &quot;新快速姬路行，硬卡点。&quot;, linkKeys: [&quot;returnTrain&quot;] },
-    { id: &quot;step-keihan&quot;, segmentId: &quot;keihan-south&quot;, time: &quot;15:57–16:19&quot;, title: &quot;京阪一路向南&quot;, summary: &quot;JR大津京步行换京阪，乘15:57前往膳所本町。&quot;, linkKeys: [&quot;keihanOtsukyo&quot;, &quot;keihanTicket&quot;, &quot;icoca&quot;, &quot;otsukyoTransferMap&quot;] },
-    { id: &quot;step-zeze&quot;, nodeId: &quot;zeze&quot;, time: &quot;16:27–18:43&quot;, title: &quot;膳所湖岸暖光与蓝调&quot;, summary: &quot;17:47暖光、18:20日落，18:43收机赶18:58京阪。&quot;, linkKeys: [&quot;zezeStationMap&quot;, &quot;zezeMap&quot;, &quot;nao&quot;, &quot;keihanZeze&quot;, &quot;keihanTicket&quot;, &quot;icoca&quot;] },
-    { id: &quot;step-ishiyama&quot;, nodeId: &quot;ishiyama&quot;, time: &quot;18:58–19:15&quot;, title: &quot;京阪石山站数字拉力（非取景）&quot;, summary: &quot;约19:06到站，改札内先拍立牌并签到。&quot;, linkKeys: [&quot;keihanZeze&quot;, &quot;keihanTicket&quot;, &quot;icoca&quot;, &quot;rally&quot;] },
+    { id: &quot;step-keihan&quot;, segmentId: &quot;keihan-south&quot;, time: &quot;15:59–约16:19&quot;, title: &quot;京阪一路向南&quot;, summary: &quot;JR大津京步行换京阪，乘15:59前往膳所本町（约16:19到站，候选班次）。&quot;, linkKeys: [&quot;keihanOtsukyo&quot;, &quot;keihanZeze&quot;, &quot;keihanTicket&quot;, &quot;icoca&quot;, &quot;otsukyoTransferMap&quot;] },
+    { id: &quot;step-zeze&quot;, nodeId: &quot;zeze&quot;, time: &quot;16:29–18:43&quot;, title: &quot;膳所湖岸暖光与蓝调&quot;, summary: &quot;17:47暖光、18:20日落，18:43收机赶18:59京阪。&quot;, linkKeys: [&quot;zezeStationMap&quot;, &quot;zezeMap&quot;, &quot;nao&quot;, &quot;keihanZeze&quot;, &quot;keihanTicket&quot;, &quot;icoca&quot;] },
+    { id: &quot;step-ishiyama&quot;, nodeId: &quot;ishiyama&quot;, time: &quot;18:59–19:15&quot;, title: &quot;京阪石山站数字拉力（非取景）&quot;, summary: &quot;约19:05到站（安排至19:07整理），改札内先拍立牌并签到。&quot;, linkKeys: [&quot;keihanZeze&quot;, &quot;keihanIshiyamaTime&quot;, &quot;keihanTicket&quot;, &quot;icoca&quot;, &quot;rally&quot;] },
     { id: &quot;step-heiwado&quot;, nodeId: &quot;heiwado&quot;, time: &quot;19:15–19:45&quot;, title: &quot;平和堂石山巡礼&quot;, summary: &quot;官方第2、4话地点，3层尝试兑换卡片。&quot;, linkKeys: [&quot;laraMap&quot;, &quot;rally&quot;, &quot;heiwadoMap&quot;] },
     { id: &quot;step-home&quot;, segmentId: &quot;return-hotel&quot;, time: &quot;19:51–20:20&quot;, title: &quot;JR返大津、酒店班车&quot;, summary: &quot;19:51石山发、19:56大津到，接20:15酒店班车。&quot;, linkKeys: [&quot;jrIshiyamaReturn&quot;, &quot;hotelShuttle&quot;] }
   ];
+
+  const glossaryTerms = [
+    {
+      title: &quot;JR、Pass与ICOCA&quot;,
+      text: &quot;JR是日本铁路系统。本行程用Kansai Area Pass乘JR西日本列车：1日成人参考价¥2,800，覆盖指定区域内HARUKA普通车指定席、JR新快速/快速/普通列车；不覆盖京阪电车和出租车。ICOCA是充值式交通IC卡，京阪进出站各感应一次，余额自动扣款。&quot;,
+      linkKeys: [&quot;kansaiPass&quot;, &quot;jrReceive&quot;, &quot;icoca&quot;]
+    },
+    {
+      title: &quot;HARUKA、特急与新干线&quot;,
+      text: &quot;HARUKA是关西机场往京都的JR机场特急，不是新干线。特急表示停站少、速度较快，使用指定席要在上车前取得座位票；新干线是另一套高速铁路，本日路线完全不用，也不要前往新大阪换乘。&quot;,
+      linkKeys: [&quot;haruka&quot;, &quot;jrSeat&quot;, &quot;harukaOneWay&quot;]
+    },
+    {
+      title: &quot;新快速与湖西线&quot;,
+      text: &quot;新快速（Shin-kaisoku）是JR普通铁路中停站较少的快速等级，不等于新干线，一般普通车厢先到先坐、无需另付特急费。湖西线沿琵琶湖西岸行驶，站牌上的“敦贺行”“姬路行”表示列车终点方向。&quot;,
+      linkKeys: [&quot;jrKyotoOtsu&quot;, &quot;otsukyoTrain&quot;, &quot;returnTrain&quot;]
+    },
+    {
+      title: &quot;京阪电车&quot;,
+      text: &quot;京阪是与JR不同的私营铁路。石山坂本线像城市有轨电车一样在大津市内南北运行；JR Pass不适用，使用ICOCA或在自动售票机买当日车票，票价以站内票价表为准。&quot;,
+      linkKeys: [&quot;keihan&quot;, &quot;keihanTicket&quot;, &quot;icoca&quot;]
+    },
+    {
+      title: &quot;数字拉力&quot;,
+      text: &quot;这里的“拉力”不是跑步或赛车，而是期间限定的电子集章活动：打开官方活动页，在指定点用二维码/GPS签到。活动本身通常免费，交通和手机流量另付；每点预留5–8分钟，并截屏保存成功画面。第一期为2026-08-06至10-31；官方页面另称可听语音内容的点位为3处，不要把签到/立牌点数量误当成音频点数量。第一期卡片规则显示9月20日前完成3处签到可申请，活动页面、库存和规则可能临时调整。&quot;,
+      linkKeys: [&quot;rally&quot;]
+    },
+    {
+      title: &quot;动画舞台与拉力点的区别&quot;,
+      text: &quot;大津港（第2话）和平和堂石山（第2、4话）是官方动画舞台。JR大津站、京阪石山站只提供数字拉力或立牌，不是官方取景地；白鬚神社也不是当前官方《再见菈菈》舞台。&quot;,
+      linkKeys: [&quot;laraMap&quot;, &quot;rally&quot;]
+    },
+    {
+      title: &quot;JR站名与换乘&quot;,
+      text: &quot;JR大津（Otsu／おおつ）在市中心，上午做签到；JR大津京（Otsukyo／おおつきょう）在北侧，去近江高岛的湖西线从这里上车，返程后还要步行到相邻的京阪大津京。JR石山（Ishiyama／いしやま）用于晚间返大津；京阪石山（Keihan-Ishiyama／けいはんいしやま）是另一家私铁车站，先在此完成站内拉力再出闸。四个站名不能互换，JR与京阪闸机也不通用。&quot;,
+      linkKeys: [&quot;jrStationInfo&quot;, &quot;jrOtsuMap&quot;, &quot;jrOtsukyoMap&quot;, &quot;jrIshiyamaMap&quot;, &quot;keihanIshiyamaMap&quot;, &quot;otsukyoTransferMap&quot;]
+    },
+    {
+      title: &quot;普通出租车与乘合出租&quot;,
+      text: &quot;普通出租车是独享车辆、按计价器收费，可提前配车。第一交通滋贺公开费率为起步¥500/900m，之后每218m加¥100；低速或堵车每1分20秒加¥100；迎车费¥200，最终以车内计价器和最新公告为准。大津港→JR大津京约¥1,000–2,000/车/单程；近江高岛站↔白鬚神社约¥1,800–2,400/车/单程，迎车、预约或等待可能另计。乘合出租是共享预约车，成人¥300/次、儿童¥150/次，按固定班次和停靠点运行；13:45去程须在13:15前预约，14:56回程须在14:13前预约（以官方预约系统为准），不能当作随叫随到的普通出租车。&quot;,
+      linkKeys: [&quot;taxiOfficial&quot;, &quot;taxiFare&quot;, &quot;taxiCall&quot;, &quot;takashimaTaxi&quot;, &quot;takashimaFare&quot;, &quot;takashimaHowto&quot;, &quot;taxiPdf&quot;]
+    },
+    {
+      title: &quot;不会日语时预约出租车（四步）&quot;,
+      items: [
+        &quot;准备信息：9月4日、上车时间、具体接客点、目的地、人数、行李和三脚架；普通出租车建议至少提前一天，回程另约。&quot;,
+        &quot;最省沟通的方法是请酒店前台代打0120-524-447；本人拨号时先说“普通タクシーを予約したいです”（想预约普通出租车）。海外号码若拨不通0120，直接请前台或日本SIM代打。&quot;,
+        &quot;逐项复述确认：配车时间、接客点、公司/司机电话、预计车费、迎车/等待费，以及迟到或取消的处理；乘合出租还要报路线、班次和上下车站。&quot;,
+        &quot;当天提前5–10分钟到点，核对车身公司名或车牌后再上车；把日语目的地句子给司机看，迟到立刻拨回预约电话。&quot;
+      ],
+      text: &quot;日语句子中的“駅（eki）”是车站，“まで（made）”是到，“お願いします（onegaishimasu）”是请。普通车和乘合车的费用、班次与预约规则不同，确认时不要混称。&quot;,
+      linkKeys: [&quot;taxiCall&quot;, &quot;taxiOfficial&quot;, &quot;taxiFare&quot;, &quot;takashimaTaxi&quot;, &quot;takashimaHowto&quot;]
+    },
+    {
+      title: &quot;价格标注&quot;,
+      text: &quot;铁路票价、出租车估算与营业时间按2026-08-26可查信息整理。标为“参考”的金额不是承诺价；出租车按计价器、京阪按进出站区间、兑换品按库存，15:59与18:59京阪班次属于当前平日候选，出发前24小时再次核对官方页面和站内电子屏。&quot;,
+      linkKeys: [&quot;kansaiPass&quot;, &quot;keihanTicket&quot;, &quot;keihanOtsukyo&quot;, &quot;keihanZeze&quot;, &quot;keihanIshiyamaTime&quot;, &quot;taxiOfficial&quot;, &quot;taxiFare&quot;]
+    }
+  ];
+
+  const timelineGuideByStep = {
+    &quot;step-kix&quot;: [
+      { kind: &quot;route&quot;, label: &quot;路线&quot;, text: &quot;HX616抵达KIX第1航站楼后，依次走入境审查、取托运行李、海关；出到到达层后按“JR / Railways”标识步行到关西机场站绿色售票机或人工窗口。&quot; },
+      { kind: &quot;action&quot;, label: &quot;怎么做&quot;, items: [&quot;提前完成Visit Japan Web；入境后先处理车票，不在机场拍摄。&quot;, &quot;出示护照领取已购买的Kansai Area Pass，并为09:42 HARUKA取得普通车指定席。&quot;, &quot;给ICOCA充值，买好早餐、午餐、水和雨具，再进JR闸机。&quot;], wide: true },
+      { kind: &quot;cost&quot;, label: &quot;费用&quot;, text: &quot;Kansai Area Pass 1日成人参考¥2,800；它已覆盖本日JR主线和HARUKA普通车指定席。若不买Pass才单买HARUKA单程票，两种方案二选一，避免重复付款。&quot; },
+      { kind: &quot;background&quot;, label: &quot;名词背景&quot;, text: &quot;KIX是关西国际机场代码；HARUKA是JR机场特急，不是新干线。本行程没有任何一段需要新干线车票。&quot; },
+      { kind: &quot;risk&quot;, label: &quot;注意&quot;, text: &quot;09:12班只在09:00前已经到JR站时考虑；不要带着行李冲刺。护照要和Pass放在一起，遗失的Pass通常不能补发。&quot; },
+      { kind: &quot;backup&quot;, label: &quot;错过时怎么办&quot;, text: &quot;错过09:42就乘后续HARUKA，并优先保住12:55湖西线。时间不足时先删午间大津港或膳所，不牺牲白鬚神社接驳。&quot; }
+    ],
+    &quot;step-haruka&quot;: [
+      { kind: &quot;route&quot;, label: &quot;路线&quot;, text: &quot;09:42乘HARUKA 12号，由关西机场直达京都，约82分钟；11:04到京都后仍在JR付费区内换乘。&quot; },
+      { kind: &quot;action&quot;, label: &quot;怎么做&quot;, text: &quot;按座位票找普通车指定席和座号，车上休息、整理随身物品；到京都前提前背好相机包，准备快速换站台。&quot; },
+      { kind: &quot;cost&quot;, label: &quot;费用&quot;, text: &quot;已用Kansai Area Pass时无需再买HARUKA票。单买HARUKA访日旅客单程票到京都参考¥2,200，价格和资格以官方购票页为准。&quot; },
+      { kind: &quot;background&quot;, label: &quot;名词背景&quot;, text: &quot;“特急”是普通铁路的快车等级；“指定席”是固定座位。它们都不是新干线。Pass的HARUKA指定席应在上车前预约。&quot; },
+      { kind: &quot;risk&quot;, label: &quot;注意&quot;, text: &quot;列车晚点时不要在京都站奔跑或拖着行李逆行；11分钟换乘本来就紧。&quot; },
+      { kind: &quot;backup&quot;, label: &quot;备用&quot;, text: &quot;HARUKA晚到后改乘下一班JR琵琶湖线新快速/快速/普通列车到大津；只要不出JR闸机，换车最简单。&quot; }
+    ],
+    &quot;step-kyoto&quot;: [
+      { kind: &quot;route&quot;, label: &quot;路线 / 换乘&quot;, text: &quot;HARUKA通常到京都站30号站台；跟随JR在来线标识前往2号站台，乘11:15新快速“野洲行”，约9分钟到JR大津站。全程不出闸。&quot; },
+      { kind: &quot;action&quot;, label: &quot;怎么做&quot;, items: [&quot;先看电子屏确认“新快速・野洲行”和2号站台。&quot;, &quot;有行李时优先电扶梯/电梯，不为抢座横穿人流。&quot;, &quot;到大津前移到车门附近，但不要堵门。&quot;] },
+      { kind: &quot;cost&quot;, label: &quot;费用&quot;, text: &quot;京都到大津已由Kansai Area Pass覆盖；新快速普通车厢没有额外特急费，也不用预约座位。&quot; },
+      { kind: &quot;background&quot;, label: &quot;名词背景&quot;, text: &quot;“新快速”只是JR普通线中停站较少的快车，不是Shinkansen新干线；“野洲行”表示列车最终开往野洲。&quot; },
+      { kind: &quot;risk&quot;, label: &quot;注意&quot;, text: &quot;11分钟包括下车、走站台和候车，别出错闸口。若电子屏临时改站台，以现场广播和JR工作人员指示为准。&quot; },
+      { kind: &quot;backup&quot;, label: &quot;备用&quot;, text: &quot;错过11:15可乘后续开往米原/野洲方向、停靠大津的JR列车；到站后根据实际时间选择下一班酒店班车。&quot; }
+    ],
+    &quot;step-otsu&quot;: [
+      { kind: &quot;route&quot;, label: &quot;路线&quot;, text: &quot;在JR大津站下车，先到北口改札外、自动售票机附近找活动立牌/签到点，再前往酒店免费班车乘车处。&quot; },
+      { kind: &quot;action&quot;, label: &quot;数字拉力怎么做&quot;, items: [&quot;打开《再见菈菈》官方数字拉力页面并允许定位。&quot;, &quot;按现场提示扫码或使用GPS签到，看到成功画面后截屏。&quot;, &quot;总用时控制在8分钟，11:35前到班车处。&quot;] },
+      { kind: &quot;cost&quot;, label: &quot;费用&quot;, text: &quot;数字拉力活动本身免费，手机流量自理；琵琶湖酒店班车对酒店客人免费、通常无需预约。&quot; },
+      { kind: &quot;background&quot;, label: &quot;背景&quot;, text: &quot;数字拉力相当于手机电子集章，不是竞速活动。JR大津站只是拉力点和立牌点，不是官方动画取景地。&quot; },
+      { kind: &quot;risk&quot;, label: &quot;注意&quot;, text: &quot;不要在改札通道架三脚架。班车可能满员，具体乘车处和时刻以酒店官网/站前标识为准。&quot; },
+      { kind: &quot;backup&quot;, label: &quot;备用&quot;, text: &quot;错过11:35就改乘下一班班车、步行或叫出租车到酒店；若已延误，先寄存行李，数字拉力可晚间回大津站再补。&quot; }
+    ],
+    &quot;step-hotel&quot;: [
+      { kind: &quot;route&quot;, label: &quot;路线&quot;, text: &quot;班车到琵琶湖酒店后直接去前台寄存大件行李，只带相机、16–35mm、70–200mm、三脚架、水和雨具，再步行前往大津港。&quot; },
+      { kind: &quot;action&quot;, label: &quot;前台要办的事&quot;, items: [&quot;领取行李寄存牌并确认晚间取行李/入住流程。&quot;, &quot;请前台预叫12:15在大津港上车、前往JR大津京站的普通出租车。&quot;, &quot;让前台把司机接客点写清楚，并确认是否有迎车费。&quot;] },
+      { kind: &quot;cost&quot;, label: &quot;费用&quot;, text: &quot;住客行李寄存通常不另收费，以酒店确认结果为准；酒店班车免费。市区普通出租车参考约¥1,000–2,000/车/单程，按计价器，迎车或预约费可能另计。&quot; },
+      { kind: &quot;background&quot;, label: &quot;服务背景&quot;, text: &quot;“预叫/配车”是指定时间地点让出租车来接，不等于包车等候。不会日语时让酒店前台代叫最稳。&quot; },
+      { kind: &quot;language&quot;, label: &quot;给前台看&quot;, phrase: &quot;12時15分に、大津港からJR大津京駅まで、普通タクシーを1台お願いします。三脚があります。&quot;, romaji: &quot;Juuni-ji juugo-fun ni, Otsu-kou kara JR Otsukyo-eki made, futsuu takushii o ichidai onegaishimasu. Sankyaku ga arimasu.&quot;, meaning: &quot;请安排12:15从大津港到JR大津京站的普通出租车1台；我带有三脚架。&quot;, wide: true },
+      { kind: &quot;risk&quot;, label: &quot;注意&quot;, text: &quot;一定区分JR大津站与JR大津京站；目的地是后者。拿到接车公司、时间和集合点后再离开前台。&quot; }
+    ],
+    &quot;step-port&quot;: [
+      { kind: &quot;route&quot;, label: &quot;路线&quot;, text: &quot;从酒店湖侧步行到大津港/旅客中心，先找1层候船室附近的立牌和签到点，再到港湾外侧拍摄；12:10开始收机，12:15到约定接车点。&quot; },
+      { kind: &quot;action&quot;, label: &quot;巡礼怎么做&quot;, items: [&quot;先核对官方舞台图，拍一张实景与动画画面对应的记录照。&quot;, &quot;完成GPS/二维码签到并截屏。&quot;, &quot;预留最后5分钟找出租车，不把器材摊在候船通道。&quot;] },
+      { kind: &quot;cost&quot;, label: &quot;费用&quot;, text: &quot;港区外观、立牌和数字拉力不需要游船票；活动本身免费。若临时登船则是另一项收费服务，本时间轴不安排。&quot; },
+      { kind: &quot;background&quot;, label: &quot;背景&quot;, text: &quot;大津港是《再见菈菈》第2话官方动画舞台，同时也是第一期数字拉力点；“舞台”表示官方确认过的现实地点。&quot; },
+      { kind: &quot;photo&quot;, label: &quot;摄影&quot;, text: &quot;16–35mm拍候船楼、港湾和琵琶湖的空间关系；午间光硬，以记录为主，可用偏振镜压反光但不要追求长曝光。&quot; },
+      { kind: &quot;risk&quot;, label: &quot;注意&quot;, text: &quot;候船区有乘客和工作人员，避开通道与清晰人脸；12:15出租车是后续12:55湖西线的关键接驳。&quot; }
+    ],
+    &quot;step-taxi-otsu&quot;: [
+      { kind: &quot;route&quot;, label: &quot;路线&quot;, text: &quot;12:15在大津港约定点上车，直接前往JR大津京站，目标12:35前到；不要先回JR大津站，也不要改走京阪慢速换乘。&quot; },
+      { kind: &quot;action&quot;, label: &quot;上车前确认&quot;, items: [&quot;向司机出示“JR大津京駅”，并再次说明不是“JR大津駅”。&quot;, &quot;问清是否可刷卡；默认准备日元现金。&quot;, &quot;下车前取回三脚架和全部小件，向车站入口移动。&quot;] },
+      { kind: &quot;cost&quot;, label: &quot;费用&quot;, text: &quot;大津港→JR大津京普通出租车参考约¥1,000–2,000/车/单程；第一交通滋贺公开费率为起步¥500/900m，之后每218m加¥100，低速每1分20秒加¥100，迎车费¥200；以计价器和当日公告为准。&quot; },
+      { kind: &quot;background&quot;, label: &quot;服务背景&quot;, text: &quot;普通出租车是独享车辆、按里程/时间计费；这段不是高岛市的乘合出租。酒店代叫可以减少日语沟通和找车时间。&quot; },
+      { kind: &quot;language&quot;, label: &quot;给司机看&quot;, phrase: &quot;JR大津京駅までお願いします。12時55分の湖西線に乗ります。&quot;, romaji: &quot;JR Otsukyo-eki made onegaishimasu. Juuni-ji gojuugo-fun no Kosei-sen ni norimasu.&quot;, meaning: &quot;请去JR大津京站；我要赶12:55的湖西线。&quot;, wide: true },
+      { kind: &quot;backup&quot;, label: &quot;备用&quot;, text: &quot;若12:35仍未到站，车上就确认JR实时运行；到站后直接进闸。确定赶不上12:55时，立刻按延误规则联系神社往返车并压缩拍摄。&quot; }
+    ],
+    &quot;step-kosei-out&quot;: [
+      { kind: &quot;route&quot;, label: &quot;路线&quot;, text: &quot;JR大津京站乘12:55新快速“敦贺行”，走JR湖西线，13:23到近江高岛；看清列车是否停靠近江高岛再上车。&quot; },
+      { kind: &quot;action&quot;, label: &quot;怎么做&quot;, text: &quot;12:40前进入正确站台；普通车厢先到先坐。到站前背好器材，13:23下车后直接到事先确认的出租车接站点。&quot; },
+      { kind: &quot;cost&quot;, label: &quot;费用&quot;, text: &quot;JR湖西线这段由Kansai Area Pass覆盖；普通新快速无需另付特急费或指定席费。&quot; },
+      { kind: &quot;background&quot;, label: &quot;名词背景&quot;, text: &quot;湖西线沿琵琶湖西岸运行；“敦贺行”是去程方向，“新快速”不是新干线。&quot; },
+      { kind: &quot;risk&quot;, label: &quot;注意&quot;, text: &quot;班次是硬卡点；坐反方向或误乘不停近江高岛的列车会破坏预约出租车时间。车窗只能观察天气，不替代正式拍摄。&quot; },
+      { kind: &quot;backup&quot;, label: &quot;备用&quot;, text: &quot;错过12:55按延误表改乘13:55、14:23到；普通出租车改约14:30接站，并把白鬚神社拍摄压缩到约30分钟。&quot; }
+    ],
+    &quot;step-takashima&quot;: [
+      { kind: &quot;route&quot;, label: &quot;接站流程&quot;, text: &quot;13:23到近江高岛站后不找寄存柜，直接到预约时约定的站前接客点；普通出租车建议13:25接，约10–15分钟到白鬚神社。&quot; },
+      { kind: &quot;action&quot;, label: &quot;至少提前一天预约&quot;, items: [&quot;首选让琵琶湖酒店前台代打0120-524-447；也可本人拨第一交通滋贺。&quot;, &quot;报日期、13:25、近江高岛站、白鬚神社/藍湖白鬚台、人数和三脚架。&quot;, &quot;同时预约14:50回程，确认两次接客点、迎车费、预计车费和预约记录。&quot;], wide: true },
+      { kind: &quot;cost&quot;, label: &quot;费用&quot;, text: &quot;近江高岛站↔白鬚神社普通出租车参考约¥1,800–2,400/车/单程，往返准备约¥3,600–4,800，另预留迎车/等待费；按计价器、交通和接送点变化。高岛市乘合出租成人¥300/次、儿童¥150/次，13:45去程须在13:15前预约，14:56回程须在14:13前预约。&quot; },
+      { kind: &quot;background&quot;, label: &quot;普通车 / 乘合车&quot;, text: &quot;普通出租车可指定时间地点、车辆独享；乘合出租是固定班次和停靠点的共享车，成人¥300/次、儿童¥150/次。官方说明的预约截止会按班次计算：本计划13:45去程为13:15前、14:56回程为14:13前，最终以预约系统为准；晚到通常不会像包车一样等待。&quot; },
+      { kind: &quot;language&quot;, label: &quot;电话预约原句&quot;, phrase: &quot;もしもし。9月4日13時25分に、近江高島駅から白鬚神社の湖側の安全な乗車場所まで、普通タクシーを1台予約したいです。大人1名、三脚1本です。帰りは14時50分に同じ乗車場所から近江高島駅までお願いします。待ち合わせ場所と料金の目安を教えてください。&quot;, romaji: &quot;Moshi moshi. Kugatsu yokka juusan-ji nijuu-go-fun ni, Omi-Takashima-eki kara Shirahige Jinja no mizube no anzen na jousha basho made, futsuu takushii o ichidai yoyaku shitai desu. Otona ichimei, sankyaku ippon desu. Kaeri wa juuyo-ji gojuppun ni onaji jousha basho kara Omi-Takashima-eki made onegaishimasu. Machiawase basho to ryoukin no meyasu o oshiete kudasai.&quot;, meaning: &quot;您好，想预约9月4日13:25从近江高岛站到白鬚神社湖侧安全接送点的普通出租车1台；1名成人、1支三脚架；14:50从同一接送点返回车站。请告知集合点和预计费用。&quot;, wide: true },
+      { kind: &quot;language&quot;, label: &quot;乘合出租短句&quot;, phrase: &quot;9月4日13時45分の予約乗合タクシーを予約したいです。乗車は近江高島駅、降車は白鬚神社です。大人1名です。帰りは14時56分の便です。&quot;, romaji: &quot;Kugatsu yokka juusan-ji yonjuugo-fun no yoyaku noriai takushii o yoyaku shitai desu. Jousha wa Omi-Takashima-eki, kousha wa Shirahige Jinja desu. Otona ichimei desu. Kaeri wa juuyo-ji gojuuroppun no bin desu.&quot;, meaning: &quot;想预约9月4日13:45的预约乘合出租；上车近江高岛站、下车白鬚神社，1名成人；回程是14:56班次。&quot;, wide: true },
+      { kind: &quot;risk&quot;, label: &quot;注意&quot;, text: &quot;近江高岛站没有寄存柜；不要带未寄存的大行李。预约后把公司、电话、接送时间和地点截屏保存，迟到要尽快电话说明。&quot; },
+      { kind: &quot;backup&quot;, label: &quot;省钱备用&quot;, text: &quot;按现有时刻可查13:45去程、14:56回程乘合出租；去程最晚13:15、回程最晚14:13提交预约，并按固定站点上车。它会明显压缩神社拍摄时间，使用前核对当日PDF和预约系统。&quot; }
+    ],
+    &quot;step-shrine&quot;: [
+      { kind: &quot;route&quot;, label: &quot;现场顺序&quot;, text: &quot;让车停在预约确认的安全接送点；先到神社一侧的藍湖白鬚台拍湖中鸟居，再回神社境内参拜和拍建筑，14:45前收机，14:50到原接客点。&quot; },
+      { kind: &quot;action&quot;, label: &quot;怎么做&quot;, items: [&quot;到场先确认回程司机/集合点和手机信号。&quot;, &quot;先拍最重要的鸟居正面与湖面，再补神社环境照。&quot;, &quot;14:40开始拆脚架，14:45完成清点，给回程车留5分钟。&quot;] },
+      { kind: &quot;cost&quot;, label: &quot;费用&quot;, text: &quot;神社境内和观景台通常无需门票，参拜奉纳自愿；普通出租车往返预算约¥3,600–4,800/车（单程约¥1,800–2,400），按计价器，迎车/等待费可能另计。任何临时收费或交通管制以现场公告为准。&quot; },
+      { kind: &quot;background&quot;, label: &quot;背景&quot;, text: &quot;白鬚神社以琵琶湖中的大鸟居闻名，是本日风光摄影重点，但不是当前官方《再见菈菈》动画舞台。&quot; },
+      { kind: &quot;photo&quot;, label: &quot;摄影&quot;, text: &quot;70–200mm优先，ISO 100、f/8、1/250–1/500s冻结清晰水纹与倒影；水面需要柔化时再用ND做1–8秒长曝。CPL只旋到反光和蓝色自然，不要压到最强。&quot; },
+      { kind: &quot;risk&quot;, label: &quot;安全 / 管制&quot;, text: &quot;绝不横穿国道161，也不要站上车道拍摄。9月4日14:00起因翌日大祭关闭停车场，出租车接送点可能变化，必须在预约时确认。雷暴时不在湖岸架金属脚架。&quot; },
+      { kind: &quot;backup&quot;, label: &quot;天气备用&quot;, text: &quot;阴天改拍极简鸟居、压缩远山和长焦细节；大风时缩短脚架中轴并提高快门。若回程车提前到，立即以15:21列车为优先停止拍摄。&quot; }
+    ],
+    &quot;step-return-taxi&quot;: [
+      { kind: &quot;route&quot;, label: &quot;路线&quot;, text: &quot;14:50从事先确认的神社接客点上车，直接回近江高岛站；目标15:05前抵达，为15:21新快速留约16分钟进站缓冲。&quot; },
+      { kind: &quot;action&quot;, label: &quot;怎么做&quot;, text: &quot;14:45前站到接客点，看到车辆先核对公司/姓名；上车再次说近江高岛站和15:21列车。到站后立即进JR闸机。&quot; },
+      { kind: &quot;cost&quot;, label: &quot;费用&quot;, text: &quot;普通出租车参考约¥1,800–2,400/车/单程，按计价器；如果司机原地等候，等待费可能持续计入。预约时应明确是“回程另配车”还是“现场等候”。乘合出租为成人¥300/次、儿童¥150/次，但班次固定且须提前预约。&quot; },
+      { kind: &quot;language&quot;, label: &quot;给司机看&quot;, phrase: &quot;近江高島駅までお願いします。15時21分の新快速に乗ります。&quot;, romaji: &quot;Omi-Takashima-eki made onegaishimasu. Juugo-ji nijuu-ippun no Shin-kaisoku ni norimasu.&quot;, meaning: &quot;请去近江高岛站；我要乘15:21的新快速。&quot;, wide: true },
+      { kind: &quot;risk&quot;, label: &quot;注意&quot;, text: &quot;9月大祭管制可能让车无法停在原位置。手机保持可接听；超过14:52还未见车就立即拨预约电话。&quot; },
+      { kind: &quot;backup&quot;, label: &quot;备用&quot;, text: &quot;乘合方案按14:56回程班次执行；若普通车迟到，优先让司机送到最近可安全下车的站口，不在车站外整理器材。&quot; }
+    ],
+    &quot;step-return-jr&quot;: [
+      { kind: &quot;route&quot;, label: &quot;路线&quot;, text: &quot;近江高岛站乘15:21新快速“姬路行”，沿湖西线返回，15:48到JR大津京。&quot; },
+      { kind: &quot;action&quot;, label: &quot;怎么做&quot;, text: &quot;15:05到站后直接看电子屏和站台，不安排站前拍摄；车上补水、检查电池，准备下车后步行换京阪。&quot; },
+      { kind: &quot;cost&quot;, label: &quot;费用&quot;, text: &quot;Kansai Area Pass覆盖；普通新快速无需指定席或额外费用。&quot; },
+      { kind: &quot;background&quot;, label: &quot;名词背景&quot;, text: &quot;“姬路行”表示向南/西返回的列车方向，不是需要去姬路换乘；在JR大津京下车即可。&quot; },
+      { kind: &quot;risk&quot;, label: &quot;注意&quot;, text: &quot;返程班次同样是硬卡点；不要误上敦贺方向。到大津京后只有9分钟换到京阪，提前移动到车门附近。&quot; },
+      { kind: &quot;backup&quot;, label: &quot;备用&quot;, text: &quot;JR晚点时先看京阪后续班次；优先保留膳所主摄影窗口，必要时取消站内慢拍或缩短石山停留。&quot; }
+    ],
+    &quot;step-keihan&quot;: [
+      { kind: &quot;route&quot;, label: &quot;换站路线&quot;, text: &quot;15:48到JR大津京后出JR闸机，按步行导航前往相邻的京阪大津京站；用ICOCA进京阪，乘15:59石山寺方向列车，约16:19到膳所本町（行程安排至16:21作为下车整理缓冲）。该班次为候选，出发日以站内电子屏为准。&quot; },
+      { kind: &quot;action&quot;, label: &quot;怎么做&quot;, items: [&quot;出JR闸机后不要寻找同站台换乘，JR与京阪是两个独立车站。&quot;, &quot;看清京阪“石山寺方面”，ICOCA进出站各感应一次。&quot;, &quot;余额不足就在自动售票机充值；保留少量日元现金。&quot;] },
+      { kind: &quot;cost&quot;, label: &quot;费用&quot;, text: &quot;京阪大津线不在JR Pass范围内，须ICOCA另付；本段成人参考约¥240–¥300，按实际进出站区间和站内票价表扣款。&quot; },
+      { kind: &quot;background&quot;, label: &quot;名词背景&quot;, text: &quot;京阪是私营铁路，石山坂本线像城市电车一样频繁停站；“电车”在这里是普通铁路车辆，不是新干线。&quot; },
+      { kind: &quot;risk&quot;, label: &quot;注意&quot;, text: &quot;11分钟换乘包含出JR、步行、进京阪和候车。若赶不上15:59，不要逆行冲闸，乘下一班并相应压缩膳所前期踩点。&quot; },
+      { kind: &quot;backup&quot;, label: &quot;备用&quot;, text: &quot;下一班京阪通常较频密，以现场时刻为准；严重晚点可从大津京直接出租车去膳所城迹公园，但费用显著上升。&quot; }
+    ],
+    &quot;step-zeze&quot;: [
+      { kind: &quot;route&quot;, label: &quot;步行与机位&quot;, text: &quot;约16:19在膳所本町下车（预留至16:21整理），按导航步行约7–8分钟到膳所城迹公园；膳所湖岸与近江大桥西诘相邻，光线窗口只选一个主机位，不来回搬动。&quot; },
+      { kind: &quot;action&quot;, label: &quot;执行顺序&quot;, items: [&quot;先确认18:59京阪班次和回站路线。&quot;, &quot;17:40前完成构图、水平、脚架和延时设置。&quot;, &quot;17:47拍暖光，18:20日落前后持续观察云层，18:36进入蓝调，18:43强制收机回站。&quot;] },
+      { kind: &quot;cost&quot;, label: &quot;费用&quot;, text: &quot;公园和湖岸为户外公共空间，通常无门票；步行免费。餐饮、饮水及后续京阪车资另计。&quot; },
+      { kind: &quot;background&quot;, label: &quot;背景&quot;, text: &quot;夕阳位于拍摄者身后，重点不是太阳落入湖面，而是暖光照亮云层、湖面与近江大桥；“蓝调”是日落后天空仍有深蓝层次的短时间。&quot; },
+      { kind: &quot;photo&quot;, label: &quot;摄影&quot;, text: &quot;暖光ISO 100、f/8、1/60–1/250s并做±2EV包围；蓝调ISO 100、f/8、1–8s、WB 3800–4500K。延时间隔4–6秒，固定对焦、光圈和白平衡。&quot; },
+      { kind: &quot;risk&quot;, label: &quot;注意&quot;, text: &quot;湖岸风会放大三脚架振动；压低中轴、挂包但不要让包摆动。雷暴时停止金属脚架和湖岸拍摄。18:43是硬收机时间。&quot; },
+      { kind: &quot;backup&quot;, label: &quot;备用&quot;, text: &quot;阴天拍极简湖面、桥梁线条和长曝水面；雨势增大则在有遮挡处手持记录，提前回膳所本町，不冒险追蓝调。&quot; }
+    ],
+    &quot;step-ishiyama&quot;: [
+      { kind: &quot;route&quot;, label: &quot;路线&quot;, text: &quot;18:59从膳所本町乘京阪石山寺方向列车，约19:05到京阪石山（预留至19:07整理），立牌/签到点在2层改札内正面附近，先完成再出付费区。&quot; },
+      { kind: &quot;action&quot;, label: &quot;数字拉力怎么做&quot;, items: [&quot;下车后不要立刻刷ICOCA出站。&quot;, &quot;在不挡通道的位置手持拍立牌，打开官方活动页完成定位/扫码并截屏。&quot;, &quot;完成后再出闸，步行去平和堂石山。&quot;] },
+      { kind: &quot;cost&quot;, label: &quot;费用&quot;, text: &quot;数字拉力免费，京阪车资由ICOCA按区间扣除；JR Pass不覆盖。&quot; },
+      { kind: &quot;background&quot;, label: &quot;背景&quot;, text: &quot;京阪石山站只是数字拉力和立牌点，不是官方动画取景地；不要把“有活动素材”误写成“动画舞台”。&quot; },
+      { kind: &quot;photo&quot;, label: &quot;摄影&quot;, text: &quot;站内用高感手持快速记录，避免三脚架、闪光灯和清晰拍入通勤者面部。&quot; },
+      { kind: &quot;risk&quot;, label: &quot;注意&quot;, text: &quot;一旦刷卡出闸，若签到点确实在改札内，重新进入可能需要与站员沟通；所以先确认现场位置再离开。&quot; },
+      { kind: &quot;backup&quot;, label: &quot;备用&quot;, text: &quot;若手机定位失败，先截屏错误画面并重开定位权限；19:15仍未完成就保留照片、前往平和堂，避免错过服务中心。&quot; }
+    ],
+    &quot;step-heiwado&quot;: [
+      { kind: &quot;route&quot;, label: &quot;路线&quot;, text: &quot;从京阪石山站步行约5分钟到平和堂石山；先在2层找立牌/舞台对应位置，再到3层服务中心询问第一期卡片兑换。&quot; },
+      { kind: &quot;action&quot;, label: &quot;巡礼与兑换&quot;, items: [&quot;对照官方第2、4话画面拍环境记录。&quot;, &quot;确认数字拉力签到数；9月4日处于第一期时，官方页面显示完成3处签到可向3层服务中心出示手机画面申请卡片。&quot;, &quot;礼貌询问卡片库存，完成后19:45前离开；活动规则以当天页面为准。&quot;] },
+      { kind: &quot;cost&quot;, label: &quot;费用&quot;, text: &quot;商场入场、巡礼和数字拉力通常免费，购物另付；兑换卡片按活动条件发放，不把“免费”理解为保证有库存。&quot; },
+      { kind: &quot;background&quot;, label: &quot;背景&quot;, text: &quot;平和堂石山是《再见菈菈》第2、4话官方动画舞台，也是数字拉力点；与京阪石山站的“仅拉力、非取景”身份不同。&quot; },
+      { kind: &quot;photo&quot;, label: &quot;摄影&quot;, text: &quot;夜间以店铺外观、招牌和动画对应关系为主，使用手持高感或防抖；不要在商场通道架三脚架。&quot; },
+      { kind: &quot;risk&quot;, label: &quot;营业 / 库存&quot;, text: &quot;官方公布服务中心到21:00，但营业时间、兑换条件和库存可能变化；以当天活动页和服务中心答复为准，不因兑换排队错过19:51列车。&quot; },
+      { kind: &quot;backup&quot;, label: &quot;备用&quot;, text: &quot;没有库存也完成现场拍摄与签到；19:40开始向JR石山站移动，19:45必须离开。&quot; }
+    ],
+    &quot;step-home&quot;: [
+      { kind: &quot;route&quot;, label: &quot;路线&quot;, text: &quot;19:45离开平和堂，到相邻JR石山站乘19:51普通列车，19:56到JR大津；出站后前往酒店班车处，目标20:15班车，约20:20回酒店。&quot; },
+      { kind: &quot;action&quot;, label: &quot;怎么做&quot;, text: &quot;器材在进站前全部收好；到大津后直接找班车，不再做站内拍摄。回酒店先取行李/入住，再备份两份照片并给相机、电池和充电宝充电。&quot; },
+      { kind: &quot;cost&quot;, label: &quot;费用&quot;, text: &quot;JR石山到大津由当日Kansai Area Pass覆盖；酒店班车免费。若改叫出租车，从JR大津到酒店参考约¥700–1,200/车，以计价器和迎车费为准。&quot; },
+      { kind: &quot;background&quot;, label: &quot;名词背景&quot;, text: &quot;这段是JR普通列车，不需要指定席或新干线票；JR石山与京阪石山相邻但闸机和运营公司不同。&quot; },
+      { kind: &quot;risk&quot;, label: &quot;注意&quot;, text: &quot;19:51是首选而非末班；仍要为平和堂到JR站的步行、进闸和找站台留时间。酒店班车可能满员，以现场排队为准。&quot; },
+      { kind: &quot;backup&quot;, label: &quot;备用&quot;, text: &quot;错过19:51可尝试19:58或后续JR列车；错过20:15班车则等下一班、步行或从JR大津叫出租车，不必在石山折返。&quot; }
+    ]
+  };
 
   const regions = {
     type: &quot;FeatureCollection&quot;,
@@ -2209,6 +2648,89 @@ html&gt;body{padding:0}&lt;/style&gt;
     return item ? `&lt;span class=&quot;viz-badge&quot;&gt;${item.label}&lt;/span&gt;` : &quot;&quot;;
   }
 
+  function escapeHtml(value) {
+    return String(value == null ? &quot;&quot; : value).replace(/[&amp;&lt;&gt;&quot;&#x27;]/g, function (character) {
+      return { &quot;&amp;&quot;: &quot;&amp;amp;&quot;, &quot;&lt;&quot;: &quot;&amp;lt;&quot;, &quot;&gt;&quot;: &quot;&amp;gt;&quot;, &quot;\&quot;&quot;: &quot;&amp;quot;&quot;, &quot;&#x27;&quot;: &quot;&amp;#39;&quot; }[character];
+    });
+  }
+
+  function baseItemForStep(step) {
+    if (!step) return null;
+    return step.nodeId ? nodeById.get(step.nodeId) : segmentById.get(step.segmentId);
+  }
+
+  function guideBlocksForStep(step) {
+    if (!step) return [];
+    if (timelineGuideByStep[step.id]) return timelineGuideByStep[step.id];
+    const base = baseItemForStep(step);
+    return base &amp;&amp; base.guideBlocks ? base.guideBlocks : [];
+  }
+
+  function guideBlocksForItem(item) {
+    if (!item) return [];
+    const matchingStep = steps.find(function (step) {
+      return (step.nodeId &amp;&amp; step.nodeId === item.id) || (step.segmentId &amp;&amp; step.segmentId === item.id);
+    });
+    return matchingStep ? guideBlocksForStep(matchingStep) : (item.guideBlocks || []);
+  }
+
+  function guideCopyHtml(block) {
+    if (Array.isArray(block.items)) {
+      return `&lt;ul&gt;${block.items.map(function (item) { return `&lt;li&gt;${escapeHtml(item)}&lt;/li&gt;`; }).join(&quot;&quot;)}&lt;/ul&gt;`;
+    }
+    if (block.phrase) {
+      return `&lt;code&gt;${escapeHtml(block.phrase)}&lt;/code&gt;${block.romaji ? `&lt;span class=&quot;guide-romaji&quot;&gt;读法：${escapeHtml(block.romaji)}&lt;/span&gt;` : &quot;&quot;}${block.meaning ? `&lt;span class=&quot;guide-meaning&quot;&gt;${escapeHtml(block.meaning)}&lt;/span&gt;` : &quot;&quot;}`;
+    }
+    if (Array.isArray(block.text)) {
+      return `&lt;ul&gt;${block.text.map(function (item) { return `&lt;li&gt;${escapeHtml(item)}&lt;/li&gt;`; }).join(&quot;&quot;)}&lt;/ul&gt;`;
+    }
+    return `&lt;p&gt;${escapeHtml(block.text || &quot;&quot;)}&lt;/p&gt;`;
+  }
+
+  function guideBlocksHtml(blocks) {
+    return (blocks || []).map(function (block) {
+      const kind = String(block.kind || &quot;background&quot;).replace(/[^a-z-]/g, &quot;&quot;);
+      const wideClass = block.wide ? &quot; guide-block-wide&quot; : &quot;&quot;;
+      return `&lt;section class=&quot;guide-block guide-${kind}${wideClass}&quot;&gt;&lt;strong class=&quot;guide-label&quot;&gt;${escapeHtml(block.label || kind)}&lt;/strong&gt;&lt;div class=&quot;guide-copy&quot;&gt;${guideCopyHtml(block)}&lt;/div&gt;&lt;/section&gt;`;
+    }).join(&quot;&quot;);
+  }
+
+  function timelineGuideHtml(step) {
+    return guideBlocksHtml(guideBlocksForStep(step));
+  }
+
+  function compactText(value, limit) {
+    const text = String(value == null ? &quot;&quot; : value).replace(/\s+/g, &quot; &quot;).trim();
+    if (!limit || text.length &lt;= limit) return text;
+    return text.slice(0, limit - 1) + &quot;…&quot;;
+  }
+
+  function compactGuideHtml(item) {
+    const parts = [];
+    if (item.action) {
+      parts.push(`&lt;span class=&quot;tooltip-guide tooltip-guide-action&quot;&gt;&lt;b&gt;怎么做：&lt;/b&gt;${escapeHtml(compactText(item.action, 220))}&lt;/span&gt;`);
+    }
+    const blocks = guideBlocksForItem(item).filter(function (block) {
+      return block.kind === &quot;cost&quot; || block.kind === &quot;risk&quot;;
+    }).slice(0, 2);
+    blocks.forEach(function (block) {
+      const text = block.text || (block.items || []).join(&quot; &quot;);
+      parts.push(`&lt;span class=&quot;tooltip-guide tooltip-guide-${block.kind}&quot;&gt;&lt;b&gt;${escapeHtml(block.label || block.kind)}：&lt;/b&gt;${escapeHtml(compactText(text, 220))}&lt;/span&gt;`);
+    });
+    return parts.join(&quot;&quot;);
+  }
+
+  function renderGlossary() {
+    const list = root.querySelector(&quot;.terms-list&quot;);
+    if (!list) return;
+    list.innerHTML = glossaryTerms.map(function (term) {
+      const sourceLinks = externalLinks(term.linkKeys, false);
+      const body = term.items ? `&lt;ol&gt;${term.items.map(function (item) { return `&lt;li&gt;${escapeHtml(item)}&lt;/li&gt;`; }).join(&quot;&quot;)}&lt;/ol&gt;` : `&lt;p&gt;${escapeHtml(term.text || &quot;&quot;)}&lt;/p&gt;`;
+      const note = term.items &amp;&amp; term.text ? `&lt;p class=&quot;term-note&quot;&gt;${escapeHtml(term.text)}&lt;/p&gt;` : &quot;&quot;;
+      return `&lt;article class=&quot;term-item&quot;&gt;&lt;strong&gt;${escapeHtml(term.title)}&lt;/strong&gt;${body}${note}${sourceLinks ? `&lt;div class=&quot;inline-links text-small&quot;&gt;${sourceLinks}&lt;/div&gt;` : &quot;&quot;}&lt;/article&gt;`;
+    }).join(&quot;&quot;);
+  }
+
   function mapTooltipMediaHtml(ids) {
     const items = (ids || []).map(function (id) { return mediaById[id]; }).filter(Boolean);
     if (!items.length) return &quot;&quot;;
@@ -2222,6 +2744,7 @@ html&gt;body{padding:0}&lt;/style&gt;
     return `&lt;span class=&quot;text-small text-muted&quot;&gt;${node.time} · ${node.status}&lt;/span&gt;` +
       laraBadgeHtml(node.id) +
       `&lt;strong&gt;${node.name}&lt;/strong&gt;&lt;span&gt;${node.summary}&lt;/span&gt;` +
+      compactGuideHtml(node) +
       mapTooltipMediaHtml(nodeMediaIds[node.id]);
   }
 
@@ -2315,6 +2838,7 @@ html&gt;body{padding:0}&lt;/style&gt;
     root.querySelector(&quot;.detail-summary&quot;).textContent = item.summary || &quot;&quot;;
     root.querySelector(&quot;.detail-action&quot;).textContent = item.action || &quot;&quot;;
     root.querySelector(&quot;.detail-photo&quot;).textContent = item.photo || &quot;&quot;;
+    root.querySelector(&quot;.detail-guide&quot;).innerHTML = guideBlocksHtml(item.guideBlocks || guideBlocksForItem(item));
     root.querySelector(&quot;.detail-links&quot;).innerHTML = externalLinks(item.linkKeys, true);
 
     root.querySelectorAll(&quot;.step-trigger&quot;).forEach(function (button) {
@@ -2328,7 +2852,8 @@ html&gt;body{padding:0}&lt;/style&gt;
       title: step.title,
       time: step.time,
       summary: step.summary,
-      linkKeys: step.linkKeys
+      linkKeys: step.linkKeys,
+      guideBlocks: guideBlocksForStep(step)
     });
   }
 
@@ -2367,10 +2892,13 @@ html&gt;body{padding:0}&lt;/style&gt;
   function renderTimeline() {
     const list = root.querySelector(&quot;.timeline-list&quot;);
     list.innerHTML = steps.map(function (step) {
-      return `&lt;div class=&quot;timeline-item&quot;&gt;
+      const base = baseItemForStep(step) || {};
+      const priority = base.type || (step.segmentId ? &quot;route&quot; : &quot;normal&quot;);
+      return `&lt;div class=&quot;timeline-item&quot; data-step-id=&quot;${step.id}&quot; data-priority=&quot;${priority}&quot;&gt;
         &lt;strong class=&quot;timeline-time&quot;&gt;${step.time}&lt;/strong&gt;
-        &lt;div class=&quot;timeline-title-wrap&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;btn btn-ghost step-trigger&quot; data-step-id=&quot;${step.id}&quot; aria-pressed=&quot;false&quot;&gt;${step.title}&lt;/button&gt;${laraBadgeHtml(step.nodeId)}&lt;/div&gt;
-        &lt;div class=&quot;timeline-meta&quot;&gt;&lt;p&gt;${step.summary}&lt;/p&gt;&lt;div class=&quot;inline-links text-small&quot;&gt;${externalLinks(step.linkKeys, false)}&lt;/div&gt;${timelineMediaHtml(step)}&lt;/div&gt;
+        &lt;div class=&quot;timeline-title-wrap&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;btn btn-ghost step-trigger&quot; data-step-id=&quot;${step.id}&quot; aria-pressed=&quot;false&quot;&gt;${step.title}&lt;/button&gt;${laraBadgeHtml(step.nodeId || base.id)}&lt;/div&gt;
+        &lt;div class=&quot;timeline-meta&quot;&gt;&lt;p class=&quot;timeline-purpose&quot;&gt;${step.summary}&lt;/p&gt;&lt;div class=&quot;inline-links text-small&quot;&gt;${externalLinks(step.linkKeys, false)}&lt;/div&gt;${timelineMediaHtml(step)}&lt;/div&gt;
+        &lt;div class=&quot;timeline-guide&quot;&gt;${timelineGuideHtml(step)}&lt;/div&gt;
       &lt;/div&gt;`;
     }).join(&quot;&quot;);
 
@@ -2442,7 +2970,28 @@ html&gt;body{padding:0}&lt;/style&gt;
     const points = new Map(visibleNodes.map(function (node) {
       return [node.id, screenPointForNode(node, shellRect)];
     }));
-    const labelRects = Array.from(root.querySelectorAll(&quot;.node-label&quot;)).map(function (label) {
+    // Use the actual SVG hit-circle bounds instead of a small point radius. The
+    // hit target is 36px wide, so point-only checks let a thumbnail cover the
+    // neighbouring node on narrow maps.
+    const nodeRects = Array.from(nodeLayer.selectAll(&quot;.node-group&quot;).nodes()).map(function (group) {
+      const node = group.__data__;
+      const hit = group.querySelector(&quot;.node-hit&quot;);
+      if (!node || !hit || viewNodeIds[currentView].indexOf(node.id) &lt; 0) return null;
+      const rect = hit.getBoundingClientRect();
+      return {
+        id: node.id,
+        left: rect.left - shellRect.left,
+        right: rect.right - shellRect.left,
+        top: rect.top - shellRect.top,
+        bottom: rect.bottom - shellRect.top
+      };
+    }).filter(function (rect) {
+      return rect &amp;&amp; rect.right &gt; rect.left &amp;&amp; rect.bottom &gt; rect.top;
+    });
+    // Reserve both node labels and geographic context labels (lake/province).
+    // The latter are easy to overlook because they are rendered in a separate
+    // SVG join, but a thumbnail should not obscure them on compact views.
+    const labelRects = Array.from(root.querySelectorAll(&quot;.node-label, .map-place-label&quot;)).map(function (label) {
       const rect = label.getBoundingClientRect();
       return {
         left: rect.left - shellRect.left, right: rect.right - shellRect.left,
@@ -2452,10 +3001,12 @@ html&gt;body{padding:0}&lt;/style&gt;
     const placed = [];
     const placementOrder = visibleNodes.slice().sort(function (a, b) {
       const rank = function (node) {
-        if (laraByNodeId[node.id] &amp;&amp; laraByNodeId[node.id].kind === &quot;official&quot;) return 0;
-        if (laraByNodeId[node.id]) return 1;
+        // Keep the currently selected point and confirmed anime stages visible first.
+        if (selectedNodeIds.has(node.id)) return 0;
+        if (laraByNodeId[node.id] &amp;&amp; laraByNodeId[node.id].kind === &quot;official&quot;) return 1;
         if (node.type === &quot;photo&quot;) return 2;
-        return 3;
+        if (laraByNodeId[node.id]) return 3;
+        return 4;
       };
       return rank(a) - rank(b) || a.number - b.number;
     });
@@ -2463,6 +3014,10 @@ html&gt;body{padding:0}&lt;/style&gt;
     placementOrder.forEach(function (node) {
       const pin = mediaLayer.querySelector(`[data-node-id=&quot;${node.id}&quot;]`);
       if (!pin) return;
+      pin.hidden = false;
+      pin.classList.remove(&quot;is-hidden&quot;);
+      pin.setAttribute(&quot;aria-hidden&quot;, &quot;false&quot;);
+      pin.tabIndex = 0;
       const pinRect = pin.getBoundingClientRect();
       const pinWidth = pinRect.width || 44;
       const pinHeight = pinRect.height || 34;
@@ -2483,10 +3038,8 @@ html&gt;body{padding:0}&lt;/style&gt;
       }
 
       function coversAnotherNode(rect) {
-        return visibleNodes.some(function (other) {
-          if (other.id === node.id) return false;
-          const point = points.get(other.id);
-          return point.x &gt;= rect.left - 7 &amp;&amp; point.x &lt;= rect.right + 7 &amp;&amp; point.y &gt;= rect.top - 7 &amp;&amp; point.y &lt;= rect.bottom + 7;
+        return nodeRects.some(function (nodeRect) {
+          return rectanglesOverlap(rect, nodeRect, 5);
         });
       }
 
@@ -2494,20 +3047,23 @@ html&gt;body{padding:0}&lt;/style&gt;
         return labelRects.some(function (labelRect) { return rectanglesOverlap(rect, labelRect, 4); });
       }
 
-      let chosen = candidates.map(candidateRect).find(function (rect) {
+      // Every accepted candidate must clear all node hit areas, visible labels and
+      // previously placed pins. Do not fall back to an overlapping position on
+      // narrow maps; hide lower-priority media instead.
+      const isLegal = function (rect) {
         return !coversAnotherNode(rect) &amp;&amp; !coversLabel(rect) &amp;&amp; !placed.some(function (other) { return rectanglesOverlap(rect, other, 5); });
-      });
+      };
+      const chosen = candidates.map(candidateRect).find(isLegal);
+
       if (!chosen) {
-        chosen = candidates.map(candidateRect).find(function (rect) {
-          return !coversLabel(rect) &amp;&amp; !placed.some(function (other) { return rectanglesOverlap(rect, other, 3); });
-        });
+        // The SVG node/label remains the source of truth when no collision-free
+        // thumbnail slot exists. This also removes the anchor from the tab order.
+        pin.hidden = true;
+        pin.classList.add(&quot;is-hidden&quot;);
+        pin.setAttribute(&quot;aria-hidden&quot;, &quot;true&quot;);
+        pin.tabIndex = -1;
+        return;
       }
-      if (!chosen) {
-        chosen = candidates.map(candidateRect).find(function (rect) {
-          return !placed.some(function (other) { return rectanglesOverlap(rect, other, 3); });
-        });
-      }
-      if (!chosen) chosen = candidateRect(preferred);
 
       placed.push(chosen);
       pin.style.left = chosen.centerX + &quot;px&quot;;
@@ -2600,6 +3156,27 @@ html&gt;body{padding:0}&lt;/style&gt;
   }
 
   function labelOffset(node) {
+    const viewOffsets = {
+      all: {
+        kyoto: { dx: -28, dy: -28 },
+        takashima: { dx: -60, dy: -30 },
+        shrine: { dx: -60, dy: 50 }
+      },
+      shiga: {
+        takashima: { dx: -60, dy: -30 },
+        shrine: { dx: -60, dy: 50 },
+        zeze: { dx: 55, dy: 52 }
+      },
+      otsu: {
+        otsukyo: { dx: -45, dy: -34 },
+        keihanotsukyo: { dx: -45, dy: 42 },
+        zezehm: { dx: -35, dy: 20 },
+        zeze: { dx: 48, dy: 48 },
+        bridge: { dx: 10, dy: -38 },
+        heiwado: { dx: 10, dy: -38 }
+      }
+    };
+    if (viewOffsets[currentView] &amp;&amp; viewOffsets[currentView][node.id]) return viewOffsets[currentView][node.id];
     if (currentView === &quot;all&quot; &amp;&amp; node.id === &quot;otsu&quot;) return { dx: 10, dy: 18 };
     return { dx: node.dx, dy: node.dy };
   }
@@ -2688,7 +3265,8 @@ html&gt;body{padding:0}&lt;/style&gt;
         placeTooltip(event,
           `&lt;span class=&quot;text-small text-muted&quot;&gt;${segment.time} · ${segment.status}&lt;/span&gt;` +
           `&lt;strong&gt;${segment.from} → ${segment.to}&lt;/strong&gt;` +
-          `&lt;span&gt;${segment.summary}&lt;/span&gt;`);
+          `&lt;span&gt;${segment.summary}&lt;/span&gt;` +
+          compactGuideHtml(segment));
       })
       .on(&quot;mousemove&quot;, moveTooltip)
       .on(&quot;mouseleave&quot;, hideTooltip)
@@ -2767,6 +3345,7 @@ html&gt;body{padding:0}&lt;/style&gt;
   });
 
   renderTimeline();
+  renderGlossary();
   renderCredits();
   renderDetail(currentSelection, selectedStepId);
   drawMap(false);
